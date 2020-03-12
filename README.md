@@ -4,7 +4,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
 ![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
 
-Nome_da_Aplicação é um/uma ... que permite/tem por objetivo/visa/etc .... 
+Photo Room é um/uma ... que permite/tem por objetivo/visa/etc .... 
 
 Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo.
 
@@ -34,9 +34,9 @@ Windows (opcional):
 <commandos>
 ```
 
-## Usando Nome_da_Aplicação
+## Usando Photo Room
 
-Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
+Para usar Photo Room, siga os seguintes passos (exemplos):
 
 * Abra o navegador e digite o seguinte endereço: `http://localhost/....`
 * Ao abrir a aplicação você poderá:
@@ -50,7 +50,7 @@ Para usar Nome_da_Aplicação, siga os seguintes passos (exemplos):
 
 As seguintes pessoas contribuiram para este projeto:
 
-* [Meu nome](https://github.com/meu_nome)
+* [Jean Henrique de Oliveira Jaques](https://github.com/jeanhjaques)
 * *.... (liste todos os membros da equipe)*
 
 ## Licença de uso
