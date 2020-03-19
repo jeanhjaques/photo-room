@@ -4,9 +4,11 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
 ![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
 
-Photo Room é um/uma ... que permite/tem por objetivo/visa/etc .... 
+Photo Room é uma aplicação web que permite o armazenamento de imagens e videos visando ajudar seus usuários a se manterem organizados com relação a suas midias. 
 
-Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo.
+<!--Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo. --->
+
+Por meio do Photo Room o usuário é capaz de armazenar imagens e videos e além disso é possível criar albuns, ordenar imagens por diferentes critérios, criar albuns compartilhados, adicionar informações descritivas as fotos e marcar suas favoritas. Nesta aplicação cada usuário possuí seu album principal(Que conta com todas as fotografias armazenadas), um albúm de favoritos e albúns personalizados cujo os mesmo podem possuir nomes e descrições personalizados.
 
 ## Pré-requisitos
 
