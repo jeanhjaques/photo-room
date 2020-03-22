@@ -53,6 +53,7 @@ Para usar Photo Room, siga os seguintes passos (exemplos):
 As seguintes pessoas contribuiram para este projeto:
 
 * [Jean Henrique de Oliveira Jaques](https://github.com/jeanhjaques)
+* [Suellen Rosemberg dos Santos](https://github.com/suellenRosemberg)
 * *.... (liste todos os membros da equipe)*
 
 ## Licença de uso
