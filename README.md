@@ -54,6 +54,7 @@ As seguintes pessoas contribuiram para este projeto:
 
 * [Jean Henrique de Oliveira Jaques](https://github.com/jeanhjaques)
 * [Suellen Rosemberg dos Santos](https://github.com/suellenRosemberg)
+* [Daniel Elias de Oliveira Pinheiro](https://github.com/deopmaster)
 * *.... (liste todos os membros da equipe)*
 
 ## Licença de uso
