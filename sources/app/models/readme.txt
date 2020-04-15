@@ -1,0 +1,1 @@
+Aqui é a parte dos objetos, as classes do php ficarão aqui!

@@ -1,0 +1,1 @@
+Aqui é a parte da midia, onde os arquivos de midia são inseridos, tais como as imagens dos icones!
