@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="homepage.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Nome do Usuário</a></li>
+                <li><img class="imgperfil" src="../../public/imgperfil.jpg"></li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+            <div class="espacobusca">
+                <form method="post" action="../controllers/loginController.php">
+                    <label for="pesquisa"></label>
+                    <input id="pesquisa" name="pesquisa" required="required" type="search" placeholder="Pesquisar">
+                </form>
+            </div>
+            <nav class="menuprincipal">
+                <ul>
+                    <li><img class="imgmenuprincipal" src="../../public/tudo.png"></li>
+                    <li><img class="imgmenuprincipal" src="../../public/favorito.png"></li>
+                    <li><img class="imgmenuprincipal" src="../../public/mais.png"></li>
+                </ul>
+            </nav>
+            
+            <div class="imagens">
+                <nav class="caixadeimagens">
+                    <ul>
+                        <li><img class="imgcx" src="../../public/foto0.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto1.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto2.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto3.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto4.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto5.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto6.jpg"></li>
+                        <li><img class="imgcx" src="../../public/foto7.jpg"></li>
+                    </ul>
+                </nav>
+            </div>
+    </article>
+    <footer>
+        <span>Desenvolvido por Fenix Group</span><br>
+        <span>Copyright 2020</span>
+    </footer>
+</body>
+</html>
