@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+    padding:0;
+}
+header{
+    background-color: black;
+    background-image: url("../../public/logo.png");
+    background-repeat: no-repeat;
+	background-position: left;
+	background-position-x: 5%;
+	background-size: 40px;
+    color: white;
+    margin:0;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+header .menu{
+    text-align: right;
+}
+header .menu ul{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header .menu ul li{
+    display: inline;
+}
+
+header .menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.imgperfil{
+    vertical-align: -65%;
+    width: 40px;
+    border-radius: 100%;
+}
+
+
+article .espacobusca{
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+
+article .espacobusca input[type = search]{
+    text-align: center;
+    border-color: rgb(197, 197, 197);
+    border-style: solid;
+    border-radius: 10px;
+    width: 30%;
+}
+
+article .espacobusca input[type = search]:hover{
+    text-align: center;
+    border-color: rgb(0, 255, 242);
+    border-style: solid;
+    border-radius: 10px;
+    width: 30%;
+}
+
+article .menuprincipal{
+    text-align: center;
+}
+article .menuprincipal ul{
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+}
+
+article .menuprincipal ul li{
+    display: inline;
+}
+
+article .menuprincipal ul li img{
+    text-decoration: none;
+}
+
+.imgmenuprincipal{
+    width: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.imagens .caixadeimagens ul{
+    list-style-type: none;
+}
+
+.imagens .caixadeimagens ul li{
+    text-align: center;
+    display: inline-flex;
+    position: space-around;
+    margin:0;
+    padding: 0;
+}
+
+.imgcx{
+    width: 175px;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgb(148, 147, 147) 1px 1px 1px 1px;
+    margin: 1px;
+    padding: 0;
+}
+
+footer{
+    font-size: 15px;
+    text-align: center;
+}
