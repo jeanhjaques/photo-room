@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link href="homepage.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="logo"></div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <link href="homepage.css" rel="stylesheet">
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id="modal-wrapper" class="modal">
 
-        <nav class="menu">
-            <ul>
-                <li><a href="#">Nome do Usuário</a></li>
-                <li><img class="imgperfil" src="../../public/imgperfil.jpg"></li>
-            </ul>
-        </nav>
-    </header>
-    <article>
+                <form class="modal-content animate" action="/action_page.php">
+
+                    <div class="createAlbumImgContainer">
+                        <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Fechar">&times;</span>
+                        <img src="../../public/imgperfil.jpg" alt="Avatar" class="createAlbumAvatar">
+                        <h1 style="text-align:center">Criar novo álbum</h1>
+                    </div>
+
+                    <div class="container">
+                        <input class="createAlbumInput" type="text" placeholder="Nome do álbum" name="albumname">
+                        <input class="createAlbumInput" type="text" placeholder="Descrição do álbum" name="albumdescription">        
+                        <button class="createAlbumButton" type="submit">Criar</button>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="logo"></div>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Nome do Usuário</a></li>
+                    <li><img class="imgperfil" src="../../public/imgperfil.jpg"></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
             <div class="espacobusca">
                 <form method="post" action="../controllers/loginController.php">
                     <label for="pesquisa"></label>
@@ -28,10 +48,10 @@
                 <ul>
                     <li><img class="imgmenuprincipal" src="../../public/tudo.png"></li>
                     <li><img class="imgmenuprincipal" src="../../public/favorito.png"></li>
-                    <li><img class="imgmenuprincipal" src="../../public/mais.png"></li>
+                    <li><img class="imgmenuprincipal" src="../../public/mais.png" onclick="createAlbum()"></li>
                 </ul>
             </nav>
-            
+
             <div class="imagens">
                 <nav class="caixadeimagens">
                     <ul>
@@ -46,10 +66,10 @@
                     </ul>
                 </nav>
             </div>
-    </article>
-    <footer>
-        <span>Desenvolvido por Fenix Group</span><br>
-        <span>Copyright 2020</span>
-    </footer>
-</body>
+        </article>
+        <footer>
+            <span>Desenvolvido por Fenix Group</span><br>
+            <span>Copyright 2020</span>
+        </footer>
+    </body>
 </html>
