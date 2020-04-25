@@ -114,6 +114,10 @@ article .menuprincipal ul li img{
 }
 
 footer{
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     font-size: 15px;
     text-align: center;
 }
@@ -176,6 +180,7 @@ footer{
     padding-bottom: 30px;
 }
 
+
 .close {
     position: absolute;
     right: 25px;
@@ -184,6 +189,8 @@ footer{
     font-size: 35px;
     font-weight: bold;
 }
+
+
 .close:hover,.close:focus {
     color: red;
     cursor: pointer;
