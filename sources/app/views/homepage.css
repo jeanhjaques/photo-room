@@ -92,7 +92,13 @@ article .menuprincipal ul li img{
 }
 
 .imagens .caixadeimagens ul{
-    list-style-type: none;
+    list-style: none;
+    display: grid;
+    margin-left: 100px;
+    margin-right: 100px;
+    grid-template-columns: repeat(5 , 1fr);
+    grid-gap: 30px;
+    margin-top: 50px;
 }
 
 .imagens .caixadeimagens ul li{
@@ -113,9 +119,10 @@ article .menuprincipal ul li img{
     padding: 0;
 }
 
+
 footer{
     display: inline-block;
-    position: absolute;
+    position: static;
     bottom: 0;
     width: 100%;
     font-size: 15px;
