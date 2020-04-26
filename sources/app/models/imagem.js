@@ -1,23 +1,22 @@
 
-function abrirImagem() {
+function abrirImagem( a,  b) {
 
-    document.getElementById('modalImagem').style.display = 'block';
+    // document.getElementById('modalImagem').style.display = 'block';
 
     
+    var modal = document.getElementById('modalImagem');
+    modal.style.display = 'block';
     
+
+
     var modalImg = document.getElementById("imgAparece");
     var captionText = document.getElementById("caption");
-
-    var img = document.getElementsByTagName('img');
-
+    var img = document.getElementById(this);
     
-    img.onclick = function() {
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    }
-    
+    modalImg.src = a;
+    captionText.innerHTML = b;
+   
     // Get the <span> element that closes the modal
-    var modal = document.getElementById('modalImagem');
     var span = document.getElementById("fecharImagem");
     
     // When the user clicks on <span> (x), close the modal
