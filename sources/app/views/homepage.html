@@ -5,11 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
         <link href="homepage.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../public/css/img.css">
+
         <script src="scripts.js"></script>
+        <script src="../models/imagem.js"></script>
     </head>
     <body>
         <header>
-            <div id="modal-wrapper" class="modal">
+
+                <div id="modalImagem" class="modalimg">
+                        <span class="close" id="fecharImagem">&times;</span>
+                        <img class="modal-content-img" id="imgAparece">
+                        <div id="caption"></div>
+                    </div>
+
+
+                <div id="modal-wrapper" class="modal">
 
                 <form class="modal-content animate" action="/action_page.php">
 
@@ -55,18 +66,20 @@
             <div class="imagens">
                 <nav class="caixadeimagens">
                     <ul>
-                        <li><img class="imgcx" src="../../public/foto0.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto1.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto2.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto3.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto4.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto5.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto6.jpg"></li>
-                        <li><img class="imgcx" src="../../public/foto7.jpg"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto0.jpg" alt="foto1"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto1.jpg" alt="foto2"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto2.jpg" alt="foto3"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto3.jpg" alt="foto4"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto4.jpg" alt="foto5"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto5.jpg" alt="foto6"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto6.jpg" alt="foto7"></li>
+                        <li><img onclick="abrirImagem();" class="imgcx img" src="../../public/foto7.jpg" alt="foto8"></li>
                      
                     </ul>
                 </nav>
             </div>
+            <!-- Modal que para as imagens ampliar -->
+            
         </article>
         <footer>
             <span>Desenvolvido por Fenix Group</span><br>
