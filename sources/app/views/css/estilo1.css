@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*--------------Login----------------------------------*/
+
+.login_page {
+    background-image: url(../img/imgFundo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 3em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 35%;
+    height: 55%;
+    background: #1E1E1E;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+.box h1 {
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
+.box input {
+    display: block;
+    text-align: center;
+    width: 70%;
+    height: 45px;
+    position: relative;
+    left: 15%;
+    border-color: #1E1E1E;
+    border-radius: 12px;
+}
+
+.box p {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 17%;
+    margin-bottom: 4%;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #0591a3;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #b0ffe9;
+    cursor: pointer;
+}
+
+
+/*-----------CriarConta--------------------*/
+
+.box-criarConta {
+    width: 35%;
+    height: 85%;
+    background: #1E1E1E;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+.box-criarConta h1 {
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
+.box-criarConta input {
+    display: block;
+    text-align: center;
+    width: 70%;
+    height: 45px;
+    position: relative;
+    left: 15%;
+    border-color: #1E1E1E;
+    border-radius: 12px;
+}
+
+.box-criarConta p {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 17%;
+    margin-bottom: 3%;
+}
+
+
+/*-----------nova senha--------------------*/
+
+#form-ns {
+    margin-top: 5%;
+}
+
+
+/*------------Para arquivo login.html, criarConta.html e novaSenha.html-------------*/
+
+@media only screen and (min-width: 1550px) {
+    h1 {
+        font-size: 50px;
+    }
+    .box p {
+        font-size: 12px;
+    }
+    .box-criarConta p {
+        font-size: 12px;
+    }
+    a {
+        font-size: 16px;
+    }
+    strong {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1549px) {
+    h1 {
+        font-size: 30px;
+    }
+    .box p {
+        font-size: 9px;
+    }
+    .box-criarConta p {
+        font-size: 9px;
+    }
+    a {
+        font-size: 12px;
+    }
+    strong {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1399px) {
+    .box p {
+        font-size: 7px;
+    }
+    .box-criarConta p {
+        font-size: 7px;
+    }
+    a {
+        font-size: 10px;
+    }
+    strong {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    .box p {
+        font-size: 6px;
+    }
+    .box-criarConta p {
+        font-size: 6px;
+    }
+    a {
+        font-size: 8px;
+    }
+    strong {
+        font-size: 8px;
+    }
+}
+
+.btn-login {
+    margin-bottom: 2%;
+    background-color: #050a9c;
+    color: white;
+    font-weight: bold;
+    border-color: #050a9c;
+}
+
+.btn-login:hover {
+    cursor: pointer;
+    background-color: #05469c;
+    border-color: #05469c;
+}
