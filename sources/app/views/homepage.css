@@ -2,8 +2,8 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    margin:0;
-    padding:0;
+    height: 100%;
+    width: 100%;
 }
 header{
     background-color: black;
@@ -31,11 +31,13 @@ header .menu ul{
 
 header .menu ul li{
     display: inline;
+    margin-right: 5px;
 }
 
 header .menu ul li a{
     text-decoration: none;
     color: white;
+    margin-right: 5px;
 }
 
 .imgperfil{
@@ -70,6 +72,8 @@ article .espacobusca input[type = search]:hover{
 
 article .menuprincipal{
     text-align: center;
+    height: 100%;
+    position: relative;
 }
 article .menuprincipal ul{
     margin:0;
@@ -120,13 +124,16 @@ article .menuprincipal ul li img{
 }
 
 
-footer{
-    display: inline-block;
-    position: static;
-    bottom: 0;
-    width: 100%;
+.rodape {
+    border: 1px solid red;
     font-size: 15px;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
+    bottom: 0;
 }
 
 /*Popup Criar Album*/

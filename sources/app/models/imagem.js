@@ -1,5 +1,5 @@
 
-function abrirImagem( a,  b) {
+function abrirImagem(a, b) {
 
     // document.getElementById('modalImagem').style.display = 'block';
 
@@ -7,7 +7,6 @@ function abrirImagem( a,  b) {
     var modal = document.getElementById('modalImagem');
     modal.style.display = 'block';
     
-
 
     var modalImg = document.getElementById("imgAparece");
     var captionText = document.getElementById("caption");
