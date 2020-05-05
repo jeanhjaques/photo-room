@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
         <link href="homepage.css" rel="stylesheet">
         <link rel="stylesheet" href="../../public/css/img.css">
-
         <script src="scripts.js"></script>
         <script src="../models/imagem.js"></script>
     </head>
+
     <body>
         <header>
-
                 <!-- modal Imagem -->
                 <div id="modalImagem" class="modalimg">
                     <span class="close" id="fecharImagem">&times;</span>
                     <img id="imgAparece" class="modal-content-img">
                     <div id="caption"></div>
                 </div>
-
 
                 <div id="modal-wrapper" class="modal">
 
@@ -42,20 +41,26 @@
             </div>
             <div class="logo"></div>
 
+            <!-- Menu de cabeçalho -->
             <nav class="menu">
                 <ul>
                     <li><a href="#">Nome do Usuário</a></li>
                     <li><img class="imgperfil" src="../../public/imgperfil.jpg"></li>
                 </ul>
             </nav>
+
         </header>
+
         <article>
+            <!-- Bloco que inclui a barra de pesquisa -->
             <div class="espacobusca">
                 <form method="post" action="../controllers/loginController.php">
                     <label for="pesquisa"></label>
                     <input id="pesquisa" name="pesquisa" required="required" type="search" placeholder="Pesquisar">
                 </form>
             </div>
+
+            <!-- Menu Principal da página -->
             <nav class="menuprincipal">
                 <ul>
                     <li><img class="imgmenuprincipal" src="../../public/tudo.png"></li>
@@ -64,6 +69,7 @@
                 </ul>
             </nav>
 
+            <!-- Bloco onde fica o albúm do usuário -->
             <div class="imagens">
                 <nav class="caixadeimagens">
                     <ul>
@@ -79,13 +85,14 @@
                     </ul>
                 </nav>
             </div>
-            <!-- Modal que para as imagens ampliar -->
-            
         </article>
-        <div class="rodape">
-            <div>Desenvolvido por Fenix Group</div>
-            <div>Copyright</div>
-            <div>2020</div>
-        </div>
+
+        <footer>
+            <-- Espaço com informação dos DEVs -->
+            <p>Desenvolvido por Fenix Group</p>
+            <p>Copyright</p>
+            <p>2020</p>
+        </footer>
+
     </body>
 </html>
