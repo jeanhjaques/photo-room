@@ -10,7 +10,7 @@
 /*--------------Login----------------------------------*/
 
 .login_page {
-    background-image: url(../img/imgFundo.png);
+    background-image: url(../../../public/imgFundo.png);
     background-repeat: no-repeat;
     background-size: 100%;
     bottom: 0;

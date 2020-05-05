@@ -8,7 +8,7 @@ body{
 /* Cabeçalho da página */
 header{
     background-color: black;
-    background-image: url("../../public/logo.png"); /* Inserção do logo tipo da página */
+    background-image: url("../../../public/logo.png"); /* Inserção do logo tipo da página */
     background-repeat: no-repeat;
     background-position: left;
     background-position-x: 5%;
