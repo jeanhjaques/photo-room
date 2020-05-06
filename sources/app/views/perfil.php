@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../../public/css/perfil.css"  >
+    <link rel="stylesheet" href="css/perfil.css">
 </head>
 <body>
-    <?php 
-        include('header/header.php');
-    ?>
     <article class="info">
         <div class="titulo">
             <h1>Informações do perfil</h1>
@@ -18,7 +15,7 @@
         
        
         <div class="imagem">
-            <img  src="../../public/imgperfil" alt="perfil" >
+            <img  src="../../public/imgperfil.jpg" alt="perfil" >
         </div>
 
         <div class="dados">
@@ -47,15 +44,6 @@
                 <span>99 9999-9999</span>
             </div>
         </div>
-        
-        
-        
     </article>
-    <div class="rodape">
-        <div>Fênix Group</div> 
-        <div>Copyright</div> 
-        <div>2020</div> 
-    </div>
-
 </body>
 </html>
