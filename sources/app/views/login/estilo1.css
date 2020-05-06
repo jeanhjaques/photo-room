@@ -75,6 +75,7 @@ a:hover {
 /*-----------CriarConta--------------------*/
 
 .box-criarConta {
+    display: none;
     width: 35%;
     height: 85%;
     background: #1E1E1E;
@@ -110,6 +111,51 @@ a:hover {
 
 /*-----------nova senha--------------------*/
 
+.box-senha {
+    display: none;
+    width: 35%;
+    height: 55%;
+    background: #1E1E1E;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+.box-senha h1 {
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
+.box-senha input {
+    display: block;
+    text-align: center;
+    width: 70%;
+    height: 45px;
+    position: relative;
+    left: 15%;
+    border-color: #1E1E1E;
+    border-radius: 12px;
+}
+
+.box-senha p {
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 17%;
+    margin-bottom: 4%;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #0591a3;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #b0ffe9;
+    cursor: pointer;
+}
 #form-ns {
     margin-top: 5%;
 }
