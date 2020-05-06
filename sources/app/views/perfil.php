@@ -7,43 +7,34 @@
     <link rel="stylesheet" href="css/perfil.css">
 </head>
 <body>
-    <article class="info">
-        <div class="titulo">
-            <h1>Informações do perfil</h1>
-            <hr>
-        </div>
-        
-       
-        <div class="imagem">
-            <img  src="../../public/imgperfil.jpg" alt="perfil" >
-        </div>
+    <article>
+        <h1>Informações do perfil</h1>
+        <hr>
 
-        <div class="dados">
-            <div>
-                <label for="nome">Nome: </label>
-                <span> Suellen Rosemberg dos Santos</span>
-            </div>
-            <div>
-                <label for="email">Email: </label>
-                <span> suellenrosemberg10@gmail.com</span>
-            </div>
-            <div>
-                <label for="pais">País: </label>
-                <span>Brasil</span>
-            </div>
-            <div>
-                <label for="conta">Códico Conta: </label>
-                <span>XXXX</span>
-            </div>
-            <div>
-                <label for="cidade">Cidade: </label>
-                <span>Campo Grande - MS</span>
-            </div>
-            <div>
-                <label for="telefone">Telefone: </label>
-                <span>99 9999-9999</span>
-            </div>
-        </div>
+        <!-- Imagem de perfil do usuário -->
+        <figure>
+            <img class="imagemPerfil" src="../../public/imgperfil.jpg" alt="imgperfil">
+        </figure>
+
+        <!-- Informações do perfil do usuário -->
+        <p>
+            Nome: Suellen Rosemberg dos Santos
+        </p>
+        <p>
+            Email: suellenrosemberg10@gmail.com
+        </p>
+        <p>
+            País: Brasil
+        </p>
+        <p>
+            Código da sua conta: 000001
+        </p>
+        <p>
+            Cidade: Campo Grande
+        </p>
+        <p>
+            Telefone: (99) 99999 - 9999
+        </p>
     </article>
 </body>
 </html>
