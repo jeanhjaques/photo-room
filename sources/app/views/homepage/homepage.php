@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../login/img.css">
         <script src="scripts.js"></script>
         <script src="imagem.js"></script>
-    </heade>
+    </head>
 
     <body>
         <header>
