@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
-        <link href="css/homepage.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/img.css">
-        <script src="js/scripts.js"></script>
-        <script src="../models/imagem.js"></script>
+        <link href="homepage.css" rel="stylesheet">
+        <link rel="stylesheet" href="../login/img.css">
+        <script src="scripts.js"></script>
+        <script src="imagem.js"></script>
     </head>
 
     <body>
@@ -26,7 +26,7 @@
 
                     <div class="createAlbumImgContainer">
                         <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Fechar">&times;</span>
-                        <img src="../../public/imgperfil.jpg" alt="Avatar" class="createAlbumAvatar">
+                        <img src="../../../public/img/imgperfil.jpg" alt="Avatar" class="createAlbumAvatar">
                         <h1 style="text-align:center">Criar novo álbum</h1>
                     </div>
 
@@ -45,7 +45,7 @@
             <nav class="menu">
                 <ul>
                     <li><a href="#">Nome do Usuário</a></li>
-                    <li><img class="imgperfil" src="../../public/imgperfil.jpg"></li>
+                    <li><img class="imgperfil" src="../../../public/img/imgperfil.jpg"></li>
                 </ul>
             </nav>
 
@@ -63,9 +63,9 @@
             <!-- Menu Principal da página -->
             <nav class="menuprincipal">
                 <ul>
-                    <li><img class="imgmenuprincipal" src="../../public/tudo.png"></li>
-                    <li><img class="imgmenuprincipal" src="../../public/favorito.png"></li>
-                    <li><img class="imgmenuprincipal" src="../../public/mais.png" onclick="createAlbum()"></li>
+                    <li><img class="imgmenuprincipal" src="../../../public/img/tudo.png"></li>
+                    <li><img class="imgmenuprincipal" src="../../../public/img/favorito.png"></li>
+                    <li><img class="imgmenuprincipal" src="../../../public/img/mais.png" onclick="createAlbum()"></li>
                 </ul>
             </nav>
 
@@ -73,14 +73,14 @@
             <div class="imagens">
                 <nav class="caixadeimagens">
                     <ul>
-                        <li><img onclick="abrirImagem('../../public/foto0.jpg', 'foto0');" id="a" class="imgcx img" src="../../public/foto0.jpg" alt="foto0"></li>
-                        <li><img onclick="abrirImagem('../../public/foto1.jpg' , 'foto1');" class="imgcx img" src="../../public/foto1.jpg" alt="foto1"></li>
-                        <li><img onclick="abrirImagem('../../public/foto2.jpg', 'foto2');" class="imgcx img" src="../../public/foto2.jpg" alt="foto2"></li>
-                        <li><img onclick="abrirImagem('../../public/foto3.jpg', 'foto3');" class="imgcx img" src="../../public/foto3.jpg" alt="foto3"></li>
-                        <li><img onclick="abrirImagem('../../public/foto4.jpg', 'foto4');" class="imgcx img" src="../../public/foto4.jpg" alt="foto4"></li>
-                        <li><img onclick="abrirImagem('../../public/foto5.jpg', 'foto5');" class="imgcx img" src="../../public/foto5.jpg" alt="foto5"></li>
-                        <li><img onclick="abrirImagem('../../public/foto6.jpg', 'foto6');" class="imgcx img" src="../../public/foto6.jpg" alt="foto6"></li>
-                        <li><img onclick="abrirImagem('../../public/foto7.jpg', 'foto 7');" class="imgcx img" src="../../public/foto7.jpg" alt="foto7"></li>
+                        <li><img onclick="abrirImagem('../../public/foto0.jpg', 'foto0');" id="a" class="imgcx img" src="../../../public/img/foto0.jpg" alt="foto0"></li>
+                        <li><img onclick="abrirImagem('../../public/foto1.jpg' , 'foto1');" class="imgcx img" src="../../../public/img/foto1.jpg" alt="foto1"></li>
+                        <li><img onclick="abrirImagem('../../public/foto2.jpg', 'foto2');" class="imgcx img" src="../../../public/img/foto2.jpg" alt="foto2"></li>
+                        <li><img onclick="abrirImagem('../../public/foto3.jpg', 'foto3');" class="imgcx img" src="../../../public/img/foto3.jpg" alt="foto3"></li>
+                        <li><img onclick="abrirImagem('../../public/foto4.jpg', 'foto4');" class="imgcx img" src="../../../public/img/foto4.jpg" alt="foto4"></li>
+                        <li><img onclick="abrirImagem('../../public/foto5.jpg', 'foto5');" class="imgcx img" src="../../../public/img/foto5.jpg" alt="foto5"></li>
+                        <li><img onclick="abrirImagem('../../public/foto6.jpg', 'foto6');" class="imgcx img" src="../../../public/img/foto6.jpg" alt="foto6"></li>
+                        <li><img onclick="abrirImagem('../../public/foto7.jpg', 'foto 7');" class="imgcx img" src="../../../public/img/foto7.jpg" alt="foto7"></li>
                      
                     </ul>
                 </nav>

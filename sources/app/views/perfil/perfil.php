@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="perfil.css">
 </head>
 <body>
     <article>
@@ -13,7 +13,7 @@
 
         <!-- Imagem de perfil do usuário -->
         <figure>
-            <img class="imagemPerfil" src="../../public/imgperfil.jpg" alt="imgperfil">
+            <img class="imagemPerfil" src="../../../public/img/imgperfil.jpg" alt="imgperfil">
         </figure>
 
         <!-- Informações do perfil do usuário -->
