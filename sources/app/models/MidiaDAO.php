@@ -5,16 +5,15 @@
 
     class MidiaDAO{
         public function create(Midia $midia){
-            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo , descricao, tamanho, extensao, resolucao, album_idalbum) VALUES(?, ?, ?, ?, ?, ?, ?)';
+            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo , descricao, tamanho, extensao, resolucao, album_idalbum) VALUES(current_date, ?, ?, ?, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
-            $stmt->bindValue(1, current_date);
-            $stmt->bindValue(2,$midia->getEnderecoArquivo());
-            $stmt->bindValue(3, $midia->getDescricao());
-            $stmt->bindValue(4,$midia->getTamanho());
-            $stmt->bindValue(5,$midia->getExtensao());
-            $stmt->bindValue(6,$midia->getResolucao());
-            $stmt->bindValue(7,$midia->getIdAlbum());
+            $stmt->bindValue(1,$midia->getEnderecoArquivo());
+            $stmt->bindValue(2, $midia->getDescricao());
+            $stmt->bindValue(3,$midia->getTamanho());
+            $stmt->bindValue(4,$midia->getExtensao());
+            $stmt->bindValue(5,$midia->getResolucao());
+            $stmt->bindValue(6,$midia->getIdAlbum());
 
             $stmt->execute();
         }
@@ -42,6 +41,8 @@
             $stmt->bindValue(5,$midia->getExtensao());
             $stmt->bindValue(6,$midia->getResolucao());
             $stmt->bindValue(7,$midia->getId());
+
+            $stmt->execute();
         }
 
         public function delete($idmidia){

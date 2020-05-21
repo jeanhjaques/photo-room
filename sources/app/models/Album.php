@@ -1,11 +1,12 @@
 <?php
-
+require_once 'Usuario.php';
 class Album{
     private String $nome;
     private int $id;
     private Date $dataCriacao;
     private int $qtdMidias;
     private String $codCompartilhamento;
+    private Usuario $dono;
     private Midia $midias;
 
     /**
@@ -13,9 +14,10 @@ class Album{
      * @param $nome
      * @param $dataCriacao
      */
-    public function __construct($nome, $dataCriacao){
+    public function __construct($nome, $dataCriacao, Usuario $dono){
         $this->nome = $nome;
         $this->dataCriacao = $dataCriacao;
+        $this->dono = $this->dono;
     }
 
     public function getNome(): string{
@@ -64,5 +66,13 @@ class Album{
 
     public function setMidias(Midia $midias): void{
         $this->midias = $midias;
+    }
+
+    public function getDono(): Usuario{
+        return $this->dono;
+    }
+
+    public function setDono(Usuario $dono): void{
+        $this->dono = $dono;
     }
 }

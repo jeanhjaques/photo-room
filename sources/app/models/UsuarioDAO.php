@@ -55,6 +55,8 @@
             $stmt->bindValue(12, $usuario->getFotoPerfil());
             $stmt->bindValue(13, $usuario->getId());
 
+            $stmt->execute();
+
         }
 
         public function delete($idusuario){
