@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS usuario (
   idalbumprincipal VARCHAR(45) NULL,
   idalbumfavorito VARCHAR(45) NOT NULL,
   dataNascimento VARCHAR(45) NOT NULL,
-  usuariocol VARCHAR(45) NOT NULL,
   PRIMARY KEY (idusuario));
 -- -----------------------------------------------------
 -- Table photoroomschema.album
