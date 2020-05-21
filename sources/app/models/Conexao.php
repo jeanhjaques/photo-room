@@ -10,7 +10,7 @@ class Conexao{
             //Seleciona o esquema do BD
             $resultadoConexaoSchema = self::$instance->exec("SET search_path TO photoroomschema");
             //
-            if(!resultado){
+            if(!$resultadoConexaoSchema){
                 //Caso conexão com o schema seja falha o erro é reportado
                 die('Failed to set schema: '.self::$instance->errorInfo());
             }
