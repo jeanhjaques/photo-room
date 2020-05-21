@@ -74,7 +74,6 @@
          /**
          * @var Album Armazena um array de abuns do usuário
          */
-        private $otherAlbuns; 
         
         /**
          * Construtor da classe que depende do nome, sobrenome, email, senha, cidade,
@@ -111,81 +110,211 @@
             return $this->$campo = $valor;
         }
 
-        /**
-         * Método que verifica se o email e senha providos são iguais ao da instância. 
-         * sua importancia é devido ao fato da senha ser codificada.  
-         * 
-         * @return bool Retorna TRUE se igual, senão FALSE 
-         */
-        public function igual(string $email, string $senha){
-            return $this->email === $email && $this->senha === hash('sha256', $senha);
-        }
+         /**
+          * @return int
+          */
+         public function getId(): int
+         {
+             return $this->id;
+         }
 
-        /**
-         * Função que salva os dados de um usuário no banco.
-         */
-        public function salvar(){
-            $db = Banco::getInstance();
-            $stmt = $db->prepare('INSERT INTO Usuarios (nome, sobrenome, dataNasc, email, senha, cidade, estado, pais, telefone, foto_perfil)
-                                    VALUE(:nome, :sobrenome, :dataNasc, :email, :senha, :cidade, :estado, :pais, :telefone, :foto)');
-            $stmt->bindValue(':nome', $this->nome);
-            $stmt->bindValue(':sobrenome', $this->sobrenome);
-            $stmt->bindValue(':dataNasc', $this->dataNascimento);
-            $stmt->bindValue(':email', $this->email);
-            $stmt->bindValue(':senha', $this->senha);
-            $stmt->bindValue(':cidade', $this->cidade);
-            $stmt->bindValue(':estado', $this->estado);
-            $stmt->bindValue(':pais', $this->pais);
-            $stmt->bindValue(':telefone', $this->telefone);
-            $stmt->bindValue(':foto', $this->foto_perfil);
-            $stmt->execute();
-        }
+         /**
+          * @param int $id
+          */
+         public function setId(int $id): void
+         {
+             $this->id = $id;
+         }
 
-        
-        /**
-         * Função que atualiza os dados de um usuário no banco.
-         */
-        public function atualizar(){
-            $db = Banco::getInstance();
-            $stmt = $db->prepare('UPDATE Usuarios SET ');
-        }
-        
-        /**
-         * Função que exclui o usuário do banco de dados.
-         */
-        public function deletar(){
-            $db = Banco::getInstance();
-            $stmt = $db->prepare('DELETE FROM Usuarios WHERE id_usuario = :id');
-            $stmt->bindValue(':id', $this->id);
-            $stmt->execute();
-        }
+         /**
+          * @return string
+          */
+         public function getNome(): string
+         {
+             return $this->nome;
+         }
 
-        /**
-         * Função estática, pois não depende do estado de uma instância, 
-         * para buscar um usuário no banco.
-         * 
-         * @return Usuario retorna uma instância de usuário
-         */
-        public static function buscar(string $email){
-            $bd = Banco::getInstance();
+         /**
+          * @param string $nome
+          */
+         public function setNome(string $nome): void
+         {
+             $this->nome = $nome;
+         }
 
-            $stmt = $bd->prepare('SELECT * FROM Usuarios WHERE email = :email');
-            $stmt->bindValue(':email', $email);
-            $stmt->excute();
+         /**
+          * @return string
+          */
+         public function getSobrenome(): string
+         {
+             return $this->sobrenome;
+         }
 
-            $resultado = $stmt->fetch();
+         /**
+          * @param string $sobrenome
+          */
+         public function setSobrenome(string $sobrenome): void
+         {
+             $this->sobrenome = $sobrenome;
+         }
 
-            if($resultado){
-                $usuario = new Usuario($resultado['id'], $resultado['nome'], $resultado['sobrenome'], $resultado['dataNasc'], $resultado['email'],
-                                        $resultado['senha'], $resultado['cidade'], $resultado['estado'], $resultado['pais'], $resultado['telefone'], $resultado['foto_perfil']);
+         /**
+          * @return string
+          */
+         public function getDataNascimento(): string
+         {
+             return $this->dataNascimento;
+         }
 
-                return $usuario;
-            }
-            else{
-                return null;
-            }
-        }
+         /**
+          * @param string $dataNascimento
+          */
+         public function setDataNascimento(string $dataNascimento): void
+         {
+             $this->dataNascimento = $dataNascimento;
+         }
+
+         /**
+          * @return string
+          */
+         public function getEmail(): string
+         {
+             return $this->email;
+         }
+
+         /**
+          * @param string $email
+          */
+         public function setEmail(string $email): void
+         {
+             $this->email = $email;
+         }
+
+         /**
+          * @return string
+          */
+         public function getSenha(): string
+         {
+             return $this->senha;
+         }
+
+         /**
+          * @param string $senha
+          */
+         public function setSenha(string $senha): void
+         {
+             $this->senha = $senha;
+         }
+
+         /**
+          * @return string
+          */
+         public function getCidade(): string
+         {
+             return $this->cidade;
+         }
+
+         /**
+          * @param string $cidade
+          */
+         public function setCidade(string $cidade): void
+         {
+             $this->cidade = $cidade;
+         }
+
+         /**
+          * @return string
+          */
+         public function getEstado(): string
+         {
+             return $this->estado;
+         }
+
+         /**
+          * @param string $estado
+          */
+         public function setEstado(string $estado): void
+         {
+             $this->estado = $estado;
+         }
+
+         /**
+          * @return string
+          */
+         public function getPais(): string
+         {
+             return $this->pais;
+         }
+
+         /**
+          * @param string $pais
+          */
+         public function setPais(string $pais): void
+         {
+             $this->pais = $pais;
+         }
+
+         /**
+          * @return string
+          */
+         public function getTelefone(): string
+         {
+             return $this->telefone;
+         }
+
+         /**
+          * @param string $telefone
+          */
+         public function setTelefone(string $telefone): void
+         {
+             $this->telefone = $telefone;
+         }
+
+         /**
+          * @return string
+          */
+         public function getFotoPerfil(): string
+         {
+             return $this->foto_perfil;
+         }
+
+         /**
+          * @param string $foto_perfil
+          */
+         public function setFotoPerfil(string $foto_perfil): void
+         {
+             $this->foto_perfil = $foto_perfil;
+         }
+
+         /**
+          * @return Album
+          */
+         public function getAlbumPrincipal(): Album
+         {
+             return $this->albumPrincipal;
+         }
+
+         /**
+          * @param Album $albumPrincipal
+          */
+         public function setAlbumPrincipal(Album $albumPrincipal): void
+         {
+             $this->albumPrincipal = $albumPrincipal;
+         }
+
+         /**
+          * @return Album
+          */
+         public function getAlbumFavorito(): Album
+         {
+             return $this->albumFavorito;
+         }
+
+         /**
+          * @param Album $albumFavorito
+          */
+         public function setAlbumFavorito(Album $albumFavorito): void
+         {
+             $this->albumFavorito = $albumFavorito;
+         }
      }
-
-
-?>

@@ -7,6 +7,8 @@ class Midia{
     private String $tamanho;
     private String $extensao;
     private String $resolucao;
+    private int $idAlbum;
+
     private Date $dataEnvio; /*data de envio para o site*/
     /**
      * Midia constructor.
@@ -14,11 +16,12 @@ class Midia{
      * @param String $descricao
      * @param String $extensao
      */
-    public function __construct(string $enderecoArquivo, string $descricao, string $extensao)
+    public function __construct(string $enderecoArquivo, string $descricao, string $extensao, int $idAlbum)
     {
         $this->enderecoArquivo = $enderecoArquivo;
         $this->descricao = $descricao;
         $this->extensao = $extensao;
+        $this->idAlbum = $idAlbum;
     }
 
     public function getId(){
@@ -76,4 +79,22 @@ class Midia{
     public function setDataEnvio(Date $dataEnvio): void{
         $this->dataEnvio = $dataEnvio;
     }
+
+    /**
+     * @return int
+     */
+    public function getIdAlbum(): int
+    {
+        return $this->idAlbum;
+    }
+
+    /**
+     * @param int $idAlbum
+     */
+    public function setIdAlbum(int $idAlbum): void
+    {
+        $this->idAlbum = $idAlbum;
+    }
+
+
 }
