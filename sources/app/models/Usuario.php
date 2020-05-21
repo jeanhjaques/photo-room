@@ -1,8 +1,6 @@
 <?php 
-    include_once('Banco.php');
-
     /**
-     * Classe que representa os dados de um usuário do sistema     * 
+     * Classe que representa os dados de um usuário do sistema   
      */
 
      class Usuario{
@@ -70,11 +68,7 @@
          * @var Album Armazena um album favorito do usuário
          */
         private $albumFavorito;
-
-         /**
-         * @var Album Armazena um array de abuns do usuário
-         */
-        
+                
         /**
          * Construtor da classe que depende do nome, sobrenome, email, senha, cidade,
          * estado, pais, telefone e foto do perfil.
@@ -94,21 +88,7 @@
             $this->telefone = $telefone;
             $this->foto_perfil = $fotoPerfil;
             
-        }
-
-        /**
-         * Método mágico para acessar todos os campos.
-         */
-        public function __get($campo){
-            return $this->$campo;
-        }
-
-        /**
-         * Método mágico para modificar todos os campos
-         */
-        public function __set($campo, $valor){
-            return $this->$campo = $valor;
-        }
+        }        
 
          /**
           * @return int
