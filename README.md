@@ -14,8 +14,8 @@ Por meio do Photo Room o usuário é capaz de armazenar imagens e videos e além
 
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
-* Você deve possuir a última versão do `<linguagem/dependencia/etc>` instalado.
-* Você deve possuir uma máquina `<Windows/Linux/Mac>`. (Deixe claro qual SO é possível rodar a aplicação, Linux é obrigatório).
+* Você deve possuir a última versão do PHP instalado.
+* Você deve possuir uma máquina Windows/Linux/Mac. (Deixe claro qual SO é possível rodar a aplicação, Linux é obrigatório).
 * Você deve ler o `<guia/link/documentação>` dos termos de uso.
 * (outros ...)
 
@@ -40,7 +40,7 @@ Windows (opcional):
 
 Para usar Photo Room, siga os seguintes passos (exemplos):
 
-* Abra o navegador e digite o seguinte endereço: `http://localhost/....`
+* Abra o navegador e digite o seguinte endereço: http://localhost/app/sources
 * Ao abrir a aplicação você poderá:
   * Navegar pelo conteúdo público, ou
   * Entrar com usuário e senha para ....
