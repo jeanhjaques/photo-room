@@ -1,3 +1,8 @@
+<?php 
+    // Exibe todos os erros PHP (see changelog)
+    error_reporting(E_ALL);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
