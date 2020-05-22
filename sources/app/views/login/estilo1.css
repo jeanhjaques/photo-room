@@ -150,6 +150,7 @@ a {
     text-decoration: none;
     color: #0591a3;
     font-weight: bold;
+    font-size: 16px;
 }
 
 a:hover {
@@ -192,7 +193,7 @@ a:hover {
         font-size: 9px;
     }
     a {
-        font-size: 12px;
+        font-size: 18px;
     }
     strong {
         font-size: 12px;
@@ -207,7 +208,7 @@ a:hover {
         font-size: 7px;
     }
     a {
-        font-size: 10px;
+        font-size: 14px;
     }
     strong {
         font-size: 10px;
@@ -222,7 +223,7 @@ a:hover {
         font-size: 6px;
     }
     a {
-        font-size: 8px;
+        font-size: 14px;
     }
     strong {
         font-size: 8px;
