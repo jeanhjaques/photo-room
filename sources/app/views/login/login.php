@@ -4,8 +4,8 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="estilo1.css">
-        <script src="transacao.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="app/views/login/estilo1.css">
+        <script src="app/views/login/transacao.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="login_page">
