@@ -8,6 +8,7 @@ $controller = new Controller();
 
 /**
  * Seleciona a rota correta.
+ Ex :http://localhost/resources/?action=login
  */
 switch ($_GET['action']) {
     case 'login':
