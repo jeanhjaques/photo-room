@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 /**
  * Cria uma instância do controlador para uso
  */
@@ -17,6 +18,10 @@ switch ($_GET['action']) {
         break;
     case 'perfil':
         $controller->perfil();
+        break;
+    case 'cadastrar':
+        $controller->cadastrar($_POST['name'], $_POST['sobrenome'], $_POST['dataNascimento'], $_POST['email'], $_POST['password'],
+            $_POST['pais'], $_POST['estado'], $_POST['cidade']);
         break;
     default:
         $controller->login();

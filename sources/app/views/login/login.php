@@ -1,3 +1,7 @@
+<?php
+    session_start();
+error_reporting(E_ALL);
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +14,7 @@
     <body>
         <div class="login_page">
             <div class="box">
-                <h1>LOGO</h1> 
+                <h1>LOGO</h1>
                 <form id="formLogin" action="" method="post">
                     <input type="text" id="user" name="user" placeholder="Usuário" />
                     <p class="erro-user"></p>
@@ -24,18 +28,32 @@
 
             <div class="box-criarConta">
                 <h1>LOGO</h1>
-                <form id="formCriarConta" action="" method="post">
+                <?php
+                if(isset($_SESSION['loginErro'])){
+                    echo $_SESSION['loginErro'];
+                    unset($_SESSION['loginErro']);
+                }
+                ?>
+                <form id="formCriarConta" action="index.php?action=cadastrar" method="post">
                     <input type="text" id="name" name="name" placeholder="Nome" />
                     <p class="erro-name"></p>
                     <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
                     <p class="erro-sobrenome"></p>
+                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="dataNascimento" />
+                    <p class="erro-dataNascimento"></p>
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-email"></p>
                     <input type="password" id="password" name="password" placeholder="Senha" />
                     <p class="erro-password"></p>
-                    <input type="password" id="confsenha" name="confsenha" placeholder="Confirmar Senha" />
-                    <p class="erro-confsenha"></p>
-                    <input type="button" class="btn-login" id="btn-enviar" value="Enviar" />
+                    <!--<input type="password" id="confsenha" name="confsenha" placeholder="Confirmar Senha" />
+                    <p class="erro-confsenha"></p> -->
+                    <input type="text" id="pais" name="pais" placeholder="País" />
+                    <p class="erro-pais"></p>
+                    <input type="text" id="estado" name="estado" placeholder="Estado" />
+                    <p class="erro-estado"></p>
+                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" />
+                    <p class="erro-cidade"></p>
+                    <input type="submit" class="btn-login" id="btn-enviar" value="Enviar" />
                 </form>
                 <a onclick="btnLogin()">Voltar para login</a>
             </div>

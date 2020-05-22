@@ -1,10 +1,11 @@
 <?php
     require_once 'Usuario.php';
-
+    require_once 'Conexao.php';
+error_reporting(E_ALL);
     class UsuarioDAO{
 
-        public function create(Usuario $usuario){
-            $sql = 'INSERT INTO usuario (nome, sobrenome , email, senha, cidade, estado, pais, telefone, idalbumprincipal, idalbumfavorito, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        public static function create(Usuario $usuario){
+            $sql = 'INSERT INTO photoroomschema.usuario (nome, sobrenome , email, senha, cidade, estado, pais, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1, $usuario->getNome());
@@ -14,10 +15,10 @@
             $stmt->bindValue(5,$usuario->getCidade());
             $stmt->bindValue(6,$usuario->getEstado());
             $stmt->bindValue(7,$usuario->getPais());
-            $stmt->bindValue(8,$usuario->getTelefone());
+            /*$stmt->bindValue(8,$usuario->getTelefone());
             $stmt->bindValue(9,$usuario->getAlbumPrincipal());
-            $stmt->bindValue(10,$usuario->getAlbumFavorito());
-            $stmt->bindValue(11, $usuario->getDataNascimento());
+            $stmt->bindValue(10,$usuario->getAlbumFavorito());*/
+            $stmt->bindValue(8, $usuario->getDataNascimento());
 
             $stmt->execute();
         }

@@ -2,7 +2,7 @@
     /**
      * Classe que representa os dados de um usuário do sistema   
      */
-
+error_reporting(E_ALL);
      class Usuario{
         /**
          * @var int Id do usuário
@@ -75,19 +75,16 @@
          */
         
         function __construct(string $nome, string $sobrenome, string $dataNascimento, string $email, string $senha,
-                                string $cidade, string $estado, string $pais, string $telefone, string $fotoPerfil){
+                                string $cidade, string $estado, string $pais){
 
             $this->nome = $nome;
             $this->sobrenome = $sobrenome;
             $this->dataNascimento = $dataNascimento;
             $this->email = $email;
-            $this->senha = hash('sha256', $senha);
+            $this->senha = $senha;
             $this->cidade = $cidade;
             $this->estado = $estado;
             $this->pais = $pais;
-            $this->telefone = $telefone;
-            $this->foto_perfil = $fotoPerfil;
-            
         }        
 
          /**
