@@ -19,7 +19,7 @@ switch ($_GET['action']) {
     case 'perfil':
         $controller->perfil();
         break;
-    case 'cadastrar':
+    case 'cadastrar': /*Consertar, devia ser como os outros*/
         $controller->cadastrar($_POST['name'], $_POST['sobrenome'], $_POST['dataNascimento'], $_POST['email'], $_POST['password'],
             $_POST['pais'], $_POST['estado'], $_POST['cidade']);
         break;
