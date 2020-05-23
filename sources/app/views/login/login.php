@@ -15,7 +15,7 @@ error_reporting(E_ALL);
         <div class="login_page">
             <div class="box">
                 <h1>LOGO</h1>
-                <form id="formLogin" action="" method="post">
+                <form id="formLogin" action="index.php?action=login" method="post">
                     <input type="text" id="user" name="user" placeholder="Usuário" />
                     <p class="erro-user"></p>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />
@@ -57,7 +57,10 @@ error_reporting(E_ALL);
                 </form>
                 <a onclick="btnLogin()">Voltar para login</a>
             </div>
+        
 
+
+            <!-- Tela de enviar uma nova semnha para o email de cadastro -->
             <div class="box-senha">
                 <h1>LOGO</h1>
                 <strong>Iremos te enviar uma nova senha em seu email cadastrado</strong>
