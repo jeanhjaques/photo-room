@@ -1,6 +1,6 @@
 <?php
     session_start();
-error_reporting(E_ALL);
+    error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@ error_reporting(E_ALL);
         <div class="login_page">
             <div class="box">
                 <h1>LOGO</h1>
-                <form id="formLogin" action="" method="post">
+                <form id="formLogin" action="index.php?action=logar" method="post">
                     <input type="text" id="user" name="user" placeholder="Usuário" />
                     <p class="erro-user"></p>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />

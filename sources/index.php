@@ -4,7 +4,9 @@ error_reporting(E_ALL);
  * Cria uma instância do controlador para uso
  */
 include_once('app/controllers/Controller.php');
+include_once('app/controllers/LoginController.php');
 $controller = new Controller();
+$loginController = new LoginController();
 
 /**
  * Seleciona a rota correta.
@@ -20,9 +22,12 @@ switch ($_GET['action']) {
     case 'perfil':
         $controller->perfil();
         break;
-    case 'cadastrar': /*Consertar, devia ser como os outros*/
-        $controller->cadastrar($_POST['name'], $_POST['sobrenome'], $_POST['dataNascimento'], $_POST['email'], $_POST['password'],
+    case 'cadastrar':
+        $loginController->cadastrar($_POST['name'], $_POST['sobrenome'], $_POST['dataNascimento'], $_POST['email'], $_POST['password'],
             $_POST['pais'], $_POST['estado'], $_POST['cidade']);
+        break;
+    case 'logar':
+        $loginController->logar($_POST['usuario'], $_POST['password']);
         break;
     default:
         $controller->login();
