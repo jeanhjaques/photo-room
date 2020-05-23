@@ -15,6 +15,12 @@
         <div class="login_page">
             <div class="box">
                 <h1>LOGO</h1>
+                <?php
+                if(isset($_SESSION['loginErro'])){
+                    echo $_SESSION['loginErro'];
+                    unset($_SESSION['loginErro']);
+                }
+                ?>
                 <form id="formLogin" action="index.php?action=logar" method="post">
                     <input type="text" id="user" name="user" placeholder="Usuário" />
                     <p class="erro-user"></p>

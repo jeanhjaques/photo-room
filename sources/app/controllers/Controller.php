@@ -7,6 +7,8 @@ class Controller{
         require 'app/views/login/login.php';
     }
 
-    public function paginadeusuario(){}
+    public function paginadeusuario(){
+        require 'app/views/homepage/homepage.php';
+    }
     public function perfil(){}
 }
