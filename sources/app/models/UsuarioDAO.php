@@ -5,7 +5,7 @@ error_reporting(E_ALL);
     class UsuarioDAO{
 
         public static function create(Usuario $usuario){
-            $sql = 'INSERT INTO photoroomschema.usuario (nome, sobrenome , email, senha, cidade, estado, pais, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
+            $sql = 'INSERT INTO usuario (nome, sobrenome , email, senha, cidade, estado, pais, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1, $usuario->getNome());
