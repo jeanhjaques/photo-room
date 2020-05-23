@@ -39,7 +39,7 @@ error_reporting(E_ALL);
                     <p class="erro-name"></p>
                     <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
                     <p class="erro-sobrenome"></p>
-                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="dataNascimento" />
+                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento" />
                     <p class="erro-dataNascimento"></p>
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-email"></p>

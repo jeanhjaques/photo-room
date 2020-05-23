@@ -77,7 +77,7 @@ a:hover {
 .box-criarConta {
     display: none;
     width: 35%;
-    height: 85%;
+    height: 96%;
     background: #1E1E1E;
     border-radius: 20px;
     color: white;
@@ -157,6 +157,7 @@ a:hover {
     color: #b0ffe9;
     cursor: pointer;
 }
+
 #form-ns {
     margin-top: 5%;
 }
