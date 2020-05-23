@@ -7,6 +7,7 @@ class Controller{
         require 'app/views/login/login.php';
     }
 
+<<<<<<< HEAD
     public function cadastrar($nome, $sobrenome, $dataNascimento, $email, $senha, $pais, $estado, $cidade){
         $novousuario = new Usuario($nome, $sobrenome, $dataNascimento,
             $email, $senha, $cidade, $estado, $pais);
@@ -25,4 +26,10 @@ class Controller{
     public function perfil(){
         require 'app/views/perfil/perfil.php';
     }
+=======
+    public function paginadeusuario(){
+        require 'app/views/homepage/homepage.php';
+    }
+    public function perfil(){}
+>>>>>>> 39b6a3986d9824c5a9304ac50a228125964e1eca
 }

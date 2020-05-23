@@ -1,6 +1,6 @@
 <?php
     session_start();
-error_reporting(E_ALL);
+    error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,17 @@ error_reporting(E_ALL);
         <div class="login_page">
             <div class="box">
                 <h1>LOGO</h1>
+<<<<<<< HEAD
                 <form id="formLogin" action="index.php?action=login" method="post">
+=======
+                <?php
+                if(isset($_SESSION['loginErro'])){
+                    echo $_SESSION['loginErro'];
+                    unset($_SESSION['loginErro']);
+                }
+                ?>
+                <form id="formLogin" action="index.php?action=logar" method="post">
+>>>>>>> 39b6a3986d9824c5a9304ac50a228125964e1eca
                     <input type="text" id="user" name="user" placeholder="Usuário" />
                     <p class="erro-user"></p>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />
@@ -39,7 +49,7 @@ error_reporting(E_ALL);
                     <p class="erro-name"></p>
                     <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
                     <p class="erro-sobrenome"></p>
-                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="dataNascimento" />
+                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento" />
                     <p class="erro-dataNascimento"></p>
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-email"></p>

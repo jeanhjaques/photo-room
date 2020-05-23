@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 <?php
     session_start();
 error_reporting(E_ALL);
 ?>
+=======
+<?php 
+    // Exibe todos os erros PHP (see changelog)
+    error_reporting(E_ALL);
+?>
+
+>>>>>>> 39b6a3986d9824c5a9304ac50a228125964e1eca
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
