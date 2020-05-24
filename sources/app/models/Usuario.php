@@ -81,7 +81,7 @@ error_reporting(E_ALL);
             $this->sobrenome = $sobrenome;
             $this->dataNascimento = $dataNascimento;
             $this->email = $email;
-            $this->senha = hash('sha156', $senha);
+            $this->senha = $senha;
             $this->cidade = $cidade;
             $this->estado = $estado;
             $this->pais = $pais;

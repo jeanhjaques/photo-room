@@ -5,7 +5,7 @@ class Conexao{
 
     public static function getConnect(){
         if(!isset(self::$instance)){
-            self::$instance = new \PDO('mysql:host=localhost;port=3306;dbname=photoroom;', 'root', '');
+            self::$instance = new \PDO('mysql:host=localhost;dbname=photoroom;', 'root', '');
         }
         return self::$instance;
     }

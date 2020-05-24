@@ -23,11 +23,11 @@
                 }
                 ?>
                 <form id="formLogin" action="index.php?action=logar" method="post">
-                    <input type="text" id="user" name="email" placeholder="Usuário" />
+                    <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-user"></p>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />
                     <p class="erro-senha"></p>
-                    <input type="button" class="btn-login" id="btn-entrar" value="Entrar"/>
+                    <input type="submit" class="btn-login" id="btn-entrar" value="Entrar" />
                 </form>
                 <a onclick="btnEsqueciSenha();">Esqueci a senha</a>
                 <a onclick="btnCriarConta();">Criar Conta</a>
@@ -60,7 +60,7 @@
                     <p class="erro-estado"></p>
                     <input type="text" id="cidade" name="cidade" placeholder="Cidade" />
                     <p class="erro-cidade"></p>
-                    <input type="submit" class="btn-login" id="btn-enviar" value="Enviar" />
+                    <input type="submit" class="btn-login" id="btn-enviar" value="Cadastrar" />
                 </form>
                 <a onclick="btnLogin()">Voltar para login</a>
             </div>

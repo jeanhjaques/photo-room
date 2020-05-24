@@ -28,23 +28,23 @@ error_reporting(E_ALL);
             $stmt->execute();
         }
 
-        public function find($email, $senha) {
-            $sql = 'SELECT * from usuario WHERE $email = :email';
+        public static function find($email, $senha){
+            $sql = 'SELECT * FROM usuario WHERE email = ? AND senha = ?';
+
             $stmt = Conexao::getConnect()->prepare($sql);
-            $stmt->bindValue(':email', $email);
+
+            $stmt->bindValue(1, $email);
+            $stmt->bindValue(2, MD5($senha));
+
             $stmt->execute();
 
-            $resultado = $stmt->fetch();
-
-            if ($resultado) {
-                $usuario = $resultado;
-                $usuario->senha = $resultado['senha'];
-                return $usuario;
-            } else {
-                return NULL;
+            if($stmt->rowCount()>0){
+                return true;
             }
-
-        }
+            else{
+               return false;
+           }
+       }
 
 
         public function read(){

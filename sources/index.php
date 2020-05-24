@@ -28,7 +28,7 @@ switch ($_GET['action']) {
             $_POST['pais'], $_POST['estado'], $_POST['cidade']);
         break;
     case 'logar':
-        $loginController->logar($_POST['usuario'], $_POST['password']);
+        $loginController->logar($_POST['email'], $_POST['senha']);
         break;
     default:
         $controller->login();
