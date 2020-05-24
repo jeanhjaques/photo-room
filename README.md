@@ -15,13 +15,18 @@ Por meio do Photo Room o usuário é capaz de armazenar imagens e videos e além
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
 * Você deve possuir a última versão do PHP instalado.
-* Você deve possuir uma máquina Windows/Linux/Mac. (Deixe claro qual SO é possível rodar a aplicação, Linux é obrigatório).
+* Você deve possuir uma máquina Windows/Linux/Mac.
+* Você deve possuir alguma aplicação capaz de hospedar um server mySQL.
 * Você deve ler o `<guia/link/documentação>` dos termos de uso.
 * (outros ...)
 
 ## Como executar
 
-Para fazer o deploy da aplicação siga os seguintes passos:
+1)Acesse Lib e crie um banco usando o scriptBD.
+2)Prepare seu servidor php com os arquivos do projeto.
+3)Acesse pelo navegador o site Endereconoseuserver/resources
+4)Cadastre-se
+5)Efetue login
 
 Linux e/ou macOS:
 ```
@@ -42,8 +47,8 @@ Para usar Photo Room, siga os seguintes passos (exemplos):
 
 * Abra o navegador e digite o seguinte endereço: http://localhost/app/sources
 * Ao abrir a aplicação você poderá:
-  * Navegar pelo conteúdo público, ou
-  * Entrar com usuário e senha para ....
+  * Se cadastrar
+  * Efetuar login
 * *Continua ...*  
 
 *Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
