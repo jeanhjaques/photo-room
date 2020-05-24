@@ -1,117 +1,64 @@
-$(document).ready(function(){
-    //------------------login--------------------
-    $('#user').focus(function(){        
-        $(this).css('border', '1px solid white');
-        $('.erro-user').empty();
-    });
-    $('#senha').focus(function(){
-        $(this).attr('placeholder', '');
-        $(this).css('font-size', '25px');
-        $('.erro-senha').empty();
-    });
-    $('#senha').focusout(function(){
-        $(this).attr('placeholder', 'Senha');
-        $(this).css('font-size', '16px');
-        $(this).css('border', '1px solid white');
-    });
-    
-    //------------validações login--------------------
-    $('#btn-entrar').click(function(){
-        var user = $('#user').val();
-        var senha = $('#senha').val();
-        
-        if(user === ""){
-            $('.erro-user').html('preencha o campo Usuario.');
-            $('#user').css('border', '1px solid red');
-        }
-        if(senha === ""){
-            $('.erro-senha').html('preencha o campo senha.');
-            $('#senha').css('border', '1px solid red');
-        }
-    });   
-    
-    //-----formulário criar conta-----------    
-    $('#name').focus(function(){        
-        $(this).css('border', '1px solid white');
-        $('.erro-name').empty();
-    });
-    $('#sobrenome').focus(function(){        
-        $(this).css('border', '1px solid white');
-        $('.erro-sobrenome').empty();
-    });
-    $('#email').focus(function(){        
-        $(this).css('border', '1px solid white');
-        $('.erro-email').empty();
-    });    
-    $('#password').focus(function(){
-        $(this).attr('placeholder', '');
-        $(this).css('font-size', '25px');
-        $(this).css('border', '1px solid white');
-        $('.erro-password').empty();
-    });
-    $('#password').focusout(function(){
-        $(this).attr('placeholder', 'Senha');
-        $(this).css('font-size', '16px');
-    });
-    $('#confsenha').focus(function(){
-        $(this).attr('placeholder', '');
-        $(this).css('font-size', '25px');
-        $(this).css('border', '1px solid white');
-        $('.erro-confsenha').empty();
-    });
-    $('#confsenha').focusout(function(){
-        $(this).attr('placeholder', 'Confirmar Senha');
-        $(this).css('font-size', '16px');
-    }); 
-    
-    
-    //---------------validações formulário criar conta--------------------- 
-    $('#btn-enviar').click(function(){
-        var nome = $('#name').val();
-        var sobrenome = $('#sobrenome').val();
-        var email = $('#email').val();
-        var senha = $('#password').val();
-        var confsenha = $('#confsenha').val();
-        
-        if(nome === ""){
-            $('.erro-name').html('preencha o campo nome.');
-            $('#name').css('border', '1px solid red');
-        } 
-        if(sobrenome === ""){
-            $('.erro-sobrenome').html('preencha o campo sobrenome.');
-            $('#sobrenome').css('border', '1px solid red');
-        }
-        if(email === ""){
-            $('.erro-email').html('preencha o campo email.');
-            $('#email').css('border', '1px solid red');
-        }
-        if(senha === ""){
-            $('.erro-password').html('preencha o campo senha.');
-            $('#password').css('border', '1px solid red');
-        }
-        if(confsenha === ""){
-            $('.erro-confsenha').html('preencha o campo confirmar senha.');
-            $('#confsenha').css('border', '1px solid red');
-        }
-    });
-    
-    //-----formulário enviar nova senha-----------    
-    $('#email-ns').focus(function(){        
-        $(this).css('border', '1px solid white');
-        $('.erro-email-ns').empty();
-    });
-    
-    
-    //------------validações enviar nova senha--------------------
-    $('#btn-env-ns').click(function(){
-        var email_ns = $('#email-ns').val();        
-        
-        if(email_ns === ""){
-            $('.erro-email-ns').html('preencha o campo e-mail.');
-            $('#email-ns').css('border', '1px solid red');
-        }        
-    });   
-});
+function mascaraData(val) {
+    var pass = val.value;
+    var expr = /[0123456789]/;
 
+    for (var i = 0; i < pass.length; i++) {
+        // charAt -> retorna o caractere posicionado no índice especificado
+        var lchar = val.value.charAt(i);
+        var nchar = val.value.charAt(i + 1);
 
+        if (i === 0) {
+            // search -> retorna um valor inteiro, indicando a posição do inicio da primeira
+            // ocorrência de expReg dentro de instStr. Se nenhuma ocorrencia for encontrada o método retornara -1
+            // instStr.search(expReg);
+            if ((lchar.search(expr) !== 0) || (lchar > 3)) {
+                val.value = "";
+            }
+        } else if (i === 1) {
+            if (lchar.search(expr) !== 0) {
+                // substring(indice1,indice2)
+                // indice1, indice2 -> será usado para delimitar a string
+                var tst1 = val.value.substring(0, (i));
+                val.value = tst1;
+                continue;
+            }
 
+            if ((nchar !== '/') && (nchar !== '')) {
+                var tst1 = val.value.substring(0, (i) + 1);
+
+                if (nchar.search(expr) !== 0)
+                    var tst2 = val.value.substring(i + 2, pass.length);
+                else
+                    var tst2 = val.value.substring(i + 1, pass.length);
+
+                val.value = tst1 + '/' + tst2;
+            }
+        } else if (i === 4) {
+            if (lchar.search(expr) !== 0) {
+                var tst1 = val.value.substring(0, (i));
+                val.value = tst1;
+                continue;
+            }
+
+            if ((nchar !== '/') && (nchar !== '')) {
+                var tst1 = val.value.substring(0, (i) + 1);
+
+                if (nchar.search(expr) !== 0)
+                    var tst2 = val.value.substring(i + 2, pass.length);
+                else
+                    var tst2 = val.value.substring(i + 1, pass.length);
+
+                val.value = tst1 + '/' + tst2;
+            }
+        }
+        if (i >= 6) {
+            if (lchar.search(expr) !== 0) {
+                var tst1 = val.value.substring(0, (i));
+                val.value = tst1;
+            }
+        }
+    }
+    if (pass.length > 10)
+        val.value = val.value.substring(0, 10);
+    return true;
+}

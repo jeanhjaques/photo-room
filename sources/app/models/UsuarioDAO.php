@@ -8,6 +8,11 @@ error_reporting(E_ALL);
             $sql = 'INSERT INTO usuario (nome, sobrenome , email, senha, cidade, estado, pais, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
+            /** 
+             * A variável dataNasc recebe a data de nascimento do usuário no formato Y-m-d
+             */
+            $dataNasc = implode("-", array_reverse(explode("/", $usuario->getDataNascimento())));
+
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2,$usuario->getSobrenome());
             $stmt->bindValue(3, $usuario->getEmail());
@@ -18,7 +23,7 @@ error_reporting(E_ALL);
             /*$stmt->bindValue(8,$usuario->getTelefone());
             $stmt->bindValue(9,$usuario->getAlbumPrincipal());
             $stmt->bindValue(10,$usuario->getAlbumFavorito());*/
-            $stmt->bindValue(8, $usuario->getDataNascimento());
+            $stmt->bindValue(8, $dataNasc);
 
             $stmt->execute();
         }
@@ -61,6 +66,11 @@ error_reporting(E_ALL);
                     idalbumfavorito = ?, dataNascimento = ?, endfotoperfil = ? WHERE idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
 
+            /** 
+             * A variável dataNasc recebe a data de nascimento do usuário no formato Y-m-d
+             */
+            $dataNasc = implode("-", array_reverse(explode("/", $usuario->getDataNascimento())));
+
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2, $usuario->getSobrenome());
             $stmt->bindValue(3, $usuario->getEmail());
@@ -71,7 +81,7 @@ error_reporting(E_ALL);
             $stmt->bindValue(8,$usuario->getTelefone());
             $stmt->bindValue(9,$usuario->getAlbumPrincipal());
             $stmt->bindValue(10,$usuario->getAlbumFavorito());
-            $stmt->bindValue(11, $usuario->getDataNascimento());
+            $stmt->bindValue(11, $dataNasc);
             $stmt->bindValue(12, $usuario->getFotoPerfil());
             $stmt->bindValue(13, $usuario->getId());
 

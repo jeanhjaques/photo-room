@@ -9,7 +9,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="app/views/login/estilo1.css">
-        <script src="app/views/login/transacao.js" type="text/javascript"></script>
+        <script src="app/views/login/transacao.js" type="text/javascript"></script> 
+        <script src="app/views/login/login.js" type="text/javascript"></script>       
     </head>
     <body>
         <div class="login_page">
@@ -45,7 +46,7 @@
                     <p class="erro-name"></p>
                     <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
                     <p class="erro-sobrenome"></p>
-                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento" />
+                    <input type="text" id="dataNascimento" name="dataNascimento" onkeypress="mascaraData(this)" placeholder="Data Nascimento" />
                     <p class="erro-dataNascimento"></p>
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-email"></p>
@@ -63,8 +64,6 @@
                 </form>
                 <a onclick="btnLogin()">Voltar para login</a>
             </div>
-        
-
 
             <!-- Tela de enviar uma nova semnha para o email de cadastro -->
             <div class="box-senha">
@@ -77,6 +76,6 @@
                 </form>
                 <a onclick="btnLogin();">Voltar para login</a>
             </div>
-        </div>        
+        </div>  
     </body>
 </html>
