@@ -88,6 +88,10 @@ article .menuprincipal ul li img{
     text-decoration: none;
 }
 
+article h1{
+    text-align: center;
+}
+
 /* Padrões dos icones do menu principal */
 .imgmenuprincipal{
     width: 50px;

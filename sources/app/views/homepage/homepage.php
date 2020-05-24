@@ -72,6 +72,7 @@
             <li><img class="imgmenuprincipal" src="public/img/mais.png" onclick="createAlbum()"></li>
         </ul>
     </nav>
+    <h1> Página meramente ilustrativa, sem conexão alguma com o usuario que logou</h1>
 
     <!-- Bloco onde fica o albúm do usuário -->
     <div class="imagens">
