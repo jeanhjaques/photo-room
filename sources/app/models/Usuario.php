@@ -81,7 +81,7 @@ error_reporting(E_ALL);
             $this->sobrenome = $sobrenome;
             $this->dataNascimento = $dataNascimento;
             $this->email = $email;
-            $this->senha = $senha;
+            $this->senha = hash('sha156', $senha);
             $this->cidade = $cidade;
             $this->estado = $estado;
             $this->pais = $pais;
@@ -294,4 +294,14 @@ error_reporting(E_ALL);
          {
              $this->albumFavorito = $albumFavorito;
          }
+
+         /**
+        *   Método que verifica se o email e senha providos são iguais ao da instância.
+        *   Sua importância é devido ao fato da senha ser codificada.
+        *
+        *   @return bool Retorna TRUE se igual, senão FALSE
+        */
+        public function igual(string $email, string $senha) {
+            return $this->email === $email && $this->senha === hash('sha256', $senha);
+        }
      }

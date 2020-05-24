@@ -23,6 +23,25 @@ error_reporting(E_ALL);
             $stmt->execute();
         }
 
+        public function find($email, $senha) {
+            $sql = 'SELECT * from usuario WHERE $email = :email';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->bindValue(':email', $email);
+            $stmt->execute();
+
+            $resultado = $stmt->fetch();
+
+            if ($resultado) {
+                $usuario = $resultado;
+                $usuario->senha = $resultado['senha'];
+                return $usuario;
+            } else {
+                return NULL;
+            }
+
+        }
+
+
         public function read(){
             $sql = 'SELECT * FROM usuario';
             $stmt = Conexao::getConnect()->prepare($sql);

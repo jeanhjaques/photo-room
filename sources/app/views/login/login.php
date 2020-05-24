@@ -15,9 +15,6 @@
         <div class="login_page">
             <div class="box">
                 <h1>LOGO</h1>
-<<<<<<< HEAD
-                <form id="formLogin" action="index.php?action=login" method="post">
-=======
                 <?php
                 if(isset($_SESSION['loginErro'])){
                     echo $_SESSION['loginErro'];
@@ -25,8 +22,7 @@
                 }
                 ?>
                 <form id="formLogin" action="index.php?action=logar" method="post">
->>>>>>> 39b6a3986d9824c5a9304ac50a228125964e1eca
-                    <input type="text" id="user" name="user" placeholder="Usuário" />
+                    <input type="text" id="user" name="email" placeholder="Usuário" />
                     <p class="erro-user"></p>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />
                     <p class="erro-senha"></p>
