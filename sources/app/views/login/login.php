@@ -46,7 +46,7 @@
                     <p class="erro-name"></p>
                     <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
                     <p class="erro-sobrenome"></p>
-                    <input type="text" id="dataNascimento" name="dataNascimento" onkeypress="mascaraData(this)" placeholder="Data Nascimento" />
+                    <input type="text" id="dataNascimento" name="dataNascimento" maxlength="10" onkeypress="return dateMask(this, event);" placeholder="Data Nascimento" />
                     <p class="erro-dataNascimento"></p>
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-email"></p>
