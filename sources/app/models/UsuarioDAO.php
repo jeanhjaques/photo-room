@@ -39,10 +39,10 @@ error_reporting(E_ALL);
             $stmt->execute();
 
             if($stmt->rowCount()>0){
-                return true;
+                return $stmt->fetch(\PDO::FETCH_ASSOC);
             }
             else{
-               return false;
+               return null;
            }
        }
 

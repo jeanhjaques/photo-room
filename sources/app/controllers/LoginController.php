@@ -39,14 +39,15 @@
 
         public function logar($email, $senha){
             
-            $login = UsuarioDAO::find($email, $senha);
+            $loginUser = UsuarioDAO::find($email, $senha);
             
-            if($login == true){
+            if($loginUser != null){
+                $_SESSION['usuarioLogado'] = $loginUser;
                 $this->paginadeusuario();
             }
             else {
                 // header('Location: index.php?email=' . $_POST['email'] . '&mensagem=Usuário e/ou senha incorreta!');
-                $_SESSION['loginErro'] = "<h1>Impossivel logar</h1>";
+                $_SESSION['loginErro'] = "<h1>Não foi possível entrar</h1>";
                 $this->login();
             }
 

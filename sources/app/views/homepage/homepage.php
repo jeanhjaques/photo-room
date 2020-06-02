@@ -48,7 +48,7 @@
     <!-- Menu de cabeçalho -->
     <nav class="menu">
         <ul>
-            <li><a href="#">Nome do Usuário</a></li>
+            <li><a href="#"><?php echo $_SESSION['usuarioLogado']['nome']." ".$_SESSION['usuarioLogado']['sobrenome'];?></a></li>
             <li><img class="imgperfil" src="public/img/imgperfil.jpg"></li>
         </ul>
     </nav>
