@@ -6,45 +6,6 @@ body{
     width: 100%;
     margin: 0;
 }
-/* Cabeçalho da página */
-header{
-    background-color: black;
-    background-image: url("../../../public/img/logo.png"); /* Inserção do logo tipo da página */
-    background-repeat: no-repeat;
-    background-position: left;
-    background-position-x: 5%;
-    background-size: 40px;
-    color: white;
-    margin:0;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 1%;
-    padding-top: 1%;
-}
-
-/* Menu do cabecalho */
-header .menu{
-    text-align: right;
-}
-header .menu ul{
-    margin:0;
-    padding: 0;
-    list-style-type: none;
-}
-header .menu ul li{
-    display: inline;
-    margin-right: 5px;
-}
-header .menu ul li a{
-    text-decoration: none;
-    color: white;
-    margin-right: 5px;
-}
-.imgperfil{
-    vertical-align: -65%;
-    width: 40px;
-    border-radius: 100%;
-}
 
 /* Barra de pesquisa */
 article .espacobusca{
@@ -196,11 +157,4 @@ article h1{
     box-shadow: rgb(148, 147, 147) 1px 1px 1px 1px;
     margin: 1px;
     padding: 0;
-}
-
-/* footer */
-footer {
-    font-size: 15px;
-    text-align: center;
-    bottom: 0;
 }

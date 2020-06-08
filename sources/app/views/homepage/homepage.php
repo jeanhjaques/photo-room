@@ -17,44 +17,10 @@
 
 <body>
 <header>
-    <!-- modal Imagem -->
-    <div id="modalImagem" class="modalimg">
-        <span class="close" id="fecharImagem">&times;</span>
-        <img id="imgAparece" class="modal-content-img">
-        <div id="caption"></div>
-    </div>
-
-    <div id="modal-wrapper" class="modal">
-
-        <form class="modal-content animate" action="/action_page.php">
-
-            <div class="createAlbumImgContainer">
-                <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Fechar">&times;</span>
-                <img src="public/img/imgperfil.jpg" alt="Avatar" class="createAlbumAvatar">
-                <h1 style="text-align:center">Criar novo álbum</h1>
-            </div>
-
-            <div class="container">
-                <input class="createAlbumInput" type="text" placeholder="Nome do álbum" name="albumname">
-                <input class="createAlbumInput" type="text" placeholder="Descrição do álbum" name="albumdescription">
-                <button class="createAlbumButton" type="submit">Criar</button>
-            </div>
-
-        </form>
-
-    </div>
-    <div class="logo"></div>
-
-    <!-- Menu de cabeçalho -->
-    <nav class="menu">
-        <ul>
-            <li><a href="#"><?php echo $_SESSION['usuarioLogado']['nome']." ".$_SESSION['usuarioLogado']['sobrenome'];?></a></li>
-            <li><img class="imgperfil" src="public/img/imgperfil.jpg"></li>
-        </ul>
-    </nav>
-
+    <?php
+        require 'app/views/header.php';
+    ?>
 </header>
-
 <article>
     <!-- Bloco que inclui a barra de pesquisa -->
     <div class="espacobusca">
@@ -90,14 +56,17 @@
             </ul>
         </nav>
     </div>
+    <!-- modal Imagem -->
+    <div id="modalImagem" class="modalimg">
+        <span class="close" id="fecharImagem">&times;</span>
+        <img id="imgAparece" class="modal-content-img">
+        <div id="caption"></div>
+    </div>
 </article>
-
 <footer>
-    <!-- Espaço com informação dos DEVs -->
-    <p>Desenvolvido por Fenix Group</p>
-    <p>Copyright</p>
-    <p>2020</p>
+    <?php
+        require 'app/views/footer.php';
+    ?>
 </footer>
-
 </body>
 </html>

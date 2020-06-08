@@ -35,14 +35,14 @@ figure .imagemPerfil{
 }
 
 .dados div label{
-    font-size: 22px;
+    font-size: 16px;
     color: rgb(107, 107, 107);
     display: inline-block;
 }
 
 
 .dados div span{
-    font-size: 23px;
+    font-size: 16px;
     margin-left: 10px;
 }
 

@@ -1,6 +1,13 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+/* Cabeçalho da página */
 header{
     background-color: black;
-    background-image: url("../../../public/img/logo.png"); /* Inserção do logo tipo da página */
+    background-image: url("../../public/img/logo.png"); /* Inserção do logo tipo da página */
     background-repeat: no-repeat;
     background-position: left;
     background-position-x: 5%;
@@ -9,8 +16,8 @@ header{
     margin:0;
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 1%;
-    padding-top: 1%;
+    padding-bottom: 3px;
+    padding-top: 3px;
 }
 
 /* Menu do cabecalho */
@@ -30,4 +37,9 @@ header .menu ul li a{
     text-decoration: none;
     color: white;
     margin-right: 5px;
+}
+.imgperfil{
+    vertical-align: -65%;
+    width: 40px;
+    border-radius: 100%;
 }

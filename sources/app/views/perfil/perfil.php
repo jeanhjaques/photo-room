@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 <?php
-    session_start();
-error_reporting(E_ALL);
-?>
-=======
-<?php 
-    // Exibe todos os erros PHP (see changelog)
     error_reporting(E_ALL);
 ?>
 
->>>>>>> 39b6a3986d9824c5a9304ac50a228125964e1eca
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,10 +11,11 @@ error_reporting(E_ALL);
     <link rel="stylesheet" href="app/views/perfil/perfil.css">
 </head>
 <body>
-    <?php
-        include ('app/views/hearder.php');
-    ?>
-
+    <header>
+        <?php
+            require 'app/views/header.php';
+        ?>
+    </header>
     <article>
         <div class="titulo">
             <h1>Informações do perfil</h1>
@@ -30,7 +23,7 @@ error_reporting(E_ALL);
         </div>
         <!-- Imagem de perfil do usuário -->
         <figure>
-            <img class="imagemPerfil" src="../../../public/img/imgperfil.jpg" alt="imgperfil">
+            <img class="imagemPerfil" src="public/img/imgperfil.jpg" alt="imgperfil">
         </figure>
         <!-- Informações do perfil do usuário -->
         <div class="dados">
@@ -47,7 +40,7 @@ error_reporting(E_ALL);
                 <span>Brasil</span>
             </div>
             <div>
-                <label for="conta">Códico Conta: </label>
+                <label for="conta">Código Conta: </label>
                 <span>XXXX</span>
             </div>
             <div>
@@ -60,6 +53,10 @@ error_reporting(E_ALL);
             </div>
         </div>
     </article>
+    <footer>
+        <?php
+            require 'app/views/footer.php';
+        ?>
+    </footer>
 </body>
 </html>
-© 2020 GitHub, Inc.
