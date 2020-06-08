@@ -14,9 +14,9 @@ article{
 
 
 /* Imagem do perfil do usuario */
-figure .imagemPerfil{
+figure .img-perfil{
     text-align: center;
-    border-radius: 50%;
+    border-radius: 100%;
     width: 90px;
     height: 90px;
 }
@@ -57,4 +57,8 @@ figure .imagemPerfil{
     bottom: 0;
     left: 0;
     font-size: 15px;
-} 
+}
+/*Só para testes daqui para a baixo*/
+form{
+    text-align: center;
+}

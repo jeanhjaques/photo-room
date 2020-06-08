@@ -9,9 +9,11 @@
     <!-- Rodapé da pagina -->
     <footer>
         <!-- Espaço com informação dos DEVs -->
-        <p>Desenvolvido por Fenix Group</p>
-        <p>Copyright</p>
-        <p>2020</p>
+        Desenvolvido por Fenix Group
+        <br>
+        Copyright
+        <br>
+        2020
     </footer>
 </body>
 </html>

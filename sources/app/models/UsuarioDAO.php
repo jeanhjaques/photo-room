@@ -59,7 +59,16 @@ error_reporting(E_ALL);
                 return []; // retorna um array vazio caso não tenha nenhum item
             }
         }
+        public static function atualizaFotoPerfil($nomefoto, $id){
+            $sql = 'UPDATE usuario SET  endfotoperfil = ? WHERE idusuario = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
 
+            $stmt->bindValue(1, $nomefoto);
+
+            $stmt->bindValue(2, $id);
+
+            $stmt->execute();
+        }
         public function update(Usuario $usuario){
             $sql = 'UPDATE usuario SET  nome = ?, sobrenome = ? , email = ?, senha = ?, 
                     cidade = ?, estado = ?, pais = ?, telefone = ?, idalbumprincipal = ?, 

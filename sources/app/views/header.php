@@ -11,7 +11,7 @@
         <nav class="menu">
             <ul>
                 <li><a href="#"><?php echo $_SESSION['usuarioLogado']['nome']." ".$_SESSION['usuarioLogado']['sobrenome'];?></a></li>
-                <li><img class="imgperfil" src="public/img/imgperfil.jpg"></li>
+                <li><?php echo "<img class = \"imgperfil\" src=\"public/upload/".$_SESSION['usuarioLogado']['endfotoperfil']."\">"?></li>
             </ul>
         </nav>
     </header>

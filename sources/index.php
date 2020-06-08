@@ -6,8 +6,10 @@ session_start();
  */
 include_once('app/controllers/Controller.php');
 include_once('app/controllers/LoginController.php');
+include_once('app/controllers/UsuarioController.php');
 $controller = new Controller();
 $loginController = new LoginController();
+$usuarioController = new UsuarioController();
 
 /**
  * Seleciona a rota correta.
@@ -29,6 +31,9 @@ switch ($_GET['action']) {
         break;
     case 'logar':
         $loginController->logar($_POST['email'], $_POST['senha']);
+        break;
+    case 'atualizarusuario':
+        $usuarioController->atualizarImagemPerfil($_FILES['imagem-perfil']);
         break;
     default:
         $controller->login();
