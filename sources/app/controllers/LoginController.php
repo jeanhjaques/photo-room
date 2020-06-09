@@ -5,24 +5,7 @@
 
     class LoginController extends Controller {
 
-        /**
-        * @var Usuario armazena o usuário logado no momento.
-        */
-        private $loggedUser;
 
-        // /**
-        // *  Construtor da classe. 
-        // *  Inicia/recupera a sessão do usuário e recupera o usuário logado.
-        // */   
-        // function __construct() {
-        //     session_start();
-        //     if (isset($_SESSION['user'])) $this->loggedUser = $_SESSION['user'];
-        // }
-
-        /**
-         * 
-         * 
-         *  */
         public function cadastrar($nome, $sobrenome, $dataNascimento, $email, $senha, $pais, $estado, $cidade){
 
             $novousuario = new Usuario($nome, $sobrenome, $dataNascimento,
@@ -39,7 +22,7 @@
 
         public function logar($email, $senha){
             
-            $loginUser = UsuarioDAO::find($email, $senha);
+            $loginUser = UsuarioDAO::find($email, MD5($senha));
             
             if($loginUser != null){
                 $_SESSION['usuarioLogado'] = $loginUser;

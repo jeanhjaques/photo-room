@@ -34,7 +34,7 @@ error_reporting(E_ALL);
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1, $email);
-            $stmt->bindValue(2, MD5($senha));
+            $stmt->bindValue(2, $senha);
 
             $stmt->execute();
 

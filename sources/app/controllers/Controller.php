@@ -12,6 +12,5 @@ class Controller{
     public function perfil(){
         require 'app/views/perfil/perfil.php';
     }
-
   
 }
