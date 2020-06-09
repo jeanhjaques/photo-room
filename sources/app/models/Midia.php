@@ -16,11 +16,9 @@ class Midia{
      * @param String $descricao
      * @param String $extensao
      */
-    public function __construct(string $enderecoArquivo, string $descricao, string $extensao, int $idAlbum)
+    public function __construct($enderecoArquivo, $idAlbum)
     {
         $this->enderecoArquivo = $enderecoArquivo;
-        $this->descricao = $descricao;
-        $this->extensao = $extensao;
         $this->idAlbum = $idAlbum;
     }
 

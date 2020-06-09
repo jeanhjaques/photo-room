@@ -2,12 +2,12 @@
     require_once 'Album.php';
 
     class AlbumDAO{
-        public function create(Album $album){
-            $sql = 'INSERT INTO Album (nomealbum, datacriacao, usuario_idusuario) VALUES(?, current_date, ?)';
+        public static function create(Album $album){
+            $sql = 'INSERT INTO Album (nomealbum, datacriacao, usuario_idusuario) VALUES(?, current_timestamp, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$album->getNome());
-            $stmt->bindValue(2,$album->getDono()->getId());
+            $stmt->bindValue(2,$album->getDono());
 
             $stmt->execute();
         }
@@ -43,5 +43,44 @@
             $stmt->bindValue(1, $idalbum);
             $stmt->execute();
             return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        }
+
+        public static function buscaAlbumPadraoByIdDono($id){
+            $sql = 'SELECT * FROM album WHERE usuario_idusuario = ? AND nomealbum = ?';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $padrao = "Padrão";
+
+            $stmt->bindValue(1, $id);
+            $stmt->bindValue(2, $padrao);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC);
+            }
+            else{
+                return null;
+            }
+        }
+
+        public static function buscaAlbumFavoritoByIdDono($id){
+            $sql = 'SELECT * FROM album WHERE usuario_idusuario= ? AND nomealbum = ?';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $favorito = "Favorito";
+            $stmt->bindValue(1, $id);
+            $stmt->bindValue(2, $favorito);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC);
+            }
+            else{
+                return null;
+            }
         }
     }

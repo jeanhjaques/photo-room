@@ -4,16 +4,13 @@
     require_once 'Midia.php';
 
     class MidiaDAO{
-        public function create(Midia $midia){
-            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo , descricao, tamanho, extensao, resolucao, album_idalbum) VALUES(current_date, ?, ?, ?, ?, ?, ?)';
+        public static function create(Midia $midia){
+            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum) VALUES(current_timestamp , ?, ?)';
+
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$midia->getEnderecoArquivo());
-            $stmt->bindValue(2, $midia->getDescricao());
-            $stmt->bindValue(3,$midia->getTamanho());
-            $stmt->bindValue(4,$midia->getExtensao());
-            $stmt->bindValue(5,$midia->getResolucao());
-            $stmt->bindValue(6,$midia->getIdAlbum());
+            $stmt->bindValue(2, $midia->getIdAlbum());
 
             $stmt->execute();
         }
@@ -28,6 +25,22 @@
             }
             else {
                 return []; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function findByIdAlbum($idAlbum){
+            $sql = 'SELECT * FROM midia WHERE album_idalbum = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$idAlbum);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return null; // retorna um array vazio caso não tenha nenhum item
             }
         }
 

@@ -1,28 +1,39 @@
 <?php
 require_once 'Usuario.php';
+date_default_timezone_set('America/Manaus');
+
 class Album{
     private $nome;
+    private $descricao;
     private $id;
     private $dataCriacao;
     private $qtdMidias;
     private $codCompartilhamento;
     private $dono;
     private $midias;
-
-    /**
-     * Album constructor.
-     * @param $nome
-     * @param $dataCriacao
-     */
-    public function __construct($nome, $dataCriacao, Usuario $dono){
+    
+    
+    public function __construct($nome, $descricao, $dono){
         $this->nome = $nome;
-        $this->dataCriacao = $dataCriacao;
-        $this->dono = $this->dono;
+        $this->descricao = $descricao;
+        $this->dono = $dono;
     }
 
     public function getNome(){
         return $this->nome;
     }
+    
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+    
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
+    }
+    
+    
 
     public function setNome($nome){
         $this->nome = $nome;
@@ -68,11 +79,15 @@ class Album{
         $this->midias = $midias;
     }
 
-    public function getDono(){
+    public function getDono()
+    {
         return $this->dono;
     }
 
-    public function setDono($dono){
+    public function setDono($dono)
+    {
         $this->dono = $dono;
     }
+
+
 }

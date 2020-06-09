@@ -1,6 +1,7 @@
 <?php 
     // Exibe todos os erros PHP (see changelog)
     error_reporting(E_ALL);
+    require_once 'app/controllers/MidiaController.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -38,21 +39,35 @@
             <li><img class="imgmenuprincipal" src="public/img/mais.png" onclick="createAlbum()"></li>
         </ul>
     </nav>
-    <h1> Página meramente ilustrativa, sem conexão alguma com o usuario que logou</h1>
+    <br>
+    <form id="formCadastrarImagemAlbumPadrao" action="index.php?action=cadastrarimagemalbumpadrao" method="post" enctype="multipart/form-data">
+        <label for="nova-imagem"></label>
+        <input class ="nova-imagem" id="nova-imagem" name="nova-imagem" required="required"
+               type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
+        <input type="submit" value="Salvar Imagem"><br>
+    </form>
+
+    <!--busca os arquivos e determina true e false se contém itens-->
+    <?php
+    $imagens = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumprincipal']);
+    $_SESSION['imagensemprincipal'] = true;
+    if($imagens == null){
+        echo "<h1> Álbum Vazio</h1>";
+        $_SESSION['imagensemprincipal'] = false;
+    }
+    ?>
 
     <!-- Bloco onde fica o albúm do usuário -->
     <div class="imagens">
         <nav class="caixadeimagens">
             <ul>
-                <li><img onclick="abrirImagem('public/img/foto0.jpg', 'foto0');" id="a" class="imgcx img" src="public/img/foto0.jpg" alt="foto0"></li>
-                <li><img onclick="abrirImagem('public/img/foto1.jpg' , 'foto1');" class="imgcx img" src="public/img/foto1.jpg" alt="foto1"></li>
-                <li><img onclick="abrirImagem('public/img/foto2.jpg', 'foto2');" class="imgcx img" src="public/img/foto2.jpg" alt="foto2"></li>
-                <li><img onclick="abrirImagem('public/img/foto3.jpg', 'foto3');" class="imgcx img" src="public/img/foto3.jpg" alt="foto3"></li>
-                <li><img onclick="abrirImagem('public/img/foto4.jpg', 'foto4');" class="imgcx img" src="public/img/foto4.jpg" alt="foto4"></li>
-                <li><img onclick="abrirImagem('public/img/foto5.jpg', 'foto5');" class="imgcx img" src="public/img/foto5.jpg" alt="foto5"></li>
-                <li><img onclick="abrirImagem('public/img/foto6.jpg', 'foto6');" class="imgcx img" src="public/img/foto6.jpg" alt="foto6"></li>
-                <li><img onclick="abrirImagem('public/img/foto7.jpg', 'foto 7');" class="imgcx img" src="public/img/foto7.jpg" alt="foto7"></li>
-
+                <?php
+                    if($_SESSION['imagensemprincipal'] != false){
+                        foreach ($imagens as $imagem) {
+                            echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
+                        }
+                    }
+                ?>
             </ul>
         </nav>
     </div>

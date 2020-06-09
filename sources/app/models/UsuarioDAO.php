@@ -59,6 +59,7 @@ error_reporting(E_ALL);
                 return []; // retorna um array vazio caso não tenha nenhum item
             }
         }
+
         public static function atualizaFotoPerfil($nomefoto, $id){
             $sql = 'UPDATE usuario SET  endfotoperfil = ? WHERE idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
@@ -69,16 +70,12 @@ error_reporting(E_ALL);
 
             $stmt->execute();
         }
-        public function update(Usuario $usuario){
+        public static function update(Usuario $usuario){
             $sql = 'UPDATE usuario SET  nome = ?, sobrenome = ? , email = ?, senha = ?, 
                     cidade = ?, estado = ?, pais = ?, telefone = ?, idalbumprincipal = ?, 
                     idalbumfavorito = ?, dataNascimento = ?, endfotoperfil = ? WHERE idusuario = ?';
-            $stmt = Conexao::getConnect()->prepare($sql);
 
-            /** 
-             * A variável dataNasc recebe a data de nascimento do usuário no formato Y-m-d
-             */
-            $dataNasc = implode("-", array_reverse(explode("/", $usuario->getDataNascimento())));
+            $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2, $usuario->getSobrenome());
@@ -90,7 +87,7 @@ error_reporting(E_ALL);
             $stmt->bindValue(8,$usuario->getTelefone());
             $stmt->bindValue(9,$usuario->getAlbumPrincipal());
             $stmt->bindValue(10,$usuario->getAlbumFavorito());
-            $stmt->bindValue(11, $dataNasc);
+            $stmt->bindValue(11, $usuario->getDataNascimento());
             $stmt->bindValue(12, $usuario->getFotoPerfil());
             $stmt->bindValue(13, $usuario->getId());
 

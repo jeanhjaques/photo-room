@@ -7,9 +7,11 @@ session_start();
 include_once('app/controllers/Controller.php');
 include_once('app/controllers/LoginController.php');
 include_once('app/controllers/UsuarioController.php');
+include_once('app/controllers/MidiaController.php');
 $controller = new Controller();
 $loginController = new LoginController();
 $usuarioController = new UsuarioController();
+$midiaController = new MidiaController();
 
 /**
  * Seleciona a rota correta.
@@ -34,6 +36,9 @@ switch ($_GET['action']) {
         break;
     case 'atualizarusuario':
         $usuarioController->atualizarImagemPerfil($_FILES['imagem-perfil']);
+        break;
+    case 'cadastrarimagemalbumpadrao':
+        $midiaController->cadastrarMidia($_FILES['nova-imagem'], $_SESSION['usuarioLogado']['idalbumprincipal']);
         break;
     default:
         $controller->login();
