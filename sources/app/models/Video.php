@@ -20,7 +20,7 @@ class Video extends Midia{
     /**
      * @param mixed $duracao
      */
-    public function setDuracao($duracao): void{
+    public function setDuracao($duracao){
         $this->duracao = $duracao;
     }
 
