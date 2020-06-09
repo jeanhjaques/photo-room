@@ -28,62 +28,62 @@ class Midia{
         return $this->id;
     }
 
-    public function setId($id): void{
+    public function setId($id){
         $this->id = $id;
     }
 
-    public function getEnderecoArquivo(): string{
+    public function getEnderecoArquivo(){
         return $this->enderecoArquivo;
     }
 
-    public function setEnderecoArquivo(string $enderecoArquivo): void{
+    public function setEnderecoArquivo($enderecoArquivo){
         $this->enderecoArquivo = $enderecoArquivo;
     }
 
-    public function getDescricao(): string{
+    public function getDescricao(){
         return $this->descricao;
     }
 
-    public function setDescricao(string $descricao): void{
+    public function setDescricao($descricao){
         $this->descricao = $descricao;
     }
 
-    public function getTamanho(): string{
+    public function getTamanho(){
         return $this->tamanho;
     }
 
-    public function setTamanho(string $tamanho): void{
+    public function setTamanho($tamanho){
         $this->tamanho = $tamanho;
     }
 
-    public function getExtensao(): string{
+    public function getExtensao(){
         return $this->extensao;
     }
 
-    public function setExtensao(string $extensao): void{
+    public function setExtensao($extensao){
         $this->extensao = $extensao;
     }
 
-    public function getResolucao(): string{
+    public function getResolucao(){
         return $this->resolucao;
     }
 
-    public function setResolucao(string $resolucao): void{
+    public function setResolucao($resolucao){
         $this->resolucao = $resolucao;
     }
 
-    public function getDataEnvio(): Date{
+    public function getDataEnvio(){
         return $this->dataEnvio;
     }
 
-    public function setDataEnvio(Date $dataEnvio): void{
+    public function setDataEnvio($dataEnvio){
         $this->dataEnvio = $dataEnvio;
     }
 
     /**
      * @return int
      */
-    public function getIdAlbum(): int
+    public function getIdAlbum()
     {
         return $this->idAlbum;
     }
@@ -91,7 +91,7 @@ class Midia{
     /**
      * @param int $idAlbum
      */
-    public function setIdAlbum(int $idAlbum): void
+    public function setIdAlbum($idAlbum)
     {
         $this->idAlbum = $idAlbum;
     }
