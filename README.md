@@ -1,8 +1,8 @@
 # Photo Room
 
 <!--- Exemplos de badges. Acesse https://shields.io para outras opções. Você pode querer incluir informações de dependencias, build, testes, licença, etc. --->
-![GitHub repo size](https://img.shields.io/github/repo-size/hsborges/progweb-template)
-![GitHub contributors](https://img.shields.io/github/contributors/hsborges/progweb-template)
+![GitHub repo size](https://img.shields.io/github/repo-size/jeanhjaques/photo-room)
+![GitHub contributors](https://img.shields.io/github/contributors/jeanhjaques/photo-room)
 
 Photo Room é uma aplicação web que permite o armazenamento de imagens e videos visando ajudar seus usuários a se manterem organizados com relação a suas midias. 
 
