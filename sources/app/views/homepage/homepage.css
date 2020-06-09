@@ -133,24 +133,28 @@ article h1{
 }
 
 /* Albúm de fotos (caixa de imagens) */
+.imagens .caixadeimagens{
+    width: 100%;
+}
 .imagens .caixadeimagens ul{
+    grid-gap: 5px;
     list-style: none;
-    display: grid;
-    margin-left: 100px;
-    margin-right: 100px;
-    grid-template-columns: repeat(5 , 1fr);
-    grid-gap: 25px;
-    margin-top: 50px;
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    align-content: center;
+    text-align: center;
 }
 .imagens .caixadeimagens ul li{
     text-align: center;
-    display: flex;
-    position: space-around;
+    display: inline-grid;
+    position: relative;
     margin:0;
     padding: 0;
 }
 .imgcx{
-    width: 165px;;
+    width: 150px;
     border-color: #ffffff;
     border-style: solid;
     border-width: 2px;
