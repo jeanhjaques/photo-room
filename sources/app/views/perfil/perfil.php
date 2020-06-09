@@ -62,7 +62,7 @@
     <br>
     <footer>
         <?php
-            require 'app/views/footer.php';
+            require 'app/views/footer.html';
         ?>
     </footer>
 </body>
