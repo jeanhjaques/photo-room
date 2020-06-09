@@ -1,13 +1,13 @@
 <?php
 require_once 'Usuario.php';
 class Album{
-    private String $nome;
-    private int $id;
-    private Date $dataCriacao;
-    private int $qtdMidias;
-    private String $codCompartilhamento;
-    private Usuario $dono;
-    private Midia $midias;
+    private $nome;
+    private $id;
+    private $dataCriacao;
+    private $qtdMidias;
+    private $codCompartilhamento;
+    private $dono;
+    private $midias;
 
     /**
      * Album constructor.
@@ -20,59 +20,59 @@ class Album{
         $this->dono = $this->dono;
     }
 
-    public function getNome(): string{
+    public function getNome(){
         return $this->nome;
     }
 
-    public function setNome(string $nome): void{
+    public function setNome($nome){
         $this->nome = $nome;
     }
 
-    public function getId(): int{
+    public function getId(){
         return $this->id;
     }
 
-    public function setId(int $id): void{
+    public function setId($id){
         $this->id = $id;
     }
 
-    public function getDataCriacao(): Date{
+    public function getDataCriacao(){
         return $this->dataCriacao;
     }
 
-    public function setDataCriacao(Date $dataCriacao): void{
+    public function setDataCriacao($dataCriacao){
         $this->dataCriacao = $dataCriacao;
     }
 
-    public function getQtdMidias(): int{
+    public function getQtdMidias(){
         return $this->qtdMidias;
     }
 
-    public function setQtdMidias(int $qtdMidias): void{
+    public function setQtdMidias($qtdMidias){
         $this->qtdMidias = $qtdMidias;
     }
 
-    public function getCodCompartilhamento(): string{
+    public function getCodCompartilhamento(){
         return $this->codCompartilhamento;
     }
 
-    public function setCodCompartilhamento(string $codCompartilhamento): void{
+    public function setCodCompartilhamento($codCompartilhamento){
         $this->codCompartilhamento = $codCompartilhamento;
     }
 
-    public function getMidias(): Midia{
+    public function getMidias(){
         return $this->midias;
     }
 
-    public function setMidias(Midia $midias): void{
+    public function setMidias($midias){
         $this->midias = $midias;
     }
 
-    public function getDono(): Usuario{
+    public function getDono(){
         return $this->dono;
     }
 
-    public function setDono(Usuario $dono): void{
+    public function setDono($dono){
         $this->dono = $dono;
     }
 }
