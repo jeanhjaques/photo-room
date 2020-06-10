@@ -2,14 +2,14 @@
 
 class Midia{
     private $id;
-    private String $enderecoArquivo;
-    private String $descricao;
-    private String $tamanho;
-    private String $extensao;
-    private String $resolucao;
-    private int $idAlbum;
+    private  $enderecoArquivo;
+    private  $descricao;
+    private  $tamanho;
+    private  $extensao;
+    private  $resolucao;
+    private  $idAlbum;
 
-    private Date $dataEnvio; /*data de envio para o site*/
+    private  $dataEnvio; /*data de envio para o site*/
     /**
      * Midia constructor.
      * @param String $enderecoArquivo

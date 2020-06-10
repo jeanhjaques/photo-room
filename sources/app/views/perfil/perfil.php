@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="app/views/perfil/perfil.css">
+    <script src="app/views/perfil/SelecionaImg.js" type="text/javascript"></script> 
 </head>
 <body>
     <header>
@@ -25,12 +26,18 @@
         <figure class="figure-perfil">
             <?php echo "<img class = \"img-perfil\" src=\"public/upload/".$_SESSION['usuarioLogado']['endfotoperfil']."\">"?>
         </figure>
+        
         <form id="formImagemPerfil" action="index.php?action=atualizarusuario" method="post" enctype="multipart/form-data">
-            <label for="imagem-perfil"></label>
-            <input class ="imagem-perfil" id="imagem-perfil" name="imagem-perfil" required="required"
-                   type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
-            <input type="submit" value="Atualizar Imagem"><br>
-        </form>
+            <div class="divSelecionaImg">
+                <span id="spResultado">&nbsp;</span>
+                <input type="button" name="btnSelecionar" id="btnSelecionar" value="Selecionar"/>
+            </div>         
+
+            <input class ="formInput" id="imagem-perfil" name="imagem-perfil" required="required" type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
+
+            <input id="btnAtualizar" type="submit" value="Atualizar Imagem"><br>
+        </form>        
+        
         <!-- Informações do perfil do usuário -->
         <div class="dados">
             <div>
