@@ -5,7 +5,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +13,8 @@
     <link rel="stylesheet" href="app/views/homepage/img.css">
     <script src="app/views/homepage/scripts.js"></script>
     <script src="app/views/homepage/imagem.js"></script>
+    <script src="app/views/homepage/homepage.js"></script>
 </head>
-
 <body>
 <header>
     <?php
@@ -34,9 +33,9 @@
     <!-- Menu Principal da página -->
     <nav class="menuprincipal">
         <ul>
-            <li><img class="imgmenuprincipal" src="public/img/tudo.png"></li>
-            <li><img class="imgmenuprincipal" src="public/img/favorito.png"></li>
-            <li><img class="imgmenuprincipal" src="public/img/mais.png" onclick="createAlbum()"></li>
+            <li><button class="menu-principal" id="btnpadrao" onclick="mudarCorButtonsMenu('menu-principal',0); exibirAlbum(0,'Albuns')" ><img class="imgmenuprincipal" src="public/img/tudo.png"></button></li>
+            <li><button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',1); exibirAlbum(1,'Albuns')" ><img class="imgmenuprincipal" src="public/img/favorito.png"></button></li>
+            <li><button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',2); exibirAlbum(2,'Albuns')" ><img class="imgmenuprincipal" src="public/img/mais.png" onclick="createAlbum()"></button></li>
         </ul>
     </nav>
     <br>
@@ -47,29 +46,54 @@
         <input type="submit" value="Salvar Imagem"><br>
     </form>
 
-    <!--busca os arquivos e determina true e false se contém itens-->
-    <?php
-    $imagens = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumprincipal']);
-    $_SESSION['imagensemprincipal'] = true;
-    if($imagens == null){
-        echo "<h1> Álbum Vazio</h1>";
-        $_SESSION['imagensemprincipal'] = false;
-    }
-    ?>
-
     <!-- Bloco onde fica o albúm do usuário -->
-    <div class="imagens">
-        <nav class="caixadeimagens">
-            <ul>
-                <?php
-                    if($_SESSION['imagensemprincipal'] != false){
-                        foreach ($imagens as $imagem) {
+    <div class="Albuns" id="padrao">
+        <!--busca os arquivos e determina true e false se contém itens-->
+        <?php
+        $imagensEmTudo = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumprincipal']);
+        $_SESSION['imagensEmTudo'] = true;
+        if($imagensEmTudo == null){
+            echo "<h1> Álbum Vazio</h1>";
+            $_SESSION['imagensEmTudo'] = false;
+        }
+        ?>
+        <div class="imagens">
+            <nav class="caixadeimagens">
+                <ul>
+                    <?php
+                    if($_SESSION['imagensEmTudo'] != false){
+                        foreach ($imagensEmTudo as $imagem) {
                             echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
                         }
                     }
-                ?>
-            </ul>
-        </nav>
+                    ?>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="Albuns">
+        <!--busca os arquivos e determina true e false se contém itens-->
+        <?php
+        $imagensNosFavoritos = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumfavorito']);
+        $_SESSION['imagensNosFavoritos'] = true;
+        if($imagensNosFavoritos == null){
+            echo "<h1> Álbum Vazio</h1>";
+            $_SESSION['imagensNosFavoritos'] = false;
+        }
+        ?>
+        <div class="imagens">
+            <nav class="caixadeimagens">
+                <ul>
+                    <?php
+                    if($_SESSION['imagensNosFavoritos'] != false){
+                        foreach ($imagensNosFavoritos as $imagem) {
+                            echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
+                        }
+                    }
+                    ?>
+                </ul>
+            </nav>
+        </div>
     </div>
     <!-- modal Imagem -->
     <div id="modalImagem" class="modalimg">

@@ -5,7 +5,9 @@ body{
     height: 100%;
     width: 100%;
     margin: 0;
+    background-color: white;
 }
+
 
 /* Barra de pesquisa */
 article .espacobusca{
@@ -55,113 +57,86 @@ article h1{
 
 /* Padrões dos icones do menu principal */
 .imgmenuprincipal{
-    width: 50px;
+    display: inline-flex;
+    width: 30px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-/*Pop-up Criar Albúm*/
-.createAlbumInput {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 26px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size:16px;
+article .menu-principal{
+    display: inline-grid;
+    position: inherit;
+    background-color: transparent;
+    border-color: transparent;
 }
-.createAlbumButton {
-    background-color: #000;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 26px;
-    border: none;
-    cursor: pointer;
-    width: 90%;
-    font-size:20px;
+
+article .menu-principal:focus{
+    border-top-color: transparent;
+    background-color: #ff6b00;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
-.createAlbumButton:hover {
-    opacity: 0.8;
+
+article #btnpadrao{
+    background-color: #ff6b00;
 }
-.createAlbumImgContainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-    background-color: black;
+article .menu-principal:hover{
+    border-color: transparent;
+    background-color: #ff6b00;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
-.createAlbumAvatar {
-    width: 200px;
-    height:200px;
-    border-radius: 50%;
-}
-.modal {
-    display:none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-}
-.modal-content {
-    background-color: #fefefe;
-    margin: 4% auto 15% auto;
-    border: 1px solid #888;
-    width: 40%;
-    padding-bottom: 30px;
-}
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-}
-.close:hover,.close:focus {
-    color: red;
-    cursor: pointer;
-}
-.animate {
-    animation: zoom 0.6s
-}
+
 @keyframes zoom {
     from {transform: scale(0)}
     to {transform: scale(1)}
 }
 
+article .Albuns{
+    display: none;
+}
+article #padrao{
+    display: block;
+}
+
 /* Albúm de fotos (caixa de imagens) */
-.imagens .caixadeimagens{
+
+article .imagens{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+article .caixadeimagens{
+    cursor:default;
+    list-style:none;
     width: 100%;
 }
-.imagens .caixadeimagens ul{
-    grid-gap: 5px;
-    list-style: none;
-    margin-top: 5px;
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0;
-    align-content: center;
+article .caixadeimagens img{
+    background:#fff;
+    border-color:#aaa #ccc #ddd #bbb;
+    border-style:solid;
+    border-width:1px;
+    color:inherit;
+    padding:2px;
+    vertical-align:top;
+    width:150px; height:150px;
+}
+
+article .caixadeimagens ul{
     text-align: center;
+    padding: 0;
 }
-.imagens .caixadeimagens ul li{
+article .caixadeimagens li{
+    position: center;
     text-align: center;
-    display: inline-grid;
-    position: relative;
-    margin:0;
-    padding: 0;
+    color:inherit;
+    display:inline;
+    margin:3px;
+    padding:5px;
 }
-.imgcx{
-    width: 150px;
-    border-color: #ffffff;
-    border-style: solid;
-    border-width: 2px;
-    box-shadow: rgb(148, 147, 147) 1px 1px 1px 1px;
-    margin: 1px;
-    padding: 0;
+article .caixadeimagens .preview {
+    border-color:#000;
+    width:200px;
+    height:150px;
 }
+
 /*estilo do form provisório */
 form{
     text-align: center;

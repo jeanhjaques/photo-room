@@ -80,7 +80,7 @@ footer {
 #btnSelecionar {
     padding: 5px;
     font-size: 18px;
-    background-color: #4faf76;
+    background-color: #0025ff;
     float: right;
     border: none;
     outline: none;
@@ -89,13 +89,13 @@ footer {
 }
 
 #btnSelecionar:hover {
-    background-color: rgb(45, 41, 48);
+    background-color: rgb(0, 0, 0);
 }
 
 #btnAtualizar {
     padding: 5px;
     font-size: 18px;
-    background-color: #eb6262;
+    background-color: #ff0000;
     border-radius: 10px 3px;
     border: none;
     outline: none;
@@ -104,7 +104,7 @@ footer {
 }
 
 #btnAtualizar:hover {
-    background-color: black;
+    background-color: #000000;
 }
 
 @media screen and (max-width:800px) {
