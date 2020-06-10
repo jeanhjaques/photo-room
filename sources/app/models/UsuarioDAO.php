@@ -11,7 +11,7 @@ error_reporting(E_ALL);
             /** 
              * A variável dataNasc recebe a data de nascimento do usuário no formato Y-m-d
              */
-            $dataNasc = implode("-", array_reverse(explode("/", $usuario->getDataNascimento())));
+            $dataNasc = implode("-", array_reverse(explode("/", $usuario->getDataNascimento())));            
 
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2,$usuario->getSobrenome());
@@ -19,11 +19,11 @@ error_reporting(E_ALL);
             $stmt->bindValue(4,$usuario->getSenha());
             $stmt->bindValue(5,$usuario->getCidade());
             $stmt->bindValue(6,$usuario->getEstado());
-            $stmt->bindValue(7,$usuario->getPais());
+            $stmt->bindValue(7,$usuario->getPais());           
             /*$stmt->bindValue(8,$usuario->getTelefone());
             $stmt->bindValue(9,$usuario->getAlbumPrincipal());
             $stmt->bindValue(10,$usuario->getAlbumFavorito());*/
-            $stmt->bindValue(8, $dataNasc);
+            $stmt->bindValue(8, $dataNasc);            
 
             $stmt->execute();
         }
@@ -70,6 +70,7 @@ error_reporting(E_ALL);
 
             $stmt->execute();
         }
+
         public static function update(Usuario $usuario){
             $sql = 'UPDATE usuario SET  nome = ?, sobrenome = ? , email = ?, senha = ?, 
                     cidade = ?, estado = ?, pais = ?, telefone = ?, idalbumprincipal = ?, 

@@ -15,13 +15,16 @@
 
             try {
                 UsuarioDAO::create($novousuario);
-                $usuarioCadastrado  = UsuarioDAO::find($email, MD5($senha));
+                $fotoPerfil = 'usuario.png';                              
+                $usuarioCadastrado  = UsuarioDAO::find($email, MD5($senha));                                
                 $idAlbumPadrao = AlbumController::criarAlbumPadrao($usuarioCadastrado['idusuario']);
                 $idAlbumFavorito = AlbumController::criarAlbumFavorito($usuarioCadastrado['idusuario']);
                 $novousuario->setAlbumFavorito($idAlbumFavorito);
                 $novousuario->setAlbumPrincipal($idAlbumPadrao);
                 $novousuario->setId($usuarioCadastrado['idusuario']);
+                $novousuario->setFotoPerfil($fotoPerfil);                
                 UsuarioDAO::update($novousuario);
+                
                 $_SESSION['loginErro'] = "<h1>Usuario Cadastrado</h1>";
             }
             catch(PDOException $erro) {
