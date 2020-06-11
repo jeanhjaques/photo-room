@@ -27,6 +27,7 @@
         <form method="post" action="../controllers/loginController.php">
             <label for="pesquisa"></label>
             <input id="pesquisa" name="pesquisa" required="required" type="search" placeholder="Pesquisar">
+            <button class="btnPesquisa" type="submit"></button>
         </form>
     </div>
 
@@ -39,11 +40,13 @@
         </ul>
     </nav>
     <br>
-    <form id="formCadastrarImagemAlbumPadrao" action="index.php?action=cadastrarimagemalbumpadrao" method="post" enctype="multipart/form-data">
-        <label for="nova-imagem"></label>
-        <input class ="nova-imagem" id="nova-imagem" name="nova-imagem" required="required"
-               type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
-        <input type="submit" value="Salvar Imagem"><br>
+    <form id="formCadastrarImagemAlbumPadrao" action="index.php?action=cadastrarimagemalbumpadrao" method="post" enctype="multipart/form-data">        
+        <div class="divupload">
+            <span id="spupload">Selecione pela câmera</span>
+            <img src="public/img/camera32.png" alt="">
+            <input class ="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
+            <input type="submit" value="Enviar" id="btnupload"><br>
+        </div>  
     </form>
 
     <!-- Bloco onde fica o albúm do usuário -->

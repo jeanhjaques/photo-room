@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /* Import da fonte Roboto (Google) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body{
+/* Import da fonte Roboto (Google) */
+
+body {
     font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 100%;
@@ -10,134 +12,301 @@ body{
 
 
 /* Barra de pesquisa */
-article .espacobusca{
+
+.espacobusca {
+    width: 100%;
+    position: relative;
+    height: 50px;
     text-align: center;
     margin-top: 1%;
     margin-bottom: 1%;
 }
-article .espacobusca input[type = search]{
+
+input[type=search] {
+    height: 40px;
+    border: none;
+    outline: none;
+    position: relative;
     text-align: center;
-    border-color: rgb(197, 197, 197);
-    border-style: solid;
-    border-radius: 10px;
-    width: 30%;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    width: 25%;
+    margin-right: -8px;
 }
 
-article .espacobusca input[type = search]:hover{
-    text-align: center;
+.btnPesquisa {
+    height: 50px;
+    width: 50px;
+    background: url('../../../public/img/lupa24a.png') center no-repeat;
+    border: none;
+    outline: none;
+    position: absolute;
+    cursor: pointer;
+}
+
+input[type=search]:hover {
     border-color: rgb(0, 255, 242);
     border-style: solid;
-    border-radius: 10px;
-    width: 30%;
 }
 
+
 /* Menu Principal da página */
-article .menuprincipal{
+
+article .menuprincipal {
     text-align: center;
     height: 100%;
     position: relative;
 }
-article .menuprincipal ul{
-    margin:0;
+
+article .menuprincipal ul {
+    margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-article .menuprincipal ul li{
+article .menuprincipal ul li {
     display: inline;
 }
 
-article .menuprincipal ul li img{
+article .menuprincipal ul li img {
     text-decoration: none;
 }
 
-article h1{
+article h1 {
     text-align: center;
 }
 
+
 /* Padrões dos icones do menu principal */
-.imgmenuprincipal{
+
+.imgmenuprincipal {
     display: inline-flex;
     width: 30px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-article .menu-principal{
+article .menu-principal {
     display: inline-grid;
     position: inherit;
     background-color: transparent;
     border-color: transparent;
 }
 
-article .menu-principal:focus{
+article .menu-principal:focus {
     border-top-color: transparent;
     background-color: #ff6b00;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
 
-article #btnpadrao{
+article #btnpadrao {
     background-color: #ff6b00;
 }
-article .menu-principal:hover{
+
+article .menu-principal:hover {
     border-color: transparent;
     background-color: #ff6b00;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
 
 @keyframes zoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
 }
 
-article .Albuns{
+article .Albuns {
     display: none;
 }
-article #padrao{
+
+article #padrao {
     display: block;
 }
 
+
 /* Albúm de fotos (caixa de imagens) */
 
-article .imagens{
+article .imagens {
     margin-left: 10%;
     margin-right: 10%;
 }
-article .caixadeimagens{
-    cursor:default;
-    list-style:none;
+
+article .caixadeimagens {
+    cursor: default;
+    list-style: none;
     width: 100%;
 }
-article .caixadeimagens img{
-    background:#fff;
-    border-color:#aaa #ccc #ddd #bbb;
-    border-style:solid;
-    border-width:1px;
-    color:inherit;
-    padding:2px;
-    vertical-align:top;
-    width:150px; height:150px;
+
+article .caixadeimagens img {
+    background: #fff;
+    border-color: #aaa #ccc #ddd #bbb;
+    border-style: solid;
+    border-width: 1px;
+    color: inherit;
+    padding: 2px;
+    vertical-align: top;
+    width: 150px;
+    height: 150px;
 }
 
-article .caixadeimagens ul{
+article .caixadeimagens ul {
     text-align: center;
     padding: 0;
 }
-article .caixadeimagens li{
+
+article .caixadeimagens li {
     position: center;
     text-align: center;
-    color:inherit;
-    display:inline;
-    margin:3px;
-    padding:5px;
-}
-article .caixadeimagens .preview {
-    border-color:#000;
-    width:200px;
-    height:150px;
+    color: inherit;
+    display: inline;
+    margin: 3px;
+    padding: 5px;
 }
 
+article .caixadeimagens .preview {
+    border-color: #000;
+    width: 200px;
+    height: 150px;
+}
+
+.divupload {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background: #444;
+    width: 300px;
+    border-radius: 6px;
+    padding: 10px 3px 10px;
+    position: relative;
+    margin-left: 43%;
+}
+
+.divupload img {
+    float: right;
+}
+
+.divupload input[type=file] {
+    position: absolute;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+}
+
+#btnupload {
+    background: #0073e6;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    padding: 5px 0;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#btnupload:hover {
+    background: #03c;
+    color: #fff;
+    box-shadow: #03c 0 0 2px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.divupload span {
+    color: #fff;
+    margin-top: 10px;
+    display: block;
+    float: left;
+    margin-left: 5px;
+}
+
+
 /*estilo do form provisório */
-form{
+
+form {
     text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+    input[type=search] {
+        margin-top: 12px;
+        margin-bottom: 3%;
+        margin-right: -12px;
+        height: 25px;
+        width: 50%;
+    }
+    .btnPesquisa {
+        background: url('../../../public/img/lupa16a.png') center no-repeat;
+    }
+    .imgmenuprincipal {
+        width: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #padrao h1 {
+        font-size: 16px;
+    }
+    .divupload {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        width: 150px;
+        padding: 5px 2px 7px;
+        margin-left: 36%;
+    }
+    #btnupload {
+        width: 120px;
+        padding: 3px 0;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .divupload img {
+        width: 28px;
+        height: 25px;
+    }
+    .divupload span {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1440px) {
+    input[type=search] {
+        margin-top: 7px;
+        height: 35px;
+        width: 30%;
+    }
+    .btnPesquisa {
+        background: url('../../../public/img/lupa24a.png') center no-repeat;
+    }
+    .imgmenuprincipal {
+        width: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #padrao h1 {
+        font-size: 20px;
+    }
+    .divupload {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        width: 200px;
+        padding: 10px 3px 10px;
+        margin-left: 43%;
+    }
+    #btnupload {
+        width: 170px;
+        padding: 4px 0;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .divupload img {
+        width: 30px;
+        height: 28px;
+    }
+    .divupload span {
+        font-size: 12px;
+        margin-left: 8px;
+    }
 }
