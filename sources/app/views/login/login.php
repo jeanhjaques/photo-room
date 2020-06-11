@@ -8,29 +8,32 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="app/views/login/estilo1.css">
+        <link rel="stylesheet" type="text/css" href="app/views/login/login.css">        
         <script src="app/views/login/transacao.js" type="text/javascript"></script> 
         <script src="app/views/login/login.js" type="text/javascript"></script>       
     </head>
     <body>
         <div class="login_page">
             <div class="box">
-                <h1>LOGO</h1>
-                <?php
-                if(isset($_SESSION['loginErro'])){
-                    echo $_SESSION['loginErro'];
-                    unset($_SESSION['loginErro']);
-                }
-                ?>
+                <h1>LOGO</h1>               
+                <strong>                    
+                    <?php
+                        if(isset($_SESSION['loginErro'])){
+                            echo $_SESSION['loginErro'];
+                            unset($_SESSION['loginErro']);
+                        }
+                    ?>                   
+                </strong>                           
+               
                 <form id="formLogin" action="index.php?action=logar" method="post">
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-user"></p>
                     <input type="password" id="senha" name="senha" placeholder="Senha" />
                     <p class="erro-senha"></p>
                     <input type="submit" class="btn-login" id="btn-entrar" value="Entrar" />
-                </form>
+                </form>                
                 <a onclick="btnEsqueciSenha();">Esqueci a senha</a>
-                <a onclick="btnCriarConta();">Criar Conta</a>
+                <a onclick="btnCriarConta();">Criar Conta</a>                            
             </div>
 
             <div class="box-criarConta">

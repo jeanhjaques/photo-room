@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-body{
+body {
     margin: 0;
     padding: 0;
     font-size: 100%;
@@ -58,6 +58,11 @@ body{
     text-align: left;
     margin-left: 17%;
     margin-bottom: 4%;
+}
+
+.box strong {
+    font-size: 12px;
+    color: red;
 }
 
 a {
@@ -166,69 +171,81 @@ a:hover {
 
 /*------------Para arquivo login.html, criarConta.html e novaSenha.html-------------*/
 
-@media only screen and (min-width: 1550px) {
-    h1 {
-        font-size: 50px;
+@media screen and (max-width: 800px) {
+    .box h1,
+    .box-criarConta h1,
+    .box-senha h1 {
+        font-size: 20px;
     }
-    .box p {
+    .box p,
+    .box a,
+    .box-criarConta a,
+    .box-senha a {
         font-size: 12px;
     }
     .box-criarConta p {
         font-size: 12px;
     }
-    a {
-        font-size: 16px;
-    }
     strong {
         font-size: 16px;
     }
+    .box {
+        width: 70%;
+        height: 50%;
+    }
+    .box input,
+    .box-criarConta input,
+    .box-senha input {
+        width: 70%;
+        height: 35px;
+        left: 15%;
+    }
+    .box-criarConta {
+        width: 70%;
+        height: 96%;
+    }
+    .box-senha {
+        width: 70%;
+        height: 45%;
+    }
 }
 
-@media only screen and (min-width: 1400px) and (max-width: 1549px) {
-    h1 {
+@media screen and (min-width: 801px) and (max-width: 1440px) {
+    .box h1,
+    .box-criarConta h1,
+    .box-senha h1 {
         font-size: 30px;
     }
-    .box p {
-        font-size: 9px;
+    .box p,
+    .box a,
+    .box-criarConta a,
+    .box-senha a {
+        font-size: 14px;
     }
     .box-criarConta p {
-        font-size: 9px;
-    }
-    a {
-        font-size: 18px;
-    }
-    strong {
         font-size: 12px;
     }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1399px) {
-    .box p {
-        font-size: 7px;
+    .box {
+        width: 40%;
+        height: 55%;
     }
-    .box-criarConta p {
-        font-size: 7px;
+    .box input,
+    .box-criarConta input,
+    .box-senha input {
+        width: 70%;
+        height: 40px;
+        left: 15%;
     }
-    a {
+    .box-criarConta {
+        width: 40%;
+        height: 680px;
+    }
+    .box-senha {
+        width: 40%;
+        height: 50%;
+    }
+    .box-senha strong {
         font-size: 14px;
-    }
-    strong {
-        font-size: 10px;
-    }
-}
-
-@media only screen and (max-width: 1023px) {
-    .box p {
-        font-size: 6px;
-    }
-    .box-criarConta p {
-        font-size: 6px;
-    }
-    a {
-        font-size: 14px;
-    }
-    strong {
-        font-size: 8px;
     }
 }
 
