@@ -8,7 +8,7 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="app/views/login/login.css">        
+        <link rel="stylesheet" type="text/css" href="app/views/login/login1.css">        
         <script src="app/views/login/transacao.js" type="text/javascript"></script> 
         <script src="app/views/login/login.js" type="text/javascript"></script>       
     </head>
@@ -21,7 +21,7 @@
                         if(isset($_SESSION['loginErro'])){
                             echo $_SESSION['loginErro'];
                             unset($_SESSION['loginErro']);
-                        }
+                        }                                                                        
                     ?>                   
                 </strong>                           
                
