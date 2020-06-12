@@ -39,62 +39,84 @@
             <li><button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',2); exibirAlbum(2,'Albuns')" ><img class="imgmenuprincipal" src="public/img/mais.png" onclick="createAlbum()"></button></li>
         </ul>
     </nav>
-    <br>
-    <form id="formCadastrarImagemAlbumPadrao" action="index.php?action=cadastrarimagemalbumpadrao" method="post" enctype="multipart/form-data">        
-        <div class="divupload">
-            <span id="spupload">Selecione pela câmera</span>
-            <img src="public/img/camera32.png" alt="">
-            <input class ="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
-            <input type="submit" value="Enviar" id="btnupload"><br>
-        </div>  
-    </form>
 
     <!-- Bloco onde fica o albúm do usuário -->
     <div class="Albuns" id="padrao">
-        <!--busca os arquivos e determina true e false se contém itens-->
-        <?php
-        $imagensEmTudo = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumprincipal']);
-        $_SESSION['imagensEmTudo'] = true;
-        if($imagensEmTudo == null){
-            echo "<h1> Álbum Vazio</h1>";
-            $_SESSION['imagensEmTudo'] = false;
-        }
-        ?>
         <div class="imagens">
-            <nav class="caixadeimagens">
-                <ul>
+            <div class="caixadeimagens">
+                <!--busca os arquivos e determina true e false se contém itens-->
+                <?php
+                $imagensEmTudo = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumprincipal']);
+                $_SESSION['imagensEmTudo'] = true;
+                if($imagensEmTudo == null){
+                    echo "<h1> Álbum Vazio</h1>";
+                    $_SESSION['imagensEmTudo'] = false;
+                }
+                ?>
                     <?php
                     if($_SESSION['imagensEmTudo'] != false){
+                        $posicao = 0;
                         foreach ($imagensEmTudo as $imagem) {
-                            echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
+                            //echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
+                            echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('".$posicao."');\">
+                                    <img class=\"img-album\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
+                                    <br>
+                                    <figcaption class=\"texto\">
+                                        <a onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
+                                        
+                                    </figcaption>
+                                </figure>";
+                            $posicao++;
                         }
                     }
                     ?>
-                </ul>
-            </nav>
+                <figure class="iconeAddImagem"><img class="img-album-add" src="public/icones/addImagem.png" alt="Adicionar mais fotos"></figure>
+            </div>
         </div>
+        <form id="formCadastrarImagemAlbumPadrao" action="index.php?action=cadastrarimagemalbumpadrao" method="post" enctype="multipart/form-data">
+            <div class="divupload">
+                <span id="spupload">Selecione pela câmera</span>
+                <img src="public/img/camera32.png" alt="">
+                <input class ="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
+                <input type="submit" value="Enviar" id="btnupload"><br>
+            </div>
+        </form>
     </div>
     <div class="Albuns">
-        <!--busca os arquivos e determina true e false se contém itens-->
-        <?php
-        $imagensNosFavoritos = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumfavorito']);
-        $_SESSION['imagensNosFavoritos'] = true;
-        if($imagensNosFavoritos == null){
-            echo "<h1> Álbum Vazio</h1>";
-            $_SESSION['imagensNosFavoritos'] = false;
-        }
-        ?>
         <div class="imagens">
             <nav class="caixadeimagens">
-                <ul>
+                <!--busca os arquivos e determina true e false se contém itens-->
+                <?php
+                $imagensNosFavoritos = MidiaController::buscarImagens($_SESSION['usuarioLogado']['idalbumfavorito']);
+                $_SESSION['imagensNosFavoritos'] = true;
+                if($imagensNosFavoritos == null){
+                    echo "<h1> Álbum Vazio</h1>";
+                    $_SESSION['imagensNosFavoritos'] = false;
+                }
+                ?>
                     <?php
                     if($_SESSION['imagensNosFavoritos'] != false){
+                        $posicao = 0;
                         foreach ($imagensNosFavoritos as $imagem) {
-                            echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
+                            //echo "<li><img onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\" id=\"a\" class=\"imgcx img\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\"></li>";
+                            echo "<figure onclick=\"aparecerMenuContexto('".$posicao."');\">
+                                    <img src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
+                                    <br>
+                                    <figcaption class=\"texto\">
+                                        <a href=\"\"><img class=\"img-icone\" src=\"favorito.png\" alt=\"Favoritar\"></a>Favorito<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"expandir.png\" alt=\"Expandir\"></a>Expandir<br>
+                                        <a href=\"\"><img class=\"img-icone\" src=\"detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
+                                    </figcaption>
+                                </figure>";
+                            $posicao++;
                         }
                     }
                     ?>
-                </ul>
             </nav>
         </div>
     </div>

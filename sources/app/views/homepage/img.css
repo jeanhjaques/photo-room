@@ -19,10 +19,16 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
 }
 
 /* Modal Content (image) */
 .modal-content-img {
+  box-shadow: 1px 1px 1em black;
+  border-style: solid;
+  border-color: white;
+  border-width: 3px;
+  border-radius: 5px;
   margin: auto;
   display: block;
   width: 50%;

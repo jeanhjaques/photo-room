@@ -39,3 +39,22 @@ function mostrarNomeArq() {
     var nomeArquivo = document.getElementById("nova-imagem").value;
     document.getElementById("spupload").innerHTML = nomeArquivo;
 }
+
+//responsável pelo menu de contexto
+function aparecerMenuContexto(ClassNumber){
+    var values = document.getElementsByClassName("texto");
+    for (var i = 0; i < values.length; i++) {
+        if (i != ClassNumber) {
+            values[i].style.display = "none";
+        } else {
+            values[i].style.display = "block";
+        }
+    }
+}
+
+function desapareceContextoClicandoFora() {
+    var values = document.getElementsByClassName("texto");
+    for (var i = 0; i < values.length; i++) {
+            values[i].style.display = "none";
+    }
+}
