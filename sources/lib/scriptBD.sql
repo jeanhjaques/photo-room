@@ -2,7 +2,7 @@
 -- Table `usuario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `idusuario` INT NOT NULL AUTO_INCREMENT,
+  `idusuario` INT NOT NULL AUTO_INCREMENT UNIQUE,
   `nome` VARCHAR(45) NULL,
   `sobrenome` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
@@ -23,11 +23,11 @@ ENGINE = InnoDB;
 -- Table `album`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `album` (
-  `idalbum` INT NOT NULL,
+  `idalbum` INT NOT NULL UNIQUE,
   `nomealbum` VARCHAR(45) NULL,
   `dataCriacao` DATE NULL,
   `codCompartilhamento` VARCHAR(100) NULL,
-  `usuario_idusuario` INT NULL,
+  `usuario_idusuario` INT,
   PRIMARY KEY (`idalbum`, `usuario_idusuario`),
   CONSTRAINT `fk_album_usuario`
     FOREIGN KEY (`usuario_idusuario`)
@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 -- Table `midia`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `midia` (
-  `idmidia` INT AUTO_INCREMENT NULL,
+  `idmidia` INT AUTO_INCREMENT NOT NULL,
   `datadeenvio` DATE NULL,
   `enderecoArquivo` VARCHAR(100) NOT NULL,
   `descricao` TEXT(1000) NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `midia` (
   `extensao` VARCHAR(45) NULL,
   `resolucao` VARCHAR(45) NULL,
   `duracao` VARCHAR(45) NULL,
-  `album_idalbum` INT NULL,
+  `album_idalbum` INT,
   PRIMARY KEY (`idmidia`, `album_idalbum`),
     FOREIGN KEY (`album_idalbum`)
     REFERENCES `album` (`idalbum`)
