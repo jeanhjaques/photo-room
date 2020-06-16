@@ -25,10 +25,10 @@
                 $novousuario->setFotoPerfil($fotoPerfil);                
                 UsuarioDAO::update($novousuario);
                 
-                $_SESSION['loginErro'] = "<strong>Usuario Cadastrado</strong>";
+                $_SESSION['loginErro'] = "<h1>Usuario Cadastrado</h1>";
             }
             catch(PDOException $erro) {
-                $_SESSION['loginErro'] = "<strong>Impossivel cadastradar</strong>";
+                $_SESSION['loginErro'] = "<h1>Impossivel cadastradar</h1>";
             }
             $this->login();
         }
@@ -43,7 +43,7 @@
             }
             else {
                 // header('Location: index.php?email=' . $_POST['email'] . '&mensagem=Usuário e/ou senha incorreta!');
-                $_SESSION['loginErro'] = "<strong>Erro ao tentar logar</strong>";
+                $_SESSION['loginErro'] = "<h1>Não foi possível entrar</h1>";
                 $this->login();
             }
 
