@@ -8,10 +8,12 @@ include_once('app/controllers/Controller.php');
 include_once('app/controllers/LoginController.php');
 include_once('app/controllers/UsuarioController.php');
 include_once('app/controllers/MidiaController.php');
+include_once('app/controllers/AlbumController.php');
 $controller = new Controller();
 $loginController = new LoginController();
 $usuarioController = new UsuarioController();
 $midiaController = new MidiaController();
+$albumController = new AlbumController();
 
 /**
  * Seleciona a rota correta.
@@ -39,6 +41,18 @@ switch ($_GET['action']) {
         break;
     case 'cadastrarimagemalbumpadrao':
         $midiaController->cadastrarMidia($_FILES['nova-imagem'], $_SESSION['usuarioLogado']['idalbumprincipal']);
+        break;
+    case 'favoritar':
+        $midiaController->favoritar($_GET['MidiaId']);
+        break;
+    case 'desfavoritar':
+        $midiaController->desfavoritar($_GET['MidiaId']);
+        break;
+    case 'deletarimagem':
+        $midiaController->removeMidiaAlbum($_GET['MidiaId'], $_GET['AlbumId']);
+        break;
+    case 'criaralbum':
+        $albumController->criarAlbum($_POST['nome_album'], $_POST['descricao_album']);
         break;
     default:
         $controller->login();

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 }, false);
 
 /* Função que muda a visualização dependendo da opção escolhida pelo usuário*/
-function exibirAlbum(numButtom, classeExibir) {
+function exibirAlbum(classeExibir, numButtom) {
     var classValues = document.getElementsByClassName(classeExibir);
     for (var i = 0; i < classValues.length; i++) {
         if (i == numButtom) {
@@ -27,11 +27,17 @@ function mudarCorButtonsMenu(classOfButtons, numButtom) {
     var colorValue = document.getElementsByClassName(classOfButtons);
     for (var i = 0; i < colorValue.length; i++) {
         if (i == numButtom) {
-            colorValue[i].style.background = "#ff6b00";
+            colorValue[i].style.background = "#387bfc";
         } else {
-            colorValue[i].style.background = "white";
+            colorValue[i].style.background = "black";
         }
     }
+}
+
+function blueFirst(classOfButtons, numButtom){
+    var colorValue = document.getElementsByClassName(classOfButtons);
+    var i = 0;
+    colorValue[i].style.background = "#387bfc";
 }
 
 function mostrarNomeArq() {

@@ -29,7 +29,7 @@
         }
 
         public static function findByIdAlbum($idAlbum){
-            $sql = 'SELECT * FROM midia WHERE album_idalbum = ?';
+            $sql = 'SELECT * FROM midia as m JOIN midia_album as ma ON m.idmidia = ma.idmidia WHERE ma.idalbum = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$idAlbum);
@@ -38,6 +38,61 @@
 
             if($stmt->rowCount()>0){
                 return $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return null; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function findByIdImagemAndAlbum($idMidia, $idAlbum){
+            $sql = 'SELECT * FROM midia WHERE album_idalbum = ? AND idmidia = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$idAlbum);
+            $stmt->bindValue(1,$idMidia);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return null; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function cadastrarEmALbum($idMidia, $idAlbum){
+            $sql = 'INSERT INTO midia_album VALUES(?, ?)';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$idMidia);
+            $stmt->bindValue(2, $idAlbum);
+
+            $stmt->execute();
+        }
+
+        public static function removeMidiaAlbum($idMidia, $idAlbum){
+            $sql = 'DELETE FROM `midia_album` WHERE `midia_album`.`idmidia` = ? AND `midia_album`.`idalbum` = ?';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$idMidia);
+            $stmt->bindValue(2, $idAlbum);
+
+            $stmt->execute();
+    }
+
+        public static function buscaMidiaPorNomeArquivo($nomeArquivo){
+            $sql = 'SELECT * FROM midia WHERE enderecoArquivo = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$nomeArquivo);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
             }
             else {
                 return null; // retorna um array vazio caso não tenha nenhum item

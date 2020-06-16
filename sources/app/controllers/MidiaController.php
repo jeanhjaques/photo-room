@@ -16,6 +16,8 @@ class MidiaController extends Controller{
 
         try {
                 MidiaDAO::create($novamidia);
+                $midiaBD = MidiaDAO::buscaMidiaPorNomeArquivo($novo_nome);
+                MidiaDAO::cadastrarEmAlbum($midiaBD['idmidia'], $idAlbum);
                 $this->paginadeusuario();
         }
         catch(PDOException $erro) {
@@ -25,5 +27,25 @@ class MidiaController extends Controller{
 
     public static function buscarImagens($idAlbum){
         return MidiaDAO::findByIdAlbum($idAlbum);
+    }
+
+    public function favoritar($idImagem){
+        MidiaDAO::cadastrarEmALbum($idImagem, $_SESSION['usuarioLogado']['idalbumfavorito']);
+        $this->paginadeusuario();
+    }
+
+    public function desfavoritar($idImagem){
+        MidiaDAO::removeMidiaAlbum($idImagem, $_SESSION['usuarioLogado']['idalbumfavorito']);
+        $this->paginadeusuario();
+    }
+
+    public function addEmAlbum($idImagem, $idAlbum){
+        MidiaDAO::cadastrarEmALbum($idImagem, $idAlbum);
+        $this->paginadeusuario();
+    }
+
+    public function removeMidiaAlbum($idImagem, $idAlbum){
+        MidiaDAO::removeMidiaAlbum($idImagem, $idAlbum);
+        $this->paginadeusuario();
     }
 }

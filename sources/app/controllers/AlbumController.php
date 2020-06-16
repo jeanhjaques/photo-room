@@ -19,4 +19,14 @@ class AlbumController extends Controller {
         $dadosAlbumFavorito = AlbumDAO::buscaAlbumFavoritoByIdDono($id);
         return $dadosAlbumFavorito['idalbum'];
     }
+
+    public function criarAlbum($nome, $descricao){
+        $novoAlbum = new Album($nome, $descricao, $_SESSION['usuarioLogado']['idusuario']);
+        AlbumDAO::create($novoAlbum);
+        $this->paginadeusuario();
+    }
+
+    public static  function buscarAlbuns(){
+       return AlbumDAO::readById($_SESSION['usuarioLogado']['idusuario']);
+    }
 }

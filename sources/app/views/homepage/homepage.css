@@ -47,7 +47,7 @@ input[type=search] {
 }
 
 input[type=search]:hover {
-    border-color: rgb(0, 255, 242);
+    border-color: #387bfc;
     border-style: solid;
 }
 
@@ -89,25 +89,28 @@ article h1 {
 }
 
 article .menu-principal {
+    font-family: 'Roboto', sans-serif;
     display: inline-grid;
     position: inherit;
-    background-color: transparent;
-    border-color: transparent;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border: none;
 }
 
 article .menu-principal:focus {
     border-top-color: transparent;
-    background-color: #ff6b00;
+    background-color: #387bfc;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
 
 article #btnpadrao {
-    background-color: #ff6b00;
+    background-color: #387bfc;
 }
 
 article .menu-principal:hover {
     border-color: transparent;
-    background-color: #ff6b00;
+    background-color: #387bfc;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
 
@@ -126,6 +129,10 @@ article .Albuns {
 
 article #padrao {
     display: block;
+}
+
+article p{
+    text-align: center;
 }
 
 
@@ -211,6 +218,10 @@ article .caixadeimagens figcaption{
 figcaption a{
     text-align: center;
 }
+
+article .CadastrarAlbum{
+    display: none;
+}
 .img-icone{
     align-content: center;
     display: flex;
@@ -244,7 +255,7 @@ figcaption a{
 }
 
 #btnupload {
-    background: #0073e6;
+    background: #387bfc;
     border-radius: 5px;
     border: none;
     width: 200px;
@@ -254,9 +265,9 @@ figcaption a{
 }
 
 #btnupload:hover {
-    background: #03c;
+    background: #387bfc;
     color: #fff;
-    box-shadow: #03c 0 0 2px;
+    box-shadow: #387bfc 0 0 2px;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -269,11 +280,49 @@ figcaption a{
     margin-left: 5px;
 }
 
-
-/*estilo do form provisório */
+/*estilo dos forms*/
 
 form {
     text-align: center;
+}
+
+/*estilo do form de cadastro de albuns */
+.formCadastrarAlbum{
+    text-align: center;
+    padding: 2px;
+    font-size: 14px;
+}
+
+.formCadastrarAlbum input{
+    width: 400px;
+    padding: 2px;
+    margin: 2px;
+    border: solid 1px black;
+}
+
+.formCadastrarAlbum input[type = submit]{
+    font-family: 'Roboto', sans-serif;
+    width: auto;
+    border: none;
+    border-radius: 3px;
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+}
+.formCadastrarAlbum input[type = submit]:hover{
+    background-color: #387bfc;
+}
+.formCadastrarAlbum input[type = submit]:focus{
+    background-color: #387bfc;
+}
+.formCadastrarAlbum textarea{
+    font-family: 'Roboto', sans-serif;
+    width: 400px;
+    max-width: 400px;
+    min-width: 400px;
+    padding: 2px;
+    margin: 2px;
+    border: solid 1px black;
 }
 
 @media screen and (max-width: 800px) {
