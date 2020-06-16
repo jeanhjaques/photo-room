@@ -15,7 +15,7 @@
     <body>
         <div class="login_page">
             <div class="box">
-                <h1>LOGO</h1>               
+                <img class="logo" src="public/img/logo.png";
                 <strong>                    
                     <?php
                         if(isset($_SESSION['loginErro'])){
@@ -37,7 +37,7 @@
             </div>
 
             <div class="box-criarConta">
-                <h1>LOGO</h1>
+                <img class="logo" src="public/img/logo.png";
                 <?php
                 if(isset($_SESSION['loginErro'])){
                     echo $_SESSION['loginErro'];
