@@ -83,6 +83,8 @@ require_once 'app/controllers/MidiaController.php';
             $imagens = false;
         }
 
+        /* Caso existirem imagens buscar e exibir-->*/
+
         if ($imagens != false) {
             foreach ($imagens as $imagem) {
                 echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('" . $posicao . "');\">
