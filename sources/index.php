@@ -1,9 +1,10 @@
 <?php
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 session_start();
 /**
  * Cria uma instância do controlador para uso
  */
+
 include_once('app/controllers/Controller.php');
 include_once('app/controllers/LoginController.php');
 include_once('app/controllers/UsuarioController.php');
@@ -19,6 +20,9 @@ $albumController = new AlbumController();
  * Seleciona a rota correta.
  Ex :http://localhost/resources/?action=login
  */
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
 switch ($_GET['action']) {
     case 'login':
         $controller->login();
