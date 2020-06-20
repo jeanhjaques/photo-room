@@ -8,9 +8,9 @@
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="app/views/login/login.css">        
+        <link rel="stylesheet" type="text/css" href="app/views/login/login1.css">        
         <script src="app/views/login/transacao.js" type="text/javascript"></script> 
-        <script src="app/views/login/login.js" type="text/javascript"></script>       
+        <script src="app/views/login/login.js" type="text/javascript"></script>      
     </head>
     <body>
         <div class="login_page">
@@ -37,22 +37,21 @@
             </div>
 
             <div class="box-criarConta">
-                <img class="logo" src="public/img/logo.png">
-                <?php
-                if(isset($_SESSION['loginErro'])){
-                    echo $_SESSION['loginErro'];
-                    unset($_SESSION['loginErro']);
-                }
-                ?>
+                <img class="logo" src="public/img/logo.png">                 
                 <form id="formCriarConta" action="index.php?action=cadastrar" method="post">
-                    <input type="text" id="name" name="name" placeholder="Nome" />
+                    <legend>*</legend>
+                    <input type="text" id="name" name="name" placeholder="Nome" />                    
                     <p class="erro-name"></p>
+                    <legend>*</legend>
                     <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
                     <p class="erro-sobrenome"></p>
+                    <legend>*</legend>
                     <input type="text" id="dataNascimento" name="dataNascimento" maxlength="10" onkeypress="return dateMask(this, event);" placeholder="Data Nascimento" />
                     <p class="erro-dataNascimento"></p>
+                    <legend>*</legend>
                     <input type="email" id="email" name="email" placeholder="Email" />
                     <p class="erro-email"></p>
+                    <legend>*</legend>
                     <input type="password" id="password" name="password" placeholder="Senha" />
                     <p class="erro-password"></p>                    
                     <input type="text" id="pais" name="pais" placeholder="País" />
@@ -79,6 +78,6 @@
                 </form>
                 <a onclick="btnLogin();">Voltar para login</a>
             </div>
-        </div>  
+        </div>        
     </body>
 </html>

@@ -45,6 +45,23 @@ error_reporting(E_ALL);
                return null;
            }
        }
+       
+       public static function findEmail($email){
+           $sql = 'SELECT email FROM usuario WHERE email = ?';
+           
+           $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1, $email);            
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC);
+            }
+            else{
+               return null;
+           }
+       }
 
 
         public function read(){

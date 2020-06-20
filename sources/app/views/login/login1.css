@@ -45,9 +45,16 @@ body {
     border-radius: 12px;
 }
 
-.msg strong{
-    color: red;
+.msg strong{    
     font-size: 20px;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: greenyellow;
 }
 
 /*-----------CriarConta--------------------*/
@@ -72,6 +79,12 @@ body {
     border-radius: 12px;
 }
 
+legend{
+    color: red;
+    font-size: 20px;
+    float: right; 
+    margin-right: 11%;
+}
 /*-----------nova senha--------------------*/
 
 .box-senha {
@@ -97,6 +110,7 @@ body {
 .box-senha div{
     margin-bottom: 3%;  
 }
+
 
 /*-------------------Geral------------------------------------------------------------*/
 a {
@@ -169,11 +183,11 @@ a:hover {
         height: 35vh;       
     }
     
-    .msg strong{
-        color: red;
+    .msg strong{        
         font-size: 12px;
     }
 }
+
 
 
 

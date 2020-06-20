@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("imagem-perfil").addEventListener("change", function() {
+        atribuirNome();
+    }, false);
+
+}, false);
+
 function dateMask(inputData, e) {
     if (document.all) // Internet Explorer
         var tecla = event.keyCode;
@@ -14,4 +21,8 @@ function dateMask(inputData, e) {
         return true;
     else
         return false;
+}
+
+function mudaCorMsg(){
+    
 }

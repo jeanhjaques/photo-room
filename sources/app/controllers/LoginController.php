@@ -14,21 +14,31 @@
                 $email, MD5($senha), $cidade, $estado, $pais);
 
             try {
-                UsuarioDAO::create($novousuario);
-                $fotoPerfil = 'usuario.png';                              
-                $usuarioCadastrado  = UsuarioDAO::find($email, MD5($senha));                                
-                $idAlbumPadrao = AlbumController::criarAlbumPadrao($usuarioCadastrado['idusuario']);
-                $idAlbumFavorito = AlbumController::criarAlbumFavorito($usuarioCadastrado['idusuario']);
-                $novousuario->setAlbumFavorito($idAlbumFavorito);
-                $novousuario->setAlbumPrincipal($idAlbumPadrao);
-                $novousuario->setId($usuarioCadastrado['idusuario']);
-                $novousuario->setFotoPerfil($fotoPerfil);                
-                UsuarioDAO::update($novousuario);
-                
-                $_SESSION['loginErro'] = "<strong>Usuario Cadastrado</strong>";
-            }
+                if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($dataNascimento)){
+                    if(UsuarioDAO::findEmail($email) == null){                    
+                        UsuarioDAO::create($novousuario);
+                        $fotoPerfil = 'usuario.png';                              
+                        $usuarioCadastrado  = UsuarioDAO::find($email, MD5($senha));                                
+                        $idAlbumPadrao = AlbumController::criarAlbumPadrao($usuarioCadastrado['idusuario']);
+                        $idAlbumFavorito = AlbumController::criarAlbumFavorito($usuarioCadastrado['idusuario']);
+                        $novousuario->setAlbumFavorito($idAlbumFavorito);
+                        $novousuario->setAlbumPrincipal($idAlbumPadrao);
+                        $novousuario->setId($usuarioCadastrado['idusuario']);
+                        $novousuario->setFotoPerfil($fotoPerfil);                
+                        UsuarioDAO::update($novousuario);
+
+                        $_SESSION['loginErro'] = "<strong class='success'>Usuario Cadastrado</strong>";
+                    }
+                    else{
+                        $_SESSION['loginErro'] = "<strong class='error'>Já existe usuário com esse email!</strong>";
+                    }
+                }
+                else{
+                    $_SESSION['loginErro'] = "<strong class='error'>Preencha os campos obrigatórios!</strong>";
+                }
+            }            
             catch(PDOException $erro) {
-                $_SESSION['loginErro'] = "<strong>Impossivel cadastradar</strong>";
+                $_SESSION['loginErro'] = "<strong class='error'>Impossivel cadastradar</strong>";
             }
             $this->login();
         }
@@ -43,7 +53,7 @@
             }
             else {
                 // header('Location: index.php?email=' . $_POST['email'] . '&mensagem=Usuário e/ou senha incorreta!');
-                $_SESSION['loginErro'] = "<strong>Erro ao tentar logar!!!</strong>";
+                $_SESSION['loginErro'] = "<strong class='error'>Erro ao tentar logar!!!</strong>";
                 $this->login();
             }
 
