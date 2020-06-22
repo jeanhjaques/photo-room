@@ -5,12 +5,13 @@
 
     class MidiaDAO{
         public static function create(Midia $midia){
-            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum) VALUES(current_timestamp , ?, ?)';
+            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum, extensao) VALUES(current_timestamp , ?, ?, ?)';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$midia->getEnderecoArquivo());
             $stmt->bindValue(2, $midia->getIdAlbum());
+            $stmt->bindValue(3, $midia->getExtensao());
 
             $stmt->execute();
         }
@@ -28,8 +29,24 @@
             }
         }
 
-        public static function findByIdAlbum($idAlbum){
-            $sql = 'SELECT * FROM midia as m JOIN midia_album as ma ON m.idmidia = ma.idmidia WHERE ma.idalbum = ?';
+        public static function findImgByIdAlbum($idAlbum){
+            $sql = 'SELECT * FROM midia as m JOIN midia_album as ma ON m.idmidia = ma.idmidia WHERE ma.idalbum = ? AND m.extensao = \'jpg\' OR m.extensao = \'png\'' ;
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1,$idAlbum);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return null; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function findVideoByIdAlbum($idAlbum){
+            $sql = 'SELECT * FROM midia as m JOIN midia_album as ma ON m.idmidia = ma.idmidia WHERE ma.idalbum = ? AND m.extensao = \'mp4\' OR m.extensao = \'avi\' oR m.extensao = \'mkv\'';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$idAlbum);

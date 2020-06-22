@@ -13,6 +13,7 @@ class MidiaController extends Controller{
         move_uploaded_file($imagem['tmp_name'], $diretorio . $novo_nome);
 
         $novamidia = new Midia($novo_nome, $idAlbum);
+        $novamidia->setExtensao($extensao);
 
         try {
                 MidiaDAO::create($novamidia);
@@ -26,7 +27,11 @@ class MidiaController extends Controller{
     }
 
     public static function buscarImagens($idAlbum){
-        return MidiaDAO::findByIdAlbum($idAlbum);
+        return MidiaDAO::findImgByIdAlbum($idAlbum);
+    }
+
+    public static function buscarVideos($idAlbum){
+        return MidiaDAO::findVideoByIdAlbum($idAlbum);
     }
 
     public function favoritar($idImagem){

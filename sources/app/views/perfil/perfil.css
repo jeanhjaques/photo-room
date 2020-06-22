@@ -80,7 +80,7 @@ footer {
 #btnSelecionar {
     padding: 5px;
     font-size: 18px;
-    background-color: #387bfc;
+    background-color: #ff00b7;
     float: right;
     border: none;
     outline: none;
@@ -95,7 +95,7 @@ footer {
 #btnAtualizar {
     padding: 5px;
     font-size: 18px;
-    background-color: #387bfc;
+    background-color: #ff00b7;
     border-radius: 10px 3px;
     border: none;
     outline: none;

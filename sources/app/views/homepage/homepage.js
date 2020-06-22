@@ -21,23 +21,65 @@ function exibirAlbum(classeExibir, numButtom) {
     }
 }
 
+function exibirAddImagem(){
+    var values = document.getElementsByClassName('CadastrarImagem');
+    var valorAtual = values[0].style.display;
+    if(valorAtual == "block"){
+        values[0].style.display = "none";
+    }
+    else{
+        values[0].style.display = "block";
+    }
+}
 
-/* Função que altera a cor dos botões dependendo o botão que foi clicado*/
+function exibirImagemOrVideo(numButtom) {
+    var imagens = document.getElementsByClassName('Imagensdoalbum');
+    var videos = document.getElementsByClassName('Videosdoalbum');
+        if (numButtom == 0) {
+            for (var i = 0; i < imagens.length; i++) {
+                imagens[i].style.display = "block";
+            }
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].style.display = "none";
+            }
+        }
+        else {
+            for (var i = 0; i < imagens.length; i++) {
+                imagens[i].style.display = "none";
+            }
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].style.display = "block";
+            }
+        }
+}
+
+
+/* Função que altera a cor dos botões dependendo o botão que foi clicado colocando fundo*/
 function mudarCorButtonsMenu(classOfButtons, numButtom) {
     var colorValue = document.getElementsByClassName(classOfButtons);
     for (var i = 0; i < colorValue.length; i++) {
         if (i == numButtom) {
-            colorValue[i].style.background = "#387bfc";
+            colorValue[i].style.background = "#ff00b7";
         } else {
             colorValue[i].style.background = "black";
         }
     }
 }
-
+/* Função que altera a cor dos botões dependendo o botão que foi clicado colocando borda*/
+function mudarCorButtonsMenuBorder(classOfButtons, numButtom) {
+    var colorValue = document.getElementsByClassName(classOfButtons);
+    for (var i = 0; i < colorValue.length; i++) {
+        if (i == numButtom) {
+            colorValue[i].style.borderColor = "#ff00b7";
+        } else {
+            colorValue[i].style.borderColor = "black";
+        }
+    }
+}
 function blueFirst(classOfButtons, numButtom){
     var colorValue = document.getElementsByClassName(classOfButtons);
     var i = 0;
-    colorValue[i].style.background = "#387bfc";
+    colorValue[i].style.background = "#ff00b7";
 }
 
 function mostrarNomeArq() {

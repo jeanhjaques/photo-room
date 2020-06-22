@@ -27,6 +27,8 @@ body {
 }
 
 .box {
+    padding: 2px;
+    padding-top: 15px;
     width: 35vw;
     height: 50vh;
     background: #1E1E1E;
@@ -126,7 +128,9 @@ a:hover {
 }
 
 .logo{
-    width: 18vw;            
+    width: 16vw;
+    margin:2px;
+    padding: 0;
 }
 
 .msg{

@@ -31,14 +31,16 @@ require_once 'app/controllers/MidiaController.php';
         </form>
     </div>
 
-    <!-- Menu Principal da página
-    <nav class="menuprincipal">
-        <ul>
-            <li><button class="menu-principal" id="btnpadrao" onclick="mudarCorButtonsMenu('menu-principal',0); exibirAlbum(0,'Albuns')" ><img class="imgmenuprincipal" src="public/img/tudo.png"></button></li>
-            <li><button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',1); exibirAlbum(1,'Albuns')" ><img class="imgmenuprincipal" src="public/img/favorito.png"></button></li>
-            <li><button class="menu-principal" onclick="mudarCorButtonsMenu('menu-principal',2); exibirAlbum(2,'Albuns')" ><img class="imgmenuprincipal" src="public/img/mais.png" onclick="createAlbum()"></button></li>
-        </ul>
-    </nav> -->
+    <div class="CadastrarImagem">
+        <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
+              enctype="multipart/form-data">
+                <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
+                       accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
+                <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
+                <input type="submit" value="Enviar" id="btnupload">
+        </form>
+    </div>
+
     <nav class="menuprincipal">
         <ul>
             <?php
@@ -57,16 +59,15 @@ require_once 'app/controllers/MidiaController.php';
         </ul>
     </nav>
 
-    <form id="formCadastrarImagemAlbumPadrao" action="index.php?action=cadastrarimagemalbumpadrao" method="post"
-          enctype="multipart/form-data">
-        <div class="divupload">
-            <span id="spupload">Selecione pela câmera</span>
-            <img src="public/img/camera32.png" alt="">
-            <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
-                   accept=".jpg,.png" placeholder="Slecionar Imagem"><br>
-            <input type="submit" value="Enviar" id="btnupload"><br>
-        </div>
-    </form>
+    <div class="divSeletorImgOrVideo">
+        <button class="seletorImgOrVideo" onclick="mudarCorButtonsMenuBorder('seletorImgOrVideo',0); exibirImagemOrVideo(0)"><img class="img-icone" id="imgorvideo" src="public/icones/imagem.png" alt="Imagens"></button><br>
+        <button class="seletorImgOrVideo" onclick="mudarCorButtonsMenuBorder('seletorImgOrVideo',1); exibirImagemOrVideo(1)"><img class="img-icone" id="imgorvideo" src="public/icones/video.png" alt="Videos"></button><br>
+        <button class="seletorImgOrVideo" onclick="exibirAddImagem()"><img class="img-icone"  id="imgorvideo" src="public/icones/addImagem.png" alt="Imagens"></button>
+    </div>
+
+    <script>
+        mudarCorButtonsMenuBorder('seletorImgOrVideo', 0);
+    </script>
 
     <!-- Bloco onde fica o albúm do usuário -->
     <?php
@@ -78,30 +79,57 @@ require_once 'app/controllers/MidiaController.php';
         echo "<div class=\"imagens\">";
         echo "<div class=\"caixadeimagens\">";
         $imagens = MidiaController::buscarImagens($album['idalbum']);
-        if ($imagens == null) {
-            echo "<h1>Álbum Vazio</h1>";
-            $imagens = false;
-        }
+        $videos = MidiaController::buscarVideos($album['idalbum']);
+
 
         /* Caso existirem imagens buscar e exibir-->*/
-
-        if ($imagens != false) {
-            foreach ($imagens as $imagem) {
-                echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('" . $posicao . "');\">
-                                            <img class=\"img-album\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
-                                            <br>
-                                            <figcaption class=\"texto\">
-                                                <a onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
-                                                <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
-                                                <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
-                                                <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
-                                                <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
-                                                
-                                            </figcaption>
-                                        </figure>";
-                $posicao++;
-            }
+        echo  "<div class=\"Imagensdoalbum\">";
+        if ($imagens == null) {
+            echo "<h1>Álbum não possui imagens</h1>";
+            $imagens = false;
         }
+            if ($imagens != false) {
+                foreach ($imagens as $imagem) {
+                    echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('" . $posicao . "');\">
+                                                <img class=\"img-album\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
+                                                <figcaption class=\"texto\">
+                                                    <a onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
+                                                    <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
+                                                    <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
+                                                    <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
+                                                    <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
+                                                    
+                                                </figcaption>
+                                            </figure>";
+                    $posicao++;
+                }
+            }
+        echo "</div>";
+            echo  "<div class=\"Videosdoalbum\">";
+        if($videos == null){
+            echo "<h1>Álbum não possui videos</h1>";
+            $videos = false;
+        }
+            if ($videos != false) {
+                    foreach ($videos as $imagem) {
+                        echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('" . $posicao . "');\">
+                            <video class=\"img-album\"  width=\"320\" height=\"240\" controls>
+				                <source src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
+			                </video>
+                                                        <figcaption class=\"texto\">
+                                                            <a onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
+                                                            <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
+                                                            <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
+                                                            <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
+                                                            <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
+                                                            
+                                                        </figcaption>
+                                                    </figure>";
+                        $posicao++;
+                    }
+                }
+        echo "</div>";
+
         echo "</div>";
         echo "</div>";
         echo "</div>";

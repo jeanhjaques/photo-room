@@ -10,10 +10,9 @@ body {
     background-color: white;
 }
 
-
 /* Barra de pesquisa */
 
-.espacobusca {
+.espacobusca{
     width: 100%;
     position: relative;
     height: 50px;
@@ -47,7 +46,7 @@ input[type=search] {
 }
 
 input[type=search]:hover {
-    border-color: #387bfc;
+    border-color: #ff00b7;
     border-style: solid;
 }
 
@@ -100,17 +99,17 @@ article .menu-principal {
 
 article .menu-principal:focus {
     border-top-color: transparent;
-    background-color: #387bfc;
+    background-color: #ff00b7;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
 
 article #btnpadrao {
-    background-color: #387bfc;
+    background-color: #ff00b7;
 }
 
 article .menu-principal:hover {
     border-color: transparent;
-    background-color: #387bfc;
+    background-color: #ff00b7;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.64);
 }
 
@@ -136,6 +135,34 @@ article p{
 }
 
 
+article .CadastrarImagem{
+    display: none;
+    padding: 10px;
+    margin: unset;
+    position: fixed;
+    top: 40%;
+    left: 32%;
+    float: center;
+    background-color: white;
+    box-shadow: 0px 0px 1em #666;
+    -webkit-box-shadow: 0px 0px 1em #666;
+    -moz-box-shadow: 0px 0px 1em #666;
+}
+
+.divBtnAddImagem{
+    text-align: center;
+}
+.btnAddImagem{
+    width: 45px;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+#imgBtnAddImagem{
+    width: 100%;
+}
+
+
 /* Albúm de fotos (caixa de imagens) */
 
 article .imagens {
@@ -149,10 +176,10 @@ article .caixadeimagens {
     background-color:white;
     padding-top: 5px;
     padding-bottom: 5px;
+
 }
 
 article .caixadeimagens .img-album{
-    background: #fff;
     border-color: #aaa #ccc #ddd #bbb;
     border-style: solid;
     border-width: 1px;
@@ -162,7 +189,9 @@ article .caixadeimagens .img-album{
     vertical-align: top;
     width: 150px;
     height: 150px;
+    background-color: black;
 }
+
 article .caixadeimagens .imagensdoalbum{
     display: inline-flex;
     width: 150px;
@@ -191,6 +220,14 @@ article .caixadeimagens figcaption{
     display: none;
     text-align: center;
     font-size: 12px;
+}
+
+article .Videosdoalbum{
+    display: none;
+}
+
+article .Imagensdoalbum{
+    display: block;
 }
 
 .iconeAddImagem{
@@ -233,31 +270,42 @@ article .CadastrarAlbum{
 	margin-right: auto;
 }
 
-.divupload {
-    margin-top: 1%;
-    margin-bottom: 1%;
-    background: #444;
-    width: 300px;
-    border-radius: 6px;
-    padding: 10px 3px 10px;
-    position: relative;
-    margin-left: 43%;
+#imgorvideo{
+    width: 30px;
 }
 
-.divupload img {
-    float: right;
+.seletorImgOrVideo{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 5px;
 }
 
-.divupload input[type=file] {
-    position: absolute;
-    right: 5px;
-    width: 40px;
-    height: 40px;
-    opacity: 0;
+.divSeletorImgOrVideo{
+    position: fixed;
+    top: 50%;
+    margin-top: -25px;
+    margin-left: 10px;
+}
+
+.seletorImgOrVideo:hover{
+    border-color: #ff00b7;
+}
+
+.seletorImgOrVideo:focus{
+    border-color: #ff00b7;
+}
+
+.seletorImgOrVideo:focus-visible{
+    border-color: #ff00b7;
+}
+
+.seletorImgOrVideo:enabled{
+    border-color: #ff00b7;
 }
 
 #btnupload {
-    background: #387bfc;
+    background: #ff00b7;
     border-radius: 5px;
     border: none;
     width: 200px;
@@ -267,20 +315,13 @@ article .CadastrarAlbum{
 }
 
 #btnupload:hover {
-    background: #387bfc;
+    background: #ff00b7;
     color: #fff;
-    box-shadow: #387bfc 0 0 2px;
+    box-shadow: #ff00b7 0 0 2px;
     cursor: pointer;
     transition: all 0.5s;
 }
 
-.divupload span {
-    color: #fff;
-    margin-top: 10px;
-    display: block;
-    float: left;
-    margin-left: 5px;
-}
 
 /*estilo dos forms*/
 
@@ -312,10 +353,10 @@ form {
     padding: 5px;
 }
 .formCadastrarAlbum input[type = submit]:hover{
-    background-color: #387bfc;
+    background-color: #ff00b7;
 }
 .formCadastrarAlbum input[type = submit]:focus{
-    background-color: #387bfc;
+    background-color: #ff00b7;
 }
 .formCadastrarAlbum textarea{
     font-family: 'Roboto', sans-serif;
@@ -346,26 +387,7 @@ form {
     #padrao h1 {
         font-size: 16px;
     }
-    .divupload {
-        margin-top: 1%;
-        margin-bottom: 1%;
-        width: 150px;
-        padding: 5px 2px 7px;
-        margin-left: 36%;
-    }
-    #btnupload {
-        width: 120px;
-        padding: 3px 0;
-        margin-top: 5px;
-        margin-left: 5px;
-    }
-    .divupload img {
-        width: 28px;
-        height: 25px;
-    }
-    .divupload span {
-        font-size: 10px;
-    }
+
 }
 
 @media screen and (min-width: 801px) and (max-width: 1440px) {
@@ -384,26 +406,5 @@ form {
     }
     #padrao h1 {
         font-size: 20px;
-    }
-    .divupload {
-        margin-top: 1%;
-        margin-bottom: 1%;
-        width: 200px;
-        padding: 10px 3px 10px;
-        margin-left: 43%;
-    }
-    #btnupload {
-        width: 170px;
-        padding: 4px 0;
-        margin-top: 5px;
-        margin-left: 5px;
-    }
-    .divupload img {
-        width: 30px;
-        height: 28px;
-    }
-    .divupload span {
-        font-size: 12px;
-        margin-left: 8px;
     }
 }
