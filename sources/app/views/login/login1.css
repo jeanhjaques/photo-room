@@ -144,16 +144,16 @@ a:hover {
 
 .btn-login {
     margin-bottom: 2%;
-    background-color: #050a9c;
+    background-color: #ff00b7;
     color: white;
     font-weight: bold;
-    border-color: #050a9c;
+    border-color: #ff00b7;
 }
 
 .btn-login:hover {
     cursor: pointer;
-    background-color: #05469c;
-    border-color: #05469c;
+    background-color: #ff00b7;
+    border-color: #ff00b7;
 }
 
 /*------------Para arquivo login.html, criarConta.html e novaSenha.html-------------*/
