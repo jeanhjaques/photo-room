@@ -24,13 +24,47 @@ function exibirAlbum(classeExibir, numButtom) {
 function exibirAddImagem(){
     var values = document.getElementsByClassName('CadastrarImagem');
     var valorAtual = values[0].style.display;
+    var imagensAlbum = document.getElementsByClassName('fotosAlbum');
+
+    imagensAlbum[0].style.display = "none";
+
+    // window.onclick = function(event) {
+    //     if (event.target == values) {
+    //     values[0].style.display = "none";
+    //     }
+    // }
+
     if(valorAtual == "block"){
         values[0].style.display = "none";
     }
     else{
         values[0].style.display = "block";
     }
+        
+    
 }
+
+function abrirAlbum(idAlbum){
+    var modalAlbum = document.getElementsByClassName('selecionarAlbum');
+    var imagensAlbum = document.getElementsByClassName('fotosAlbum');
+
+    modalAlbum[0].style.display = "none";
+    imagensAlbum[0].style.display = "block";
+
+
+}
+
+
+function fecharModelAlbum(){
+    var modal = document.getElementsByClassName('CadastrarImagem');
+
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal[0].style.display = "none";
+    }
+}
+
 
 function exibirImagemOrVideo(numButtom) {
     var imagens = document.getElementsByClassName('Imagensdoalbum');

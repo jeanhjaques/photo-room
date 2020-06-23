@@ -31,14 +31,43 @@ require_once 'app/controllers/MidiaController.php';
         </form>
     </div>
 
-    <div class="CadastrarImagem">
-        <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
-              enctype="multipart/form-data">
+    <!-- Adicionar imagem ao album como um modal -->
+    <div class="CadastrarImagem" >
+        <div class="modal-content">
+            <div class="selecionarAlbum">
+                <span class="close" onclick="fecharModelAlbum()" >&times;</span>
+                <span class="selecionarMidia">Selecione o Album para colocar uma mídia</span>
+                <?php
+                $albunsUsuario = AlbumController::buscarAlbuns();
+                ?> 
+                <ul class="exibicaoAlbum"> 
+                    <?php
+                foreach ($albunsUsuario as $album) {
+                    echo "<li>
+                    <button onclick=\"abrirAlbum(" . $album['idalbum'] . ")\"> 
+                    <img src=\"public/img/album.png\"  height=\"80\"  width=\"80\" > 
+                    <div> ". $album['nomealbum'] . "</div>
+                    </button>
+                    </li>";
+                }
+                echo "</ul>";
+                ?>
+            </div>
+
+            <div class="fotosAlbum">
+                <span class="close" onclick="fecharModelAlbum()">&times;</span>
+
+                <h1>AQUI</h1>
+            </div>
+       
+            <!-- <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
+            enctype="multipart/form-data">
                 <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
-                       accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
+                accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
                 <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
                 <input type="submit" value="Enviar" id="btnupload">
-        </form>
+            </form> -->
+        </div>
     </div>
 
     <nav class="menuprincipal">
@@ -57,7 +86,7 @@ require_once 'app/controllers/MidiaController.php';
                 blueFirst('menu-principal', 0);
             </script>
         </ul>
-    </nav>
+    </nav>  
 
     <div class="divSeletorImgOrVideo">
         <button class="seletorImgOrVideo" onclick="mudarCorButtonsMenuBorder('seletorImgOrVideo',0); exibirImagemOrVideo(0)"><img class="img-icone" id="imgorvideo" src="public/icones/imagem.png" alt="Imagens"></button><br>
@@ -113,7 +142,7 @@ require_once 'app/controllers/MidiaController.php';
             if ($videos != false) {
                     foreach ($videos as $imagem) {
                         echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('" . $posicao . "');\">
-                            <video class=\"img-album\"  width=\"320\" height=\"240\" controls>
+                                <video class=\"img-album\"  width=\"320\" height=\"240\" controls>
 				                <source src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
 			                </video>
                                                         <figcaption class=\"texto\">
