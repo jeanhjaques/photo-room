@@ -80,15 +80,31 @@ error_reporting(E_ALL);
         public static function atualizaFotoPerfil($nomefoto, $id){
             $sql = 'UPDATE usuario SET  endfotoperfil = ? WHERE idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
-
             $stmt->bindValue(1, $nomefoto);
-
             $stmt->bindValue(2, $id);
-
             $stmt->execute();
         }
 
-        public static function update(Usuario $usuario){
+
+        public static function atualizaPerfil($nomefoto, $nome, $sobrenome, $pais, $cidade, $telefone, $id) {
+            $sql = 'UPDATE usuario 
+                    SET  endfotoperfil = ?, nome = ?, sobrenome = ?, pais = ?, cidade = ?, telefone = ? 
+                    WHERE idusuario = ?';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->bindValue(1, $nomefoto); 
+            $stmt->bindValue(2, $nome); 
+            $stmt->bindValue(3, $sobrenome); 
+            $stmt->bindValue(4, $pais); 
+            $stmt->bindValue(5, $cidade); 
+            $stmt->bindValue(6, $telefone); 
+            $stmt->bindValue(7, $id); 
+            $stmt->execute();
+        }
+
+
+
+
+        public static function update(Usuario $usuario) {
             $sql = 'UPDATE usuario SET  nome = ?, sobrenome = ? , email = ?, senha = ?, 
                     cidade = ?, estado = ?, pais = ?, telefone = ?, idalbumprincipal = ?, 
                     idalbumfavorito = ?, dataNascimento = ?, endfotoperfil = ? WHERE idusuario = ?';
@@ -113,7 +129,7 @@ error_reporting(E_ALL);
 
         }
 
-        public function delete($idusuario){
+        public function delete($idusuario) {
             $sql = 'SELECT * FROM usuario WHERE idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->bindValue(1, $idusuario);

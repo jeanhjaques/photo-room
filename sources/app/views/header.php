@@ -14,6 +14,7 @@
                 <li><?php echo "<img class = \"imgperfil\" src=\"public/upload/".$_SESSION['usuarioLogado']['endfotoperfil']."\">"?></li>
                 <li><a href="index.php?action=paginadeusuario">Seu Álbum de Fotos</a></li>
                 <li><a href="index.php?action=perfil">Seu Perfil</a></li>
+                <li><a href="index.php?action=editarperfil">Editar Pefil</a></li>
                 <li><a href="index.php?action=login">Sair</a></li>
             </ul>
         </nav>

@@ -12,5 +12,8 @@ class Controller{
     public static function perfil(){
         require 'app/views/perfil/perfil.php';
     }
+    public static function editarperfil(){
+        require 'app/views/perfil/editarperfil.php';
+    }
   
 }

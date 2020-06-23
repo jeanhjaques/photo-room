@@ -40,8 +40,12 @@ switch ($_GET['action']) {
     case 'logar':
         $loginController->logar($_POST['email'], $_POST['senha']);
         break;
+    case 'editarperfil':
+        $controller->editarperfil();
+        break;
     case 'atualizarusuario':
-        $usuarioController->atualizarImagemPerfil($_FILES['imagem-perfil']);
+        $usuarioController->atualizarPerfil($_FILES['imagem-perfil'], $_POST['nome'], $_POST['sobrenome'], $_POST['email'], 
+                                            $_POST['pais'], $_POST['cidade'], $_POST['telefone'] );
         break;
     case 'cadastrarimagemalbumpadrao':
         $midiaController->cadastrarMidia($_FILES['nova-imagem'], $_SESSION['usuarioLogado']['idalbumprincipal']);

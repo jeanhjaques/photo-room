@@ -26,23 +26,14 @@
         <figure class="figure-perfil">
             <?php echo "<img class = \"img-perfil\" src=\"public/upload/".$_SESSION['usuarioLogado']['endfotoperfil']."\">"?>
         </figure>
-        
-        <form id="formImagemPerfil" action="index.php?action=atualizarusuario" method="post" enctype="multipart/form-data">
-            <div class="divSelecionaImg">
-                <span id="spResultado">&nbsp;</span>
-                <input type="button" name="btnSelecionar" id="btnSelecionar" value="Selecionar"/>
-            </div>         
+   
+    
 
-            <input class ="formInput" id="imagem-perfil" name="imagem-perfil" required="required" type="file" accept=".jpg,.png" placeholder="Selecionar Imagem"><br>
-
-            <input id="btnAtualizar" type="submit" value="Atualizar Imagem"><br>
-        </form>        
-        
         <!-- Informações do perfil do usuário -->
         <div class="dados">
             <div>
                 <label for="nome">Nome: </label>
-                <span> <?php echo $_SESSION['usuarioLogado']['nome']?></span>
+                <span> <?php echo $_SESSION['usuarioLogado']['nome']?> <?php echo $_SESSION['usuarioLogado']['sobrenome']?></span>
             </div>
             <div>
                 <label for="email">Email: </label>
