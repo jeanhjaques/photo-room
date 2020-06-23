@@ -34,7 +34,7 @@ class AlbumController extends Controller {
 
     public function registrarAlbumComCodigo($codigocompAlbum){
         $album = AlbumDAO::readByCodComp($codigocompAlbum);
-        AlbumDAO::cadastrarEmUsuario($_SESSION['usuarioLogado']['idusuairo'], $codigocompAlbum['idalbum'] );
-
+        AlbumDAO::cadastrarEmUsuario($_SESSION['usuarioLogado']['idusuario'], $album['idalbum'] );
+        $this->paginadeusuario();
     }
 }
