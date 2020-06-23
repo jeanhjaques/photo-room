@@ -53,7 +53,7 @@
             </div>
             <div>
                 <label for="telefone">Telefone: </label>
-                <span><?= empty($_SESSION['usuarioLogado']['telefone'])? "Não cadastrado ainda": $_SESSION['usuarioLogado']['telefone']?></span>
+                <span>Não Cadastrado ainda</span>
             </div>
         </div>
     </article>

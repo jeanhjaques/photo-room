@@ -75,7 +75,7 @@ require_once 'app/controllers/MidiaController.php';
     $posicao = 0;
     foreach ($albunsUsuario as $album) {
         echo "<div class=\"Albuns\">";
-        echo "<p><strong>Descrição: </strong>" . $album['descricao'] . "</p>";
+        echo "<div class=\"divDescricao\"><span class=\"Descricao\"> <span class='textoDescricao'>" . $album['descricao'] . "</span><img onclick=\"exbirCompartilharAlbum('" . $album['codCompartilhamento'] . "');\" class=\"imgBtnCompartilhar\"  src=\"public/icones/compartilhar.png\" alt=\"Compartilhar\"></button></span></div>";
         echo "<div class=\"imagens\">";
         echo "<div class=\"caixadeimagens\">";
         $imagens = MidiaController::buscarImagens($album['idalbum']);
@@ -140,6 +140,12 @@ require_once 'app/controllers/MidiaController.php';
     </script>
 
     <div class="Albuns">
+        <form class="formAlbumComCodigo" id="formAlbumComCodigo" action="index.php?action=addalbumcomcodigo" method="post">
+            <label for="codigocomp_album"></label>
+            <input id="codigocomp_album" name="codigocomp_album" required="required" type="text" placeholder="Inserir com código">
+            <input type="submit" value="Validar Código">
+        </form>
+
         <form class="formCadastrarAlbum" id="formCadastrarAlbum" action="index.php?action=criaralbum" method="post">
             <?php
             if (isset($_SESSION['cadastroAlbumErro'])) {
