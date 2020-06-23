@@ -20,6 +20,11 @@ class AlbumController extends Controller {
         return $dadosAlbumFavorito['idalbum'];
     }
 
+    public static function buscaDono($id){
+        $dados = UsuarioDAO::readByID($id);
+        return $dados['nome'];
+    }
+
     public function criarAlbum($nome, $descricao){
         $novoAlbum = new Album($nome, $descricao, $_SESSION['usuarioLogado']['idusuario']);
         AlbumDAO::create($novoAlbum);
@@ -34,7 +39,7 @@ class AlbumController extends Controller {
 
     public function registrarAlbumComCodigo($codigocompAlbum){
         $album = AlbumDAO::readByCodComp($codigocompAlbum);
-        AlbumDAO::cadastrarEmUsuario($_SESSION['usuarioLogado']['idusuairo'], $codigocompAlbum['idalbum'] );
-
+        AlbumDAO::cadastrarEmUsuario($_SESSION['usuarioLogado']['idusuario'], $album['idalbum'] );
+        $this->paginadeusuario();
     }
 }

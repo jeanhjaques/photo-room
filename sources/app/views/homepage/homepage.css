@@ -499,6 +499,7 @@ article .CompartilharAlbum h2{
     text-align: center;
     margin-top: 15px;
     margin-bottom: 1px;
+    font-size: 12px;
 }
 .Descricao{
     text-align: center;
@@ -506,13 +507,14 @@ article .CompartilharAlbum h2{
     border-width: 1px;
     border-style: solid;
     border-color: #ccc;
-    border-radius: 15px;
+    border-radius: 16px;
     display: inline-flex;
 }
 .textoDescricao{
-    margin-top: 5px;
+    margin-top: 6px;
     margin-right: 2px;
     vertical-align: center;
+    font-size: 14px;
 }
 
 .imgBtnCompartilhar{

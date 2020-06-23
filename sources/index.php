@@ -64,6 +64,7 @@ switch ($_GET['action']) {
         break;
     case 'addalbumcomcodigo':
         $albumController->registrarAlbumComCodigo($_POST['codigocomp_album']);
+        break;
     default:
         $controller->login();
 }
