@@ -53,20 +53,19 @@ require_once 'app/controllers/MidiaController.php';
                 echo "</ul>";
                 ?>
             </div>
-
+            
             <div class="fotosAlbum">
                 <span class="close" onclick="fecharModelAlbum()">&times;</span>
-
-                <h1>AQUI</h1>
+                <span class="selecionarMidia">Faça o Upload da mídia</span>
+                <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
+                enctype="multipart/form-data">
+                    <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
+                    accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
+                    <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
+                    <input type="submit" value="Enviar" id="btnupload">
+                </form>
             </div>
        
-            <!-- <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
-            enctype="multipart/form-data">
-                <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
-                accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
-                <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
-                <input type="submit" value="Enviar" id="btnupload">
-            </form> -->
         </div>
     </div>
 
