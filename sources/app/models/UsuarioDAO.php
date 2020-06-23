@@ -63,6 +63,23 @@ error_reporting(E_ALL);
            }
        }
 
+        public static function readByID($id){
+            $sql = 'SELECT * FROM usuario WHERE idusuario = ?';
+
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1, $id);
+
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetch(\PDO::FETCH_ASSOC);
+            }
+            else{
+                return null;
+            }
+        }
+
 
         public function read(){
             $sql = 'SELECT * FROM usuario';
