@@ -368,6 +368,49 @@ form {
     border: solid 1px black;
 }
 
+/* Definições para expansao */
+#videoExpansao{
+    align-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#expansao{
+    display: inline-flex;
+    position: absolute;
+    top:31%;
+    left:30%;
+    margin-top:-40px;
+    margin-left:-50px;
+    background-color: black;
+    width: 500px;
+}
+#captionExpansao{
+    box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.65);
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    background-color: white;
+    height: 420px;
+}
+
+.imgIconeExpansao{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+}
+
+#btnMinimizar{
+    border: none;
+    background: none
+}
+
+
 @media screen and (max-width: 800px) {
     input[type=search] {
         margin-top: 12px;
