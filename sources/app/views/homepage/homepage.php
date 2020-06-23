@@ -53,6 +53,10 @@ require_once 'app/controllers/MidiaController.php';
                 echo "</ul>";
                 ?>
             </div>
+        </div>
+    </div>
+
+
             
             <div class="fotosAlbum">
                 <span class="close" onclick="fecharModelAlbum()">&times;</span>
@@ -124,7 +128,7 @@ require_once 'app/controllers/MidiaController.php';
                                                 <figcaption class=\"texto\">
                                                     <a onclick=\"expandirImagem('" . $imagem['enderecoArquivo'] . "');\"\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
                                                     <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
-                                                    <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
+                                                    <a ><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
                                                     <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
                                                     <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
                                                     

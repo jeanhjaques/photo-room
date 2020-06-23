@@ -189,3 +189,7 @@ function exbirCompartilharAlbum($idCodigoAlbum){
 function minimizarCompartilhar() {
     document.getElementById('CompartilharAlbum').remove();
 }
+
+function adicionarImagemParaAlbum($id) {
+
+}
