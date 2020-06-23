@@ -93,7 +93,7 @@ require_once 'app/controllers/MidiaController.php';
                     echo "<figure class=\"imagensdoalbum\" onclick=\"aparecerMenuContexto('" . $posicao . "');\">
                                                 <img class=\"img-album\" src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
                                                 <figcaption class=\"texto\">
-                                                    <a onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
+                                                    <a onclick=\"expandirImagem('" . $imagem['enderecoArquivo'] . "');\"\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
                                                     <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
                                                     <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
                                                     <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
@@ -117,7 +117,7 @@ require_once 'app/controllers/MidiaController.php';
 				                <source src=\"public/upload/" . $imagem['enderecoArquivo'] . "\"alt=\"" . $imagem['enderecoArquivo'] . "\">
 			                </video>
                                                         <figcaption class=\"texto\">
-                                                            <a onclick=\"abrirImagem('public/upload/" . $imagem['enderecoArquivo'] . "', '" . $imagem['enderecoArquivo'] . "');\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
+                                                            <a onclick=\"expandirVideo('" . $imagem['enderecoArquivo'] . "');\"\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
                                                             <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
                                                             <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
                                                             <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
