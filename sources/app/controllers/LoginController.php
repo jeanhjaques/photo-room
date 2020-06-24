@@ -26,8 +26,8 @@
                         $novousuario->setId($usuarioCadastrado['idusuario']);
                         $novousuario->setFotoPerfil($fotoPerfil);                
                         UsuarioDAO::update($novousuario);
-                        AlbumDAO::cadastrarEmUsuario($novousuario->getId(), $idAlbumFavorito);
                         AlbumDAO::cadastrarEmUsuario($novousuario->getId(), $idAlbumPadrao);
+                        AlbumDAO::cadastrarEmUsuario($novousuario->getId(), $idAlbumFavorito);
 
                         $_SESSION['loginErro'] = "<strong class='success'>Usuario Cadastrado</strong>";
                     }
