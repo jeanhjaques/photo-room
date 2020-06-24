@@ -153,7 +153,8 @@ function expandirVideo(nomeImagem){
 }
 
 function expandirImagem(nomeImagem){
-    novohtml = "\t\t<figure id=\"expansao\">\n" +
+    novohtml = "" +
+        "\t\t<figure id=\"expansao\">\n" +
         "\t\t\t\t<img id=\"videoExpansao\" src=\"public/upload/"+nomeImagem+"\">\n" +
         "\t\t\t<figcaption  id=\"captionExpansao\">\n" +
         "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +

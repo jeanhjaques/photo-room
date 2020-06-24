@@ -60,7 +60,6 @@ input[type=search]:hover {
 article .menuprincipal {
     text-align: center;
     height: 100%;
-    position: relative;
 }
 
 article .menuprincipal ul {
@@ -466,6 +465,7 @@ article .CompartilharAlbum h2{
 
 /* Definições para expansao */
 #videoExpansao{
+    position: relative;
     align-content: center;
     text-align: center;
     padding: 0;
@@ -481,11 +481,11 @@ article .CompartilharAlbum h2{
     display: inline-flex;
     position: absolute;
     top:25%;
-    left:30%;
-    margin-top:-40px;
+    left:35%;
+    margin-top:-30px;
     margin-left:auto;
     background-color: black;
-    width: 500px;
+    width: 400px;
     box-shadow: -1px 2px 2px 2px rgb(0, 0, 0, 0.65);
     border-radius: 10px;
 }
@@ -495,7 +495,7 @@ article .CompartilharAlbum h2{
     font-size: 12px;
     padding: 5px;
     background-color: white;
-    height: 420px;
+    height: auto;
     border-radius: 10px;
 }
 
@@ -511,7 +511,7 @@ article .CompartilharAlbum h2{
 .divDescricao{
     text-align: center;
     margin-top: 15px;
-    margin-bottom: 1px;
+    margin-bottom: 5px;
     font-size: 12px;
 }
 .Descricao{
