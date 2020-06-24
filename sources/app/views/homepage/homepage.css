@@ -257,6 +257,10 @@ article .caixadeimagens figcaption{
     font-size: 12px;
 }
 
+article h1 h2 h3{
+    color: #ff00b7;
+}
+
 article .Videosdoalbum{
     display: none;
 }
@@ -450,6 +454,7 @@ article .CompartilharAlbum h1{
     text-align: center;
     font-size: 18px;
     font-weight: bold;
+    color: #ff00b7;
 }
 
 article .CompartilharAlbum h2{
@@ -541,6 +546,10 @@ article .CompartilharAlbum h2{
     box-shadow: 0px 0px 1em #666;
     -webkit-box-shadow: 0px 0px 1em #666;
     -moz-box-shadow: 0px 0px 1em #666;
+}
+
+.divformAdicionarImagemEmAlgumAlbum h1{
+    color:#ff00b7;
 }
 .divformAdicionarImagemEmAlgumAlbum input{
     font-size: 10px;
