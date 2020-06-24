@@ -21,7 +21,7 @@ header {
     margin: 0;
     padding-left: 5%;
     padding-right: 5%;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
     padding-top: 3px;
 }
 
@@ -53,6 +53,11 @@ header .menu ul li a:hover {
     color: #ff00b7;
 }
 
+article .menu ul .submenu{
+    display: none;
+}
+
+
 .imgperfil {
     vertical-align: -65%;
     width: 40px;
@@ -61,7 +66,7 @@ header .menu ul li a:hover {
 
 @media screen and (max-width: 800px) {
     .menu ul li {
-        font-size: 10px;
+        font-size: 20px;
     }
     .imgperfil {
         width: 35px;

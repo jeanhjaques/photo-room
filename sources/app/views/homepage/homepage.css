@@ -100,6 +100,7 @@ article .menu-principal {
     padding: 10px;
     border: none;
     margin: 0.1px;
+    margin-top: 10px;
     font-size: 14px;
 }
 
@@ -470,17 +471,23 @@ article .CompartilharAlbum h2{
     padding: 0;
     margin: 0;
     width: 100%;
+    border-color: white;
+    border-style: black;
+    border-size: 2px;
+    border-radius: 10px;
 }
 
 #expansao{
     display: inline-flex;
     position: absolute;
-    top:31%;
+    top:25%;
     left:30%;
     margin-top:-40px;
-    margin-left:-50px;
+    margin-left:auto;
     background-color: black;
     width: 500px;
+    box-shadow: -1px 2px 2px 2px rgb(0, 0, 0, 0.65);
+    border-radius: 10px;
 }
 #captionExpansao{
     box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.65);
@@ -489,6 +496,7 @@ article .CompartilharAlbum h2{
     padding: 5px;
     background-color: white;
     height: 420px;
+    border-radius: 10px;
 }
 
 .imgIconeExpansao{

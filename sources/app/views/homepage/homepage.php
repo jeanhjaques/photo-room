@@ -22,7 +22,7 @@ require_once 'app/controllers/MidiaController.php';
     ?>
 </header>
 <article>
-    <!-- Bloco que inclui a barra de pesquisa -->
+    <!-- Bloco que inclui a barra de pesquisa
     <div class="espacobusca">
         <form method="post" action="../controllers/loginController.php">
             <label for="pesquisa"></label>
@@ -30,7 +30,7 @@ require_once 'app/controllers/MidiaController.php';
             <button class="btnPesquisa" type="submit"></button>
         </form>
     </div>
-
+    -->
     <!-- Adicionar imagem ao album como um modal -->
     <div class="CadastrarImagem" >
         <div class="modal-content">
