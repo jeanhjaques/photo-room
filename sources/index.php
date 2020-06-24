@@ -65,6 +65,9 @@ switch ($_GET['action']) {
     case 'addalbumcomcodigo':
         $albumController->registrarAlbumComCodigo($_POST['codigocomp_album']);
         break;
+    case 'addmidiaemalbum':
+        $midiaController->addEmAlbum($_POST['idMidia'], $_POST['idAlbum']);
+        break;
     default:
         $controller->login();
 }
