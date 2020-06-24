@@ -23,39 +23,44 @@ function exibirAlbum(classeExibir, numButtom) {
 
 function exibirAddImagem(){
     var values = document.getElementsByClassName('CadastrarImagem');
-    var valorAtual = values[0].style.display;
     var imagensAlbum = document.getElementsByClassName('fotosAlbum');
+    var valorAtual = imagensAlbum[0].style.display;
+
+    values[0].style.display = "block";
+
+    imagensAlbum[0].style.display = "none";
 
     if(valorAtual == "block"){
-        values[0].style.display = "none";
     }
     else{
-        values[0].style.display = "block";
     }
-    imagensAlbum[0].style.display = "none";
         
     
 }
 
 function abrirAlbum(idAlbum){
-    var modalAlbum = document.getElementsByClassName('selecionarAlbum');
+    var modalAlbum = document.getElementsByClassName('CadastrarImagem');
     var imagensAlbum = document.getElementsByClassName('fotosAlbum');
     
     modalAlbum[0].style.display = "none";
     imagensAlbum[0].style.display = "block";
-
-
+    
+    
 }
 
 
 function fecharModelAlbum(){
     var modal = document.getElementsByClassName('CadastrarImagem');
-
-    var span = document.getElementsByClassName("close");
+    var imagensAlbum = document.getElementsByClassName('fotosAlbum');
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    var valorAtual = modal[0].style.display;
+
+    if(valorAtual == "block"){
         modal[0].style.display = "none";
     }
+    imagensAlbum[0].style.display = "none";
+    
+    
 }
 
 

@@ -140,8 +140,16 @@ article p{
     text-align: center;
 }
 
+.CadastrarImagem {
+    display: none;
+}
 
-article .CadastrarImagem{
+.fotosAlbum {
+    display: none;
+}
+
+/*Fazendo os modals de Album*/
+.modal{
     display: none;
     padding: 10px;
     margin: unset;
@@ -159,17 +167,17 @@ article .CadastrarImagem{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.CadastrarImagem .modal-content {
+.modal .modal-content {
     background-color: #fefefe;
     margin: 2% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid rgb(170, 167, 167);
-    width: 100%; /* Could be more or less, depending on screen size */
+    width: 90%; /* Could be more or less, depending on screen size */
     margin-left: 50px;
   }
     
   /* The Close Button */
-.CadastrarImagem .close {
+.close {
     color: rgb(233, 15, 15);
     float: right;
     font-size: 28px;
@@ -619,11 +627,11 @@ article .CompartilharAlbum h2{
 
   
   /* Modal Content/Box */
-  .CadastrarImagem .modal-content {
+.modal-content {
     background-color: #fefefe;
     margin: 2% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid rgb(15, 14, 14);
     width: 80%; /* Could be more or less, depending on screen size */
   }
 
@@ -645,7 +653,7 @@ article .CompartilharAlbum h2{
     align-content: center;
 }
 
-.selecionarMidia{
+.textoMidia{
     color: #f705b2;
     font-size: 26px;
     font-family: 'Roboto', sans-serif;

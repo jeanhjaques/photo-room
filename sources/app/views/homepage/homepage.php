@@ -32,38 +32,41 @@ require_once 'app/controllers/MidiaController.php';
     </div>
     -->
     <!-- Adicionar imagem ao album como um modal -->
-    <div class="CadastrarImagem" >
+    <div class="CadastrarImagem modal" >
         <div class="modal-content">
-            <div class="selecionarAlbum">
-                <span class="close" onclick="fecharModelAlbum()" >&times;</span>
-                <span class="selecionarMidia">Selecione o Album para colocar uma mídia</span>
+            <span class="close" onclick="fecharModelAlbum()" >&times;</span>
+            <span class="textoMidia">Selecione o Album para colocar uma mídia</span>
+            <?php
+            $albunsUsuario = AlbumController::buscarAlbuns();
+            ?> 
+            <ul class="exibicaoAlbum"> 
                 <?php
-                $albunsUsuario = AlbumController::buscarAlbuns();
-                ?> 
-                <ul class="exibicaoAlbum"> 
-                    <?php
-                foreach ($albunsUsuario as $album) {
-                    echo "<li>
-                    <button onclick=\"abrirAlbum(" . $album['idalbum'] . ")\"> 
-                        <img src=\"public/img/album.png\"  height=\"80\"  width=\"80\" > 
-                        <div> ". $album['nomealbum'] . "</div>
-                    </button>
-                    </li>";
-                }
-                echo "</ul>";
-                ?>
-            </div>
-            <div class="fotosAlbum">
-                <span class="close" onclick="fecharModelAlbum()">&times;</span>
-                <span class="selecionarMidia">Faça o Upload da mídia</span>
-                <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
-                enctype="multipart/form-data">
-                    <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
-                    accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
-                    <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
-                    <input type="submit" value="Enviar" id="btnupload">
-                </form>
-            </div>
+            foreach ($albunsUsuario as $album) {
+                echo "<li>
+                <button onclick=\"abrirAlbum(" . $album['idalbum'] . ")\"> 
+                    <img src=\"public/img/album.png\"  height=\"80\"  width=\"80\" > 
+                    <div> ". $album['nomealbum'] . "</div>
+                </button>
+                </li>";
+            }
+            echo "</ul>";
+            ?>
+            
+        </div>
+    </div>
+
+
+    <div class="fotosAlbum modal" >
+        <div class="modal-content">
+            <span class="close" onclick="fecharModelAlbum()">&times;</span>
+            <span class="textoMidia">Faça o Upload da mídia</span>
+            <form action="index.php?action=cadastrarimagemalbumpadrao" method="post"
+            enctype="multipart/form-data">
+                <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
+                accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
+                <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
+                <input type="submit" value="Enviar" id="btnupload">
+            </form>
         </div>
     </div>
 
