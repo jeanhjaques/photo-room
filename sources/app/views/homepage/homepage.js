@@ -190,6 +190,14 @@ function minimizarCompartilhar() {
     document.getElementById('CompartilharAlbum').remove();
 }
 
-function adicionarImagemParaAlbum($id) {
+function adicionarImagemParaAlbum(idImagem) {
+    novohtml = "<input id=\"idMidia\" name=\"idMidia\" type=\"hidden\" value=\""+idImagem+"\">";
+    document.querySelector('.formAdicionarImagemEmAlbum').insertAdjacentHTML('afterbegin', novohtml);
+    var values = document.getElementsByClassName("divformAdicionarImagemEmAlgumAlbum");
+    values[0].style.display = "block";
+}
 
+function ocultarMenuSelecaoAlbum(){
+    var values = document.getElementsByClassName("divformAdicionarImagemEmAlgumAlbum");
+    values[0].style.display = "none";
 }

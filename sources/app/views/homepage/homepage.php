@@ -55,9 +55,6 @@ require_once 'app/controllers/MidiaController.php';
             </div>
         </div>
     </div>
-
-
-            
             <div class="fotosAlbum">
                 <span class="close" onclick="fecharModelAlbum()">&times;</span>
                 <span class="selecionarMidia">Faça o Upload da mídia</span>
@@ -69,9 +66,6 @@ require_once 'app/controllers/MidiaController.php';
                     <input type="submit" value="Enviar" id="btnupload">
                 </form>
             </div>
-       
-        </div>
-    </div>
 
     <nav class="menuprincipal">
         <ul>
@@ -89,7 +83,22 @@ require_once 'app/controllers/MidiaController.php';
                 blueFirst('menu-principal', 0);
             </script>
         </ul>
-    </nav>  
+    </nav>
+
+    <div class="divformAdicionarImagemEmAlgumAlbum">
+        <h1>Escolha um Álbum</h1>
+        <form class="formAdicionarImagemEmAlbum" action="index.php?action=addmidiaemalbum" method="post">
+            <?php
+            $albunsUsuario = AlbumController::buscarAlbuns();
+            foreach ($albunsUsuario as $album) {
+                echo "<input type=\"radio\" id=\"idAlbum\" name=\"idAlbum\" value=\"".$album['idalbum']."\">".$album['nomealbum']."";
+            }
+            ?>
+            <br>
+            <button id="btnupload" onclick="ocultarMenuSelecaoAlbum()">Cancelar</button>
+            <input type="submit" value="Adicionar" id="btnupload">
+        </form>
+    </div>
 
     <div class="divSeletorImgOrVideo">
         <button class="seletorImgOrVideo" onclick="mudarCorButtonsMenuBorder('seletorImgOrVideo',0); exibirImagemOrVideo(0)"><img class="img-icone" id="imgorvideo" src="public/icones/imagem.png" alt="Imagens"></button><br>
@@ -114,7 +123,6 @@ require_once 'app/controllers/MidiaController.php';
         $imagens = MidiaController::buscarImagens($album['idalbum']);
         $videos = MidiaController::buscarVideos($album['idalbum']);
 
-
         /* Caso existirem imagens buscar e exibir-->*/
         echo  "<div class=\"Imagensdoalbum\">";
         if ($imagens == null) {
@@ -128,7 +136,7 @@ require_once 'app/controllers/MidiaController.php';
                                                 <figcaption class=\"texto\">
                                                     <a onclick=\"expandirImagem('" . $imagem['enderecoArquivo'] . "');\"\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
                                                     <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
-                                                    <a ><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
+                                                    <a onclick=\"adicionarImagemParaAlbum('" . $imagem['idmidia'] . "')\" ><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
                                                     <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
                                                     <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
                                                     

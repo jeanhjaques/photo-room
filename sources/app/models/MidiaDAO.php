@@ -83,7 +83,7 @@
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
-            $stmt->bindValue(1,$idMidia);
+            $stmt->bindValue(1, $idMidia);
             $stmt->bindValue(2, $idAlbum);
 
             $stmt->execute();
