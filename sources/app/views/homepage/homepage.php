@@ -53,8 +53,6 @@ require_once 'app/controllers/MidiaController.php';
                 echo "</ul>";
                 ?>
             </div>
-        </div>
-    </div>
             <div class="fotosAlbum">
                 <span class="close" onclick="fecharModelAlbum()">&times;</span>
                 <span class="selecionarMidia">Faça o Upload da mídia</span>
@@ -66,6 +64,8 @@ require_once 'app/controllers/MidiaController.php';
                     <input type="submit" value="Enviar" id="btnupload">
                 </form>
             </div>
+        </div>
+    </div>
 
     <nav class="menuprincipal">
         <ul>
