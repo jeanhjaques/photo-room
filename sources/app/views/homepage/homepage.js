@@ -47,7 +47,7 @@ function exibirAddImagem(){
 function abrirAlbum(idAlbum){
     var modalAlbum = document.getElementsByClassName('selecionarAlbum');
     var imagensAlbum = document.getElementsByClassName('fotosAlbum');
-
+    var estado = modalAlbum
     modalAlbum[0].style.display = "none";
     imagensAlbum[0].style.display = "block";
 

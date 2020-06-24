@@ -45,8 +45,8 @@ require_once 'app/controllers/MidiaController.php';
                 foreach ($albunsUsuario as $album) {
                     echo "<li>
                     <button onclick=\"abrirAlbum(" . $album['idalbum'] . ")\"> 
-                    <img src=\"public/img/album.png\"  height=\"80\"  width=\"80\" > 
-                    <div> ". $album['nomealbum'] . "</div>
+                        <img src=\"public/img/album.png\"  height=\"80\"  width=\"80\" > 
+                        <div> ". $album['nomealbum'] . "</div>
                     </button>
                     </li>";
                 }
