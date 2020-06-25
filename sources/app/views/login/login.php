@@ -40,19 +40,21 @@
                 <img class="logo" src="public/img/logo.png">                 
                 <form id="formCriarConta" action="index.php?action=cadastrar" method="post">
                     <legend>*</legend>
-                    <input type="text" id="name" name="name" placeholder="Nome" />                    
+                    <input type="text" id="name" name="name" placeholder="Nome" required/>                    
                     <p class="erro-name"></p>
                     <legend>*</legend>
-                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" />
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required/>
                     <p class="erro-sobrenome"></p>
                     <legend>*</legend>
-                    <input type="text" id="dataNascimento" name="dataNascimento" maxlength="10" onkeypress="return dateMask(this, event);" placeholder="Data Nascimento" />
+                    <input type="text" id="dataNascimento" name="dataNascimento" maxlength="10" onkeypress="return dateMask(this, event);" placeholder="Data Nascimento" required/>
                     <p class="erro-dataNascimento"></p>
                     <legend>*</legend>
-                    <input type="email" id="email" name="email" placeholder="Email" />
+                    <input type="email" id="email" name="email" placeholder="Email" required/>
+                    <p class="erro-email"></p>
+                    <input type="text" id="telefone" name="telefone"  onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" maxlength="15" placeholder="Tel. Celular"/>
                     <p class="erro-email"></p>
                     <legend>*</legend>
-                    <input type="password" id="password" name="password" placeholder="Senha" />
+                    <input type="password" id="password" name="password" placeholder="Senha" required/>
                     <p class="erro-password"></p>                    
                     <input type="text" id="pais" name="pais" placeholder="País" />
                     <p class="erro-pais"></p>

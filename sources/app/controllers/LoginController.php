@@ -8,10 +8,10 @@
 
     class LoginController extends Controller {
 
-        public function cadastrar($nome, $sobrenome, $dataNascimento, $email, $senha, $pais, $estado, $cidade){
+        public function cadastrar($nome, $sobrenome, $dataNascimento, $email, $telefone, $senha, $pais, $estado, $cidade){
 
             $novousuario = new Usuario($nome, $sobrenome, $dataNascimento,
-                $email, MD5($senha), $cidade, $estado, $pais);
+                $email, $telefone, MD5($senha), $cidade, $estado, $pais);
 
             try {
                 if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($dataNascimento)){

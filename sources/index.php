@@ -34,7 +34,7 @@ switch ($_GET['action']) {
         $controller->perfil();
         break;
     case 'cadastrar':
-        $loginController->cadastrar($_POST['name'], $_POST['sobrenome'], $_POST['dataNascimento'], $_POST['email'], $_POST['password'],
+        $loginController->cadastrar($_POST['name'], $_POST['sobrenome'], $_POST['dataNascimento'], $_POST['email'], $_POST['telefone'], $_POST['password'],
             $_POST['pais'], $_POST['estado'], $_POST['cidade']);
         break;
     case 'logar':

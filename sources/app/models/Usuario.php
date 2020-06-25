@@ -31,12 +31,13 @@ error_reporting(E_ALL);
           * @param $pais
           */
 
-         public function __construct($nome, $sobrenome, $dataNascimento, $email, $senha, $cidade, $estado, $pais)
+         public function __construct($nome, $sobrenome, $dataNascimento, $email, $telefone, $senha, $cidade, $estado, $pais)
          {
              $this->nome = $nome;
              $this->sobrenome = $sobrenome;
              $this->dataNascimento = $dataNascimento;
              $this->email = $email;
+             $this->telefone = $telefone;
              $this->senha = $senha;
              $this->cidade = $cidade;
              $this->estado = $estado;
