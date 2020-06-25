@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <label for="telefone">Telefone: </label>
-                    <input type="text" name="telefone" id="" value="<?php echo $_SESSION['usuarioLogado']['telefone']?>">
+                    <input type="text" name="telefone" id="" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);"  maxlength="15" value="<?php echo $_SESSION['usuarioLogado']['telefone']?>">
                 </div>
             </div>
             <br>
