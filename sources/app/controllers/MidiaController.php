@@ -11,8 +11,10 @@ class MidiaController extends Controller{
         $novo_nome = $data . "." . $extensao;
         $diretorio = "public/upload/";
         move_uploaded_file($imagem['tmp_name'], $diretorio . $novo_nome);
-
+        $tamanho = filesize($diretorio.$novo_nome);
+        $tamanhoMB = $this->formatBytes($tamanho, 2);
         $novamidia = new Midia($novo_nome, $idAlbum);
+        $novamidia->setTamanho($tamanhoMB);
         $novamidia->setExtensao($extensao);
 
         try {
@@ -52,5 +54,13 @@ class MidiaController extends Controller{
     public function removeMidiaAlbum($idImagem, $idAlbum){
         MidiaDAO::removeMidiaAlbum($idImagem, $idAlbum);
         $this->paginadeusuario();
+    }
+
+    public static function formatBytes($size, $precision = 2)
+    {
+        $base = log($size, 1024);
+        $suffixes = array('', 'K', 'M', 'G', 'T');
+
+        return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
     }
 }

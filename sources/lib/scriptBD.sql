@@ -49,7 +49,7 @@ CREATE TABLE `midia` (
   `datadeenvio` date DEFAULT NULL,
   `enderecoArquivo` varchar(100) NOT NULL,
   `descricao` text DEFAULT NULL,
-  `tamanho` int(11) DEFAULT NULL,
+  `tamanho` float DEFAULT NULL,
   `extensao` varchar(45) DEFAULT NULL,
   `resolucao` varchar(45) DEFAULT NULL,
   `duracao` varchar(45) DEFAULT NULL,
