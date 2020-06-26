@@ -175,8 +175,8 @@ function expandirImagem(nomeImagem){
 function adicionaDetalhes(datadeenvio, descricao){
     novohtml = "" +
         "\t\t<figure id=\"expansao\">\n" +
-        "\t\t\t\t<span>" + datadeenvio + "</span>\n" +
-        "\t\t\t<figcaption  id=\"captionExpansao\">\n" +
+        "\t\t\t\t<div id=\"detalhesExpansao\"> Data de envio" + datadeenvio + "\nDescrição:\n" + descricao+ "</div>\n" +
+        "\t\t\t<figcaption  id=\"captionExpansao\" style=\"float:right;\">\n" +
         "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>\n" +

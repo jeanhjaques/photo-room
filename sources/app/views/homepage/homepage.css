@@ -485,6 +485,21 @@ article .CompartilharAlbum h2{
     border-radius: 10px;
 }
 
+#detalhesExpansao {
+    position: relative;
+    align-content: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: white;
+    color: black;
+    border-color: white;
+    border-style: black;
+    border-radius: 10px;
+
+}
+
 #expansao{
     display: inline-flex;
     position: absolute;
