@@ -169,27 +169,27 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `album`
 --
 ALTER TABLE `album`
-  ADD CONSTRAINT `fk_album_usuario` FOREIGN KEY (`usuario_idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_album_usuario` FOREIGN KEY (`usuario_idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `midia`
 --
 ALTER TABLE `midia`
-  ADD CONSTRAINT `midia_ibfk_1` FOREIGN KEY (`album_idalbum`) REFERENCES `album` (`idalbum`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `midia_ibfk_1` FOREIGN KEY (`album_idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON  UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `midia_album`
 --
 ALTER TABLE `midia_album`
-  ADD CONSTRAINT `fk_album` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_midia` FOREIGN KEY (`idmidia`) REFERENCES `midia` (`idmidia`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_album` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_midia` FOREIGN KEY (`idmidia`) REFERENCES `midia` (`idmidia`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `usuario_album`
 --
 ALTER TABLE `usuario_album`
-  ADD CONSTRAINT `usuario_album_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`),
-  ADD CONSTRAINT `usuario_album_ibfk_2` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`);
+  ADD CONSTRAINT `usuario_album_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `usuario_album_ibfk_2` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE CASCADE;;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -28,9 +28,9 @@ class AlbumController extends Controller {
     public function criarAlbum($nome, $descricao){
         $novoAlbum = new Album($nome, $descricao, $_SESSION['usuarioLogado']['idusuario']);
         AlbumDAO::create($novoAlbum);
-        $this->paginadeusuario();
         $albumBD = AlbumDAO::readByIdDonoAndNome($nome, $_SESSION['usuarioLogado']['idusuario']);
         AlbumDAO::cadastrarEmUsuario($_SESSION['usuarioLogado']['idusuario'], $albumBD['idalbum']);
+        $this->paginadeusuario();
     }
 
     public static  function buscarAlbuns(){

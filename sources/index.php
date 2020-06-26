@@ -83,6 +83,9 @@ switch ($_GET['action']) {
     case 'dashboardalbunsusuarios':
         $controller->dashboardAlbunsUsuarios();
         break;
+    case 'deletarconta':
+        $usuarioController->deletarContaUsuarioLogado();
+        break;
     default:
         $controller->login();
 }

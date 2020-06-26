@@ -159,8 +159,8 @@ error_reporting(E_ALL);
 
         }
 
-        public function delete($idusuario) {
-            $sql = 'SELECT * FROM usuario WHERE idusuario = ?';
+        public static function delete($idusuario) {
+            $sql = 'DELETE FROM usuario WHERE idusuario = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->bindValue(1, $idusuario);
             $stmt->execute();

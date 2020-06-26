@@ -50,4 +50,16 @@
         public static  function consultaTodosDadosUsuariosAlbum(){
             return UsuarioDAO::readUsuarioAlbum();
         }
+
+        public function deletarContaUsuarioLogado(){
+            try{
+                UsuarioDAO::delete($_SESSION['usuarioLogado']['idusuario']);
+                $_SESSION['loginErro'] = "<strong class='error'>Seu perfil foi deletado com sucesso!</strong>";
+                $this->login();
+            }
+            catch (PDOException $erro){
+                $this->perfil();
+                echo "<h1>Não foi possível deletar sua conta, tente novamente mais tarde</h1>";
+            }
+            }
     }
