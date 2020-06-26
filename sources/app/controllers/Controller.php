@@ -28,19 +28,51 @@ class Controller{
     }
 
     public static function dashboardAlbuns(){
-        require 'app/views/dashboard/dashboardAlbuns.php';
+        if($_SESSION['usuarioLogado']['admin'] != "1"){
+            require 'app/views/homepage/homepage.php';
+            echo "<script>
+                alert(\"Você não é um administrador\");
+            </script>";
+        }
+        else {
+            require 'app/views/dashboard/dashboardAlbuns.php';
+        }
     }
 
     public static function dashboardMidias(){
-        require 'app/views/dashboard/dashboardMidias.php';
+        if($_SESSION['usuarioLogado']['admin'] != "1"){
+            require 'app/views/homepage/homepage.php';
+            echo "<script>
+                alert(\"Você não é um administrador\");
+            </script>";
+        }
+        else {
+            require 'app/views/dashboard/dashboardMidias.php';
+        }
     }
 
     public static function dashboardMidiasAlbuns(){
-        require 'app/views/dashboard/dashboardMidiasAlbum.php';
+        if($_SESSION['usuarioLogado']['admin'] != "1"){
+            require 'app/views/homepage/homepage.php';
+            echo "<script>
+                alert(\"Você não é um administrador\");
+            </script>";
+        }
+        else {
+            require 'app/views/dashboard/dashboardMidiasAlbum.php';
+        }
     }
 
     public static function dashboardAlbunsUsuarios(){
-        require 'app/views/dashboard/dashboardAlbunsUsuario.php';
+        if($_SESSION['usuarioLogado']['admin'] != "1"){
+            require 'app/views/homepage/homepage.php';
+            echo "<script>
+                alert(\"Você não é um administrador\");
+            </script>";
+        }
+        else {
+            require 'app/views/dashboard/dashboardAlbunsUsuario.php';
+        }
     }
   
 }
