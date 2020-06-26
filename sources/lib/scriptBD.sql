@@ -86,7 +86,8 @@ CREATE TABLE `usuario` (
   `endfotoperfil` varchar(45) DEFAULT NULL,
   `idalbumprincipal` varchar(45) DEFAULT NULL,
   `idalbumfavorito` varchar(45) NOT NULL,
-  `dataNascimento` varchar(45) DEFAULT NULL
+  `dataNascimento` varchar(45) DEFAULT NULL,
+  `admin` boolean DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

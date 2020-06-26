@@ -20,7 +20,6 @@
     <article>
         <div class="titulo">
             <h1>Editar do perfil</h1>
-            <hr>
         </div>
         <!-- Imagem de perfil do usuário -->
         <figure class="figure-perfil">

@@ -63,10 +63,15 @@ nav h2{
     color: #ff00b7;
 }
 nav a{
+    position: relative;
     font-size: 16px;
     text-decoration: none;
     color: white;
-    padding: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+nav a:hover{
+    color:  #ff00b7;
 }
 .selecionado{
     color: #ff00b7;

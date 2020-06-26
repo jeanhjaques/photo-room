@@ -15,6 +15,24 @@ article {
     justify-content: center;
 }
 
+article #btnEditar{
+    background: #ff00b7;
+    border-radius: 5px;
+    border: none;
+    width: 80px;
+    padding: 5px 0;
+    color: white;
+}
+
+article #btnEditar:hover {
+    background: #000000;
+    color: #fff;
+    box-shadow: #000000 0 0 2px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+
 
 /* Imagem do perfil do usuario */
 

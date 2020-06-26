@@ -16,7 +16,15 @@ class Controller{
         require 'app/views/perfil/editarperfil.php';
     }
     public static function dashboard(){
-        require 'app/views/dashboard/dashboardUsuarios.php';
+        if($_SESSION['UsarioLogado']['admin']==null || $_SESSION['UsarioLogado']['admin']== "false" ){
+            require 'app/views/homepage/homepage.php';
+            echo "<script>
+                alert(\"Você não é um administrador\");
+            </script>";
+        }
+        else {
+            require 'app/views/dashboard/dashboardUsuarios.php';
+        }
     }
 
     public static function dashboardAlbuns(){

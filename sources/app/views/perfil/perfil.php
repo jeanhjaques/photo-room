@@ -20,14 +20,13 @@
     <article>
         <div class="titulo">
             <h1>Informações do perfil</h1>
-            <hr>
         </div>
         <!-- Imagem de perfil do usuário -->
         <figure class="figure-perfil">
             <?php echo "<img class = \"img-perfil\" src=\"public/upload/".$_SESSION['usuarioLogado']['endfotoperfil']."\">"?>
         </figure>
-   
-    
+
+        <a  href="index.php?action=editarperfil"><button id="btnEditar">Editar</button></a>
 
         <!-- Informações do perfil do usuário -->
         <div class="dados">

@@ -8,7 +8,7 @@ require_once 'app/controllers/MidiaController.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Photo Room</title>
     <link href="app/views/homepage/homepage.css" rel="stylesheet">
     <link rel="stylesheet" href="app/views/homepage/img.css">
     <script src="app/views/homepage/scripts.js"></script>
