@@ -19,20 +19,22 @@ header {
     background-size: 150px;
     background-repeat: no-repeat;
     color: white;
-    padding-bottom: 4px;
+    padding-bottom: 20px;
     padding-top: 3px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
+    height: 35px;
 }
 
 header nav{
     position: fixed;
     margin-left: 85%;
+    margin-top: 3px;
 }
 
 .nomeUsuario{
     position: fixed;
-    margin-left: -120px;
-    margin-top: 10px;
+    margin-left: -200px;
+    margin-top: 12px;
 }
 
 /* Menu do cabecalho */
@@ -103,5 +105,25 @@ header .menu li .btnComIcone{
 @media screen and (max-width: 800px) {
     header{
         background-position-x: 30px;
+        background-position-y: 15px;
+        background-size: 100px;
     }
+
+    .nomeUsuario{
+        position: fixed;
+        margin-left: -150px;
+        margin-top: 12px;
+        font-size: 12px;
+    }
+
+    header .menu li .icone{
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border-radius: 100%;
+        margin-right: 5px;
+        margin-left: -10px;
+    }
+
 }

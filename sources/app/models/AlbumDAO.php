@@ -88,6 +88,17 @@
             }
         }
 
+        public static function desvincularAlbum($idAlbum, $idUsuario){
+            $sql = "DELETE FROM usuario_album WHERE idalbum = ? AND idusuario = ? ";
+            $stmt = Conexao::getConnect()->prepare($sql);
+
+            $stmt->bindValue(1, $idAlbum);
+            $stmt->bindValue(2, $idUsuario);
+
+            $stmt->execute();
+
+        }
+
         public function update(Album $album){
             $sql = 'UPDATE album SET  nomealbum = ?,  codCompartilhamento = ? , usuario_idusuario = ? WHERE idalbum = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
@@ -100,12 +111,11 @@
             $stmt->execute();
         }
 
-        public function delete($idalbum){
-            $sql = 'SELECT * FROM album as a JOIN usuario_album as ua ON a.idalbum = ua.idalbum WHERE ua.idusuario = ?';
+        public static function delete($idalbum){
+            $sql = 'DELETE FROM album WHERE idalbum = ?';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->bindValue(1, $idalbum);
             $stmt->execute();
-            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
         }
 
         public static function buscaAlbumPadraoByIdDono($id){

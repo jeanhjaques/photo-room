@@ -86,6 +86,12 @@ switch ($_GET['action']) {
     case 'deletarconta':
         $usuarioController->deletarContaUsuarioLogado();
         break;
+    case 'deletaralbum':
+        $albumController->deletarAlbum($_GET['idalbum']);
+        break;
+    case 'removeralbum':
+        $albumController->desvincularAlbum($_GET['idalbum']);
+        break;
     default:
         $controller->login();
 }

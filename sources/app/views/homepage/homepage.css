@@ -471,6 +471,29 @@ article .CompartilharAlbum h2{
     font-weight: normal;
 }
 
+article #btnDeletarÁlbum{
+
+}
+
+article #btnDeletarAlbum {
+    font-size: 10px;
+    background: #ff0000;
+    border-radius: 5px;
+    border: none;
+    width: auto;
+    padding: 5px 5px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+article #btnDeletarAlbum:hover {
+    background: #000000;
+    color: #fff;
+    box-shadow: #000000 0 0 2px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
 /* Definições para expansao */
 #videoExpansao{
     position: relative;

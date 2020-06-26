@@ -120,7 +120,19 @@ require_once 'app/controllers/MidiaController.php';
     foreach ($albunsUsuario as $album) {
         $autor = AlbumController::buscaDono($album['usuario_idusuario']);
         echo "<div class=\"Albuns\">";
-        echo "<div class=\"divDescricao\"><span class=\"Descricao\"> <span class='textoDescricao'>" . $album['descricao'] . "</span><img onclick=\"exbirCompartilharAlbum('" . $album['codCompartilhamento'] . "');\" class=\"imgBtnCompartilhar\"  src=\"public/icones/compartilhar.png\" alt=\"Compartilhar\"></span> Autor: $autor</div>";
+        if($album['nomealbum'] != "Padrão" && $album['nomealbum'] != "Favorito"){
+            if($album['usuario_idusuario'] == $_SESSION['usuarioLogado']['idusuario']){
+                echo "<div class=\"divDescricao\"><span class=\"Descricao\"> <span class='textoDescricao'>" . $album['descricao'] . "</span><img onclick=\"exbirCompartilharAlbum('" . $album['codCompartilhamento'] . "');\" class=\"imgBtnCompartilhar\"  src=\"public/icones/compartilhar.png\" alt=\"Compartilhar\"></span> Autor: Você <a href=\"index.php?action=deletaralbum&idalbum=" . $album['idalbum'] ."\"><button id=\"btnDeletarAlbum\">Deletar Álbum</button></a></div>";
+            }
+            else{
+                echo "<div class=\"divDescricao\"><span class=\"Descricao\"> <span class='textoDescricao'>" . $album['descricao'] . "</span><img onclick=\"exbirCompartilharAlbum('" . $album['codCompartilhamento'] . "');\" class=\"imgBtnCompartilhar\"  src=\"public/icones/compartilhar.png\" alt=\"Compartilhar\"></span> Autor: $autor <a href=\"index.php?action=removeralbum&idalbum=" . $album['idalbum'] ."\"><button id=\"btnDeletarAlbum\">Remover Este Álbum da sua conta</button></a></div>";
+            }
+        }
+        else{
+            if($album['usuario_idusuario'] == $_SESSION['usuarioLogado']['idusuario']){
+                echo "<div class=\"divDescricao\"><span class=\"Descricao\"> <span class='textoDescricao'>" . $album['descricao'] . "</span><img onclick=\"exbirCompartilharAlbum('" . $album['codCompartilhamento'] . "');\" class=\"imgBtnCompartilhar\"  src=\"public/icones/compartilhar.png\" alt=\"Compartilhar\"></span> Autor: Você</div>";
+            }
+        }
         echo "<div class=\"imagens\">";
         echo "<div class=\"caixadeimagens\">";
         $imagens = MidiaController::buscarImagens($album['idalbum']);

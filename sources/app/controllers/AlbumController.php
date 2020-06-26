@@ -46,4 +46,31 @@ class AlbumController extends Controller {
     public static function consultaTodosAlbuns(){
         return AlbumDAO::read();
     }
+
+    public function deletarAlbum($idAlbum){
+
+        try{
+            AlbumDAO::delete($idAlbum);
+            $this->paginadeusuario();
+            echo "<script>alert(\"Album deletado com sucesso\");</script>";
+        }
+        catch (PDOException $erro){
+            $this->paginadeusuario();
+            echo "<script>alert(\"Impossivel Deletar\");</script>";
+        }
+    }
+
+    public function desvincularAlbum($idAlbum)
+    {
+        $idUsuario = $_SESSION['usuarioLogado']['idusuario'];
+        try{
+            AlbumDAO::desvincularAlbum($idAlbum, $idUsuario);
+            $this->paginadeusuario();
+            echo "<script>alert(\"Album removido com sucesso\");</script>";
+        }
+        catch (PDOException $erro){
+            $this->paginadeusuario();
+            echo "<script>alert(\"Não foi possível remover\");</script>";
+        }
+    }
 }
