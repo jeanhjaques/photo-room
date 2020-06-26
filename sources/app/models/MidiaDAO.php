@@ -5,13 +5,14 @@
 
     class MidiaDAO{
         public static function create(Midia $midia){
-            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum, extensao) VALUES(current_timestamp , ?, ?, ?)';
+            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum, extensao, tamanho) VALUES(current_timestamp , ?, ?, ?, ?)';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$midia->getEnderecoArquivo());
             $stmt->bindValue(2, $midia->getIdAlbum());
             $stmt->bindValue(3, $midia->getExtensao());
+            $stmt->bindValue(4, $midia->getTamanho());
 
             $stmt->execute();
         }

@@ -152,7 +152,7 @@ require_once 'app/controllers/MidiaController.php';
                                                     <a onclick=\"expandirImagem('" . $imagem['enderecoArquivo'] . "' , '".$imagem['datadeenvio']. "' , '" . $imagem['descricao'] ."');\"\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
                                                     <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
                                                     <a onclick=\"adicionarImagemParaAlbum('" . $imagem['idmidia'] . "')\" ><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
-                                                    <a onclick=\"adicionaDetalhes('".$imagem['datadeenvio']. "' , '" . $imagem['descricao'] ."');\"\" ><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
+                                                    <a onclick=\"adicionaDetalhes('".$imagem['enderecoArquivo']."','".$imagem['datadeenvio']. "' , '" . $imagem['tamanho'] ."', '" . $imagem['extensao'] ."');\"\" ><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
                                                     <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
                                                     
                                                 </figcaption>
@@ -176,7 +176,7 @@ require_once 'app/controllers/MidiaController.php';
                                                             <a onclick=\"expandirVideo('" . $imagem['enderecoArquivo'] . "');\"\"><img class=\"img-icone\" src=\"public/icones/expandir.png\" alt=\"Expandir\"></a>Expandir<br>
                                                             <a href=\"index.php?action=favoritar&MidiaId=" . $imagem['idmidia'] . "\"><img class=\"img-icone\" src=\"public/icones/favorito.png\" alt=\"favoritar\"></a>Favorito<br>
                                                             <a href=\"\"><img class=\"img-icone\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>
-                                                            <a href=\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
+                                                            <a onclick=\"adicionaDetalhesVideo('".$imagem['enderecoArquivo']."','".$imagem['datadeenvio']. "' , '" . $imagem['tamanho'] ."', '" . $imagem['extensao'] ."');\"\"><img class=\"img-icone\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>
                                                             <a href=\"index.php?action=deletarimagem&MidiaId=" . $imagem['idmidia'] . "&AlbumId=" . $album['idalbum'] . "\"><img class=\"img-icone\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>
                                                             
                                                         </figcaption>

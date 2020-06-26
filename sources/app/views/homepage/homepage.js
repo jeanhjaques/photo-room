@@ -171,7 +171,7 @@ function expandirImagem(nomeImagem, datadeenvio, descricao){
         "\t\t</figure>"
     document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
 }
-
+/*
 function adicionaDetalhes(datadeenvio, descricao){
     if(descricao == ''){
         descricao = "Não há nenhuma descrição"
@@ -179,8 +179,8 @@ function adicionaDetalhes(datadeenvio, descricao){
 
     novohtml = "" +
         "\t\t<figure id=\"expansao\">\n" +
-        "\t\t\t\t<div id=\"detalhesExpansao\"> " + 
-        "\t\t\t\t<p><strong> Data de envio:</strong> " + datadeenvio +"</p>" + 
+        "\t\t\t\t<div id=\"detalhesExpansao\"> " +
+        "\t\t\t\t<p><strong> Data de envio:</strong> " + datadeenvio +"</p>" +
         "\t\t\t\t<p><strong> Descrição: </strong></p>" + 
         "\t\t\t\t<p>" + descricao+ " </p></div>\n" +
         "\t\t\t<figcaption  id=\"captionDetalhesExpansao\" style=\"float:right;\">\n" +
@@ -190,6 +190,52 @@ function adicionaDetalhes(datadeenvio, descricao){
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>\n" +
         "\t\t\t</figcaption>\n" +
         "\t\t</figure>"
+    document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
+}*/
+
+function adicionaDetalhesVideo(nomeImagem, datadeenvio, tamanho, extensao){
+    novohtml = "" +
+        "\t\t<figure id=\"expansao\">\n" +
+        "\t\t\t<video id=\"videoExpansao\" controls>\n" +
+        "\t\t\t\t<source src=\"public/upload/"+nomeImagem+"\" type=\"video/mp4\">\n" +
+        "\t\t\t</video>\n" +
+        "\t\t\t<figcaption  id=\"captionExpansao\">\n" +
+        "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +
+        // "\t\t\t\t<a onclick=\"" + adicionaDetalhes(datadeenvio, descricao); + "\" ><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>\n" +
+        "\t\t\t</figcaption>\n" +
+        "<figcaption id=\"captionDetalhes\">"+
+        "<span><strong>Data de envio: </strong> " + datadeenvio +"</span><br>"+
+        "<span><strong>Tamanho: </strong></span>" +
+        "<span>"+ tamanho + " MB</span><br>\n" +
+        "<span><strong>Extensão: </strong></span>" +
+        "<span>"+ extensao + "</span><br>\n" +
+        "</figcaption>"+
+        "</figure>"
+    document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
+}
+
+function adicionaDetalhes(nomeImagem, datadeenvio, tamanho, extensao){
+    novohtml = "" +
+        "\t\t<figure id=\"expansao\">\n" +
+        "\t\t\t\t<img id=\"videoExpansao\" src=\"public/upload/"+nomeImagem+"\">\n" +
+        "\t\t\t<figcaption  id=\"captionExpansao\">\n" +
+        "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +
+        // "\t\t\t\t<a onclick=\"" + adicionaDetalhes(datadeenvio, descricao); + "\" ><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>\n" +
+        "\t\t\t</figcaption>\n" +
+        "<figcaption id=\"captionDetalhes\">"+
+        "<span><strong>Data de envio: </strong> " + datadeenvio +"</span><br>"+
+        "<span><strong>Tamanho: </strong></span>" +
+        "<span>"+ tamanho + " MB</span><br>\n" +
+        "<span><strong>Extensão: </strong></span>" +
+        "<span>"+ extensao + "</span><br>\n" +
+        "</figcaption>"+
+        "</figure>"
     document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
 }
 

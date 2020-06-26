@@ -12,7 +12,7 @@ class MidiaController extends Controller{
         $diretorio = "public/upload/";
         move_uploaded_file($imagem['tmp_name'], $diretorio . $novo_nome);
         $tamanho = filesize($diretorio.$novo_nome);
-        $tamanhoMB = $this->formatBytes($tamanho, 2);
+        $tamanhoMB = $this->formatBytes($tamanho,2);
         $novamidia = new Midia($novo_nome, $idAlbum);
         $novamidia->setTamanho($tamanhoMB);
         $novamidia->setExtensao($extensao);
