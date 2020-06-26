@@ -83,7 +83,9 @@ header .submenu-3 li:hover > a{ background:#ff00b7; }
 
 /*Icone que é a foto de perfil*/
 header .menu li .icone{
+    position: fixed;
     width: 40px;
+    height: 40px;
     padding: 0;
     border-radius: 100%;
 }
