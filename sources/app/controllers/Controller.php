@@ -16,7 +16,7 @@ class Controller{
         require 'app/views/perfil/editarperfil.php';
     }
     public static function dashboard(){
-        if($_SESSION['UsarioLogado']['admin']==null || $_SESSION['UsarioLogado']['admin']== "false" ){
+        if($_SESSION['usuarioLogado']['admin'] != "1"){
             require 'app/views/homepage/homepage.php';
             echo "<script>
                 alert(\"Você não é um administrador\");
