@@ -68,6 +68,21 @@ switch ($_GET['action']) {
     case 'addmidiaemalbum':
         $midiaController->addEmAlbum($_POST['idMidia'], $_POST['idAlbum']);
         break;
+    case 'dashboard':
+        $controller->dashboard();
+        break;
+    case 'dashboardmidias':
+        $controller->dashboardMidias();
+        break;
+    case 'dashboardalbuns':
+        $controller->dashboardAlbuns();
+        break;
+    case 'dashboardmidiasalbuns':
+        $controller->dashboardMidiasAlbuns();
+        break;
+    case 'dashboardalbunsusuarios':
+        $controller->dashboardAlbunsUsuarios();
+        break;
     default:
         $controller->login();
 }

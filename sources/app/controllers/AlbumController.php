@@ -42,4 +42,8 @@ class AlbumController extends Controller {
         AlbumDAO::cadastrarEmUsuario($_SESSION['usuarioLogado']['idusuario'], $album['idalbum'] );
         $this->paginadeusuario();
     }
+
+    public static function consultaTodosAlbuns(){
+        return AlbumDAO::read();
+    }
 }

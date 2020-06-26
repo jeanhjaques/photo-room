@@ -58,7 +58,7 @@
             }
         }
 
-        public function read(){
+        public static function read(){
             $sql = 'SELECT * FROM album';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->execute();

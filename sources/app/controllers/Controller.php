@@ -15,5 +15,24 @@ class Controller{
     public static function editarperfil(){
         require 'app/views/perfil/editarperfil.php';
     }
+    public static function dashboard(){
+        require 'app/views/dashboard/dashboardUsuarios.php';
+    }
+
+    public static function dashboardAlbuns(){
+        require 'app/views/dashboard/dashboardAlbuns.php';
+    }
+
+    public static function dashboardMidias(){
+        require 'app/views/dashboard/dashboardMidias.php';
+    }
+
+    public static function dashboardMidiasAlbuns(){
+        require 'app/views/dashboard/dashboardMidiasAlbum.php';
+    }
+
+    public static function dashboardAlbunsUsuarios(){
+        require 'app/views/dashboard/dashboardAlbunsUsuario.php';
+    }
   
 }

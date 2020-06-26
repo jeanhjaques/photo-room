@@ -56,11 +56,18 @@ class MidiaController extends Controller{
         $this->paginadeusuario();
     }
 
-    public static function formatBytes($size, $precision = 2)
-    {
+    public static function formatBytes($size, $precision = 2){
         $base = log($size, 1024);
         $suffixes = array('', 'K', 'M', 'G', 'T');
 
         return round(pow(1024, $base - floor($base)), $precision) .' '. $suffixes[floor($base)];
+    }
+
+    public static function consultaTodosDadosMidia(){
+        return MidiaDAO::read();
+    }
+
+    public static function consultaTodosDadosMidiaAlbum(){
+        return MidiaDAO::readMidiaAlbum();
     }
 }

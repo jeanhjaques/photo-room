@@ -43,7 +43,11 @@
             $_SESSION['usuarioLogado'] = $loginUser = UsuarioDAO::find($email, $senha);
         }
 
-       
+        public static function consultaTodosDados(){
+            return UsuarioDAO::read();
+        }
 
-
+        public static  function consultaTodosDadosUsuariosAlbum(){
+            return UsuarioDAO::readUsuarioAlbum();
+        }
     }

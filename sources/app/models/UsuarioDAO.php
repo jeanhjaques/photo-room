@@ -81,8 +81,21 @@ error_reporting(E_ALL);
         }
 
 
-        public function read(){
+        public static function read(){
             $sql = 'SELECT * FROM usuario';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return []; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function readUsuarioAlbum(){
+            $sql = 'SELECT * FROM usuario_album';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->execute();
 

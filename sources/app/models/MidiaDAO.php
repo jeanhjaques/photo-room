@@ -5,20 +5,32 @@
 
     class MidiaDAO{
         public static function create(Midia $midia){
-            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum, extensao, tamanho) VALUES(current_timestamp , ?, ?, ?, ?)';
+            $sql = 'INSERT INTO midia (datadeenvio, enderecoArquivo, album_idalbum, extensao) VALUES(current_timestamp , ?, ?, ?)';
 
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$midia->getEnderecoArquivo());
             $stmt->bindValue(2, $midia->getIdAlbum());
             $stmt->bindValue(3, $midia->getExtensao());
-            $stmt->bindValue(4, $midia->getTamanho());
 
             $stmt->execute();
         }
 
-        public function read(){
+        public static function read(){
             $sql = 'SELECT * FROM midia';
+            $stmt = Conexao::getConnect()->prepare($sql);
+            $stmt->execute();
+
+            if($stmt->rowCount()>0){
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC); //retorna um array com todos os registros
+            }
+            else {
+                return []; // retorna um array vazio caso não tenha nenhum item
+            }
+        }
+
+        public static function readMidiaAlbum(){
+            $sql = 'SELECT * FROM midia_album';
             $stmt = Conexao::getConnect()->prepare($sql);
             $stmt->execute();
 
