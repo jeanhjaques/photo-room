@@ -172,6 +172,21 @@ function expandirImagem(nomeImagem){
     document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
 }
 
+function adicionaDetalhes(datadeenvio, descricao){
+    novohtml = "" +
+        "\t\t<figure id=\"expansao\">\n" +
+        "\t\t\t\t<span>" + datadeenvio + "</span>\n" +
+        "\t\t\t<figcaption  id=\"captionExpansao\">\n" +
+        "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>\n" +
+        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>\n" +
+        "\t\t\t</figcaption>\n" +
+        "\t\t</figure>"
+    document.querySelector('article').insertAdjacentHTML('afterbegin', novohtml);
+}
+
 function minimizar(){
     document.getElementById('expansao').remove();
 }
