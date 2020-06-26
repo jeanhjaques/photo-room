@@ -157,13 +157,13 @@ function expandirVideo(nomeImagem){
     var values = document.getElementsByClassName("Albuns");
 }
 
-function expandirImagem(nomeImagem){
+function expandirImagem(nomeImagem, datadeenvio, descricao){
     novohtml = "" +
         "\t\t<figure id=\"expansao\">\n" +
         "\t\t\t\t<img id=\"videoExpansao\" src=\"public/upload/"+nomeImagem+"\">\n" +
         "\t\t\t<figcaption  id=\"captionExpansao\">\n" +
         "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +
-        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
+        // "\t\t\t\t<a onclick=\"" + adicionaDetalhes(datadeenvio, descricao); + "\" ><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>\n" +
@@ -173,12 +173,18 @@ function expandirImagem(nomeImagem){
 }
 
 function adicionaDetalhes(datadeenvio, descricao){
+    if(descricao == ''){
+        descricao = "Não há nenhuma descrição"
+    }
+
     novohtml = "" +
         "\t\t<figure id=\"expansao\">\n" +
-        "\t\t\t\t<div id=\"detalhesExpansao\"> Data de envio" + datadeenvio + "\nDescrição:\n" + descricao+ "</div>\n" +
-        "\t\t\t<figcaption  id=\"captionExpansao\" style=\"float:right;\">\n" +
+        "\t\t\t\t<div id=\"detalhesExpansao\"> " + 
+        "\t\t\t\t<p><strong> Data de envio:</strong> " + datadeenvio +"</p>" + 
+        "\t\t\t\t<p><strong> Descrição: </strong></p>" + 
+        "\t\t\t\t<p>" + descricao+ " </p></div>\n" +
+        "\t\t\t<figcaption  id=\"captionDetalhesExpansao\" style=\"float:right;\">\n" +
         "\t\t\t\t<button id=\"btnMinimizar\"><img class=\"imgIconeExpansao\" onclick=\"minimizar()\" src=\"public/icones/minimizar.png\" alt=\"Minimizar\">Minimizar</button><br>\n" +
-        "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/detalhes.png\" alt=\"Ver detalhes\"></a>Detalhes<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/favorito.png\" alt=\"Favoritar\"></a>Favorito<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/add.png\" alt=\"Adcionar para Álbum\"></a>Álbum<br>\n" +
         "\t\t\t\t<a href=\"\"><img class=\"imgIconeExpansao\" src=\"public/icones/excluir.png\" alt=\"Deletar\"></a>Deletar<br>\n" +
