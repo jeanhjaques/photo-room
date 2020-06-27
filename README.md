@@ -17,8 +17,7 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 * Você deve possuir a última versão do PHP instalado.
 * Você deve possuir uma máquina Windows/Linux.
 * Você deve possuir alguma aplicação capaz de hospedar um servidor mySQL ou MariaDB.
-* Você deve ler o `<guia/link/documentação>` dos termos de uso.
-* (outros ...)
+* Você deve ler o arquivo https://github.com/jeanhjaques/photo-room/blob/master/license  a respeito da licença de uso.
 
 ## Como executar
 
@@ -81,5 +80,4 @@ As seguintes pessoas contribuiram para este projeto:
 ## Licença de uso
 
 <!--- Se não tiver certeza de qual, verifique este site: https://choosealicense.com/--->
-Este projeto usa a seguinte licença: GNU General Public License v3.0 (<link>).
-*Você também deve criar um arquivo chamado LICENSE no projeto*
+Este projeto usa a seguinte licença: GNU General Public License v3.0 (https://github.com/jeanhjaques/photo-room/blob/master/license).
