@@ -62,10 +62,10 @@ Para usar Photo Room, siga os seguintes passos (exemplos):<br>
   1)Para trocar a navegação entre imagens e videos:<br>
       <i>Você deverá escolher as opções pelo menu fixado a esquerda, escolhendo uma opção a mudança é realizada e é possivel ver os arquivos.<br></i>
   2)Para cadastrar imagens ou videos:<br>
-      Você deverá escolher as opção pelo menu fixado a esquerda, escolhendo o icone com simbolo de adição, logo após determinar o álbum e
-    selecionar o arquivo que deseja enviar.<br>
+      <i>Você deverá escolher as opção pelo menu fixado a esquerda, escolhendo o icone com simbolo de adição, logo após determinar o álbum e
+    selecionar o arquivo que deseja enviar.<br></i>
   3)Para acessar o perfil, dashboard e retornar ao contexto dos albuns:<br>
-      Ao clicar na foto de perfil do usuário um menu de contexto é aberto exibindo todas essas opções.<br>
+      <i>Ao clicar na foto de perfil do usuário um menu de contexto é aberto exibindo todas essas opções.<br></i>
 
 ## Contribuidores
 
