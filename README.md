@@ -8,15 +8,15 @@ Photo Room é uma aplicação web que permite o armazenamento de imagens e video
 
 <!--Coloque aqui linhas adicionais com informações sobre o que a aplicação faz. Sua introdução deve ser de no máximo 3 parágrafos, seja simples e objetivo para não sobrecarregar de detalhes desnecessários este espaço. Se necessário, crie novas seções abaixo. --->
 
-Por meio do Photo Room o usuário é capaz de armazenar imagens e videos e além disso é possível criar albuns, ordenar imagens por diferentes critérios, criar albuns compartilhados, adicionar informações descritivas as fotos e marcar suas favoritas. Nesta aplicação cada usuário possuí seu album principal(Que conta com todas as fotografias armazenadas), um albúm de favoritos e albúns personalizados cujo os mesmo podem possuir nomes e descrições personalizados.
+Por meio do Photo Room o usuário é capaz de armazenar imagens e videos e além disso é possível criar albuns, ordenar imagens por diferentes critérios, criar albuns compartilhados e marcar suas favoritas. Nesta aplicação cada usuário possuí seu album principal(Que conta com todas as fotografias armazenadas), um álbum de favoritos e álbuns personalizados que podem possuir nomes e descrições personalizados.
 
 ## Pré-requisitos
 
 Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 <!--- Estes são alguns exemplos de requisitos. Adicione, duplique e remove como necessário --->
 * Você deve possuir a última versão do PHP instalado.
-* Você deve possuir uma máquina Windows/Linux/Mac.
-* Você deve possuir alguma aplicação capaz de hospedar um server mySQL.
+* Você deve possuir uma máquina Windows/Linux.
+* Você deve possuir alguma aplicação capaz de hospedar um servidor mySQL ou MariaDB.
 * Você deve ler o `<guia/link/documentação>` dos termos de uso.
 * (outros ...)
 
@@ -24,34 +24,50 @@ Antes de iniciar, certifique-se de cumprir os seguintes requisitos:
 
 1)Acesse Lib e crie um banco usando o scriptBD.
 2)Prepare seu servidor php com os arquivos do projeto.
-3)Acesse pelo navegador o site Endereconoseuserver/resources
-4)Cadastre-se
-5)Efetue login
+3)Acesse pelo navegador o site Endereconoseuserver/photo-room/sources
+4)Encontre a pasta public do projeto em htdocs e dê todas as permissões para que o mesmo possa upar arquivos*
+5)Cadastre-se
+6)Efetue login
 
-Linux e/ou macOS:
-```
-<commando 1>
-<commando 2>
-....
-<commando n>
-```
+*Pode ser necessário alterar o arquivo php.ini do seu servidor afim de que o mesmo possa receber uploads e posts de arquivos grandes quando se tratar de videos,
+o que deve ser alterado é o seguinte: Maximum allowed size for uploaded files e Maximum size of POST data that PHP will accept, ambos para 1024MB. 
+Feito isso o site é capaz de receber arquivos de até 1GB
+
+Linux:
+
+Não há nenhum passo exclusivo.
 
 Windows (opcional):
-```
-<commandos>
-```
+
+Não há nenhum passo exclusivo.
 
 ## Usando Photo Room
 
 Para usar Photo Room, siga os seguintes passos (exemplos):
 
-* Abra o navegador e digite o seguinte endereço: http://localhost/app/sources
+* Abra o navegador e digite o seguinte endereço: http://localhost/photo-room/sources
 * Ao abrir a aplicação você poderá:
   * Se cadastrar
   * Efetuar login
-* *Continua ...*  
+  * Navegar entre imagens ou videos
+  * Cadastar imagens em albuns
+  * Cadastrar álbuns
+  * favoritar imagens
+  * Editar seu perfil
+  * Deletar imagens, albuns e seu perfil
+  * Acessar o dashboard para ver todos os cadastros efetuados¹
+  
+  ¹Para acessar o dashboard é necessario alterar a linha correspondente a seu usuario na tabela usuario do BD trocando o valor de admin para 1(true).
 
 *Descreva as principais atividades, e/ou fluxos, que são possíveis de serem realizadas na aplicação.*
+ Dentre os principais fluxos de atividades no site nós temos:
+  1)Para trocar a navegação entre imagens e videos:
+    Você deverá escolher as opções pelo menu fixado a esquerda, escolhendo uma opção a mudança é realizada e é possivel ver os arquivos.
+  2)Para cadastrar imagens ou videos:
+    Você deverá escolher as opção pelo menu fixado a esquerda, escolhendo o icone com simbolo de adição, logo após determinar o álbum e
+    selecionar o arquivo que deseja enviar.
+  3)Para acessar o perfil, dashboard e retornar ao contexto dos albuns:
+    Ao clicar na foto de perfil do usuário um menu de contexto é aberto exibindo todas essas opções.
 
 ## Contribuidores
 
