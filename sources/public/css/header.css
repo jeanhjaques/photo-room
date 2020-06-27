@@ -26,15 +26,15 @@ header {
 }
 
 header nav{
-    position: fixed;
-    margin-left: 85%;
-    margin-top: 3px;
+    margin-top: -48px;
+    margin-right:10%;
+    text-align: right;
+    float: right;
 }
 
-.nomeUsuario{
-    position: fixed;
-    margin-left: -200px;
-    margin-top: 12px;
+header .nomeUsuario{
+    text-align: right;
+    margin-right: 15%;
 }
 
 /* Menu do cabecalho */
@@ -85,7 +85,6 @@ header .submenu-3 li:hover > a{ background:#ff00b7; }
 
 /*Icone que é a foto de perfil*/
 header .menu li .icone{
-    position: fixed;
     width: 40px;
     height: 40px;
     padding: 0;

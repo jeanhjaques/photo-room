@@ -1,7 +1,8 @@
 <?php
 // Exibe todos os erros PHP (see changelog)
 error_reporting(E_ALL);
-require_once 'app/controllers/MidiaController.php';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -69,6 +70,7 @@ require_once 'app/controllers/MidiaController.php';
             </form>
         </div>
     </div>
+
 
     <nav class="menuprincipal">
         <ul>
@@ -185,7 +187,6 @@ require_once 'app/controllers/MidiaController.php';
                     }
                 }
         echo "</div>";
-
         echo "</div>";
         echo "</div>";
         echo "</div>";

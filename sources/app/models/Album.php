@@ -1,5 +1,6 @@
 <?php
 require_once 'Usuario.php';
+require_once 'app/controllers/MidiaController.php';
 date_default_timezone_set('America/Manaus');
 
 class Album{
@@ -18,6 +19,8 @@ class Album{
         $this->descricao = $descricao;
         $this->dono = $dono;
         $this->codCompartilhamento = $this->geradorCodCompartilhamento();
+        $qrCodeName = "public/qrcode/".$this->codCompartilhamento.".png";
+        QRcode::png('code data text', $qrCodeName); // creates qrcode img file
     }
 
     public function getNome(){

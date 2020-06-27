@@ -220,6 +220,7 @@ function minimizar(){
 function exbirCompartilharAlbum($idCodigoAlbum){
     novohtml = "    <div class=\"CompartilharAlbum\" id=\"CompartilharAlbum\">\n" +
         "        <h1>Compartilhe usando o código:</h1>\n" +
+        "\t\t\t\t<img id=\"qrCode\" src=\"public/qrcode/"+$idCodigoAlbum+".png\">\n" +
         "        <h2>"+$idCodigoAlbum+"</h2>\n" +
         "        <button id=\"btnupload\" onclick=\"minimizarCompartilhar()\">Fechar</button>\n" +
         "    </div>"

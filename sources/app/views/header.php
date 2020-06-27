@@ -7,9 +7,9 @@
     </head>
     <body>
     <header>
+        <p class="nomeUsuario"><strong><?php echo $_SESSION['usuarioLogado']['nome']." ".$_SESSION['usuarioLogado']['sobrenome'];?></strong></p>
         <nav>
         <!-- Menu de cabeçalho -->
-            <span class="nomeUsuario"><strong><?php echo $_SESSION['usuarioLogado']['nome']." ".$_SESSION['usuarioLogado']['sobrenome'];?></strong></span>
             <ul class="menu"> <!-- Esse é o 1 nivel ou o nivel principal -->
             <li><a class="btnComIcone"><?php echo "<img class = \"icone\" src=\"public/upload/".$_SESSION['usuarioLogado']['endfotoperfil']."\">"?></a>
                 <ul class="submenu-1"> <!-- Esse é o 2 nivel ou o primeiro Drop Down -->

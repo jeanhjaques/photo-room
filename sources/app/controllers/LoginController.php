@@ -5,6 +5,7 @@
     require_once 'app/models/Album.php';
     require_once 'app/models/AlbumDAO.php';
     require_once "AlbumController.php";
+    require_once "lib/phpqrcode/qrlib.php";
 
     class LoginController extends Controller {
 
