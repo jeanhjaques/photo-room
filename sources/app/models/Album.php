@@ -18,9 +18,10 @@ class Album{
         $this->nome = $nome;
         $this->descricao = $descricao;
         $this->dono = $dono;
-        $this->codCompartilhamento = $this->geradorCodCompartilhamento();
-        $qrCodeName = "public/qrcode/".$this->codCompartilhamento.".png";
-        QRcode::png('code data text', $qrCodeName); // creates qrcode img file
+        $codCompartilhamento =  $this->geradorCodCompartilhamento();
+        $this->codCompartilhamento = $codCompartilhamento;
+        $qrCodeName = "public/qrcode/".$codCompartilhamento.".png";
+        QRcode::png($codCompartilhamento, $qrCodeName); // creates qrcode img file
     }
 
     public function getNome(){
