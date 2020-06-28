@@ -36,20 +36,21 @@ error_reporting(E_ALL);
     <div class="CadastrarImagem modal" >
         <div class="modal-content">
             <span class="close" onclick="fecharModelAlbum()" >&times;</span>
-            <span class="textoMidia">Selecione o Album para colocar uma mídia</span>
+            <span class="textoMidia">Selecione o Album Padrão para colocar uma mídia</span>
             <?php
             $albunsUsuario = AlbumController::buscarAlbuns();
+            // var_dump($albunsUsuario);
             ?> 
             <ul class="exibicaoAlbum"> 
                 <?php
-            foreach ($albunsUsuario as $album) {
+            // foreach ($albunsUsuario as $album) {
                 echo "<li>
-                <button onclick=\"abrirAlbum(" . $album['idalbum'] . ")\"> 
+                <button onclick=\"abrirAlbum(" . $albunsUsuario[0]['idalbum'] . ")\"> 
                     <img src=\"public/img/album.png\"  height=\"80\"  width=\"80\" > 
-                    <div> ". $album['nomealbum'] . "</div>
+                    <div> ". $albunsUsuario[0]['nomealbum'] . "</div>
                 </button>
                 </li>";
-            }
+            // }
             echo "</ul>";
             ?>
             
@@ -65,7 +66,11 @@ error_reporting(E_ALL);
             enctype="multipart/form-data">
                 <input class="nova-imagem" id="nova-imagem" name="nova-imagem" required="required" type="file"
                 accept=".jpg,.png,.mp4,.mkv,.avi" placeholder="Selecionar Imagem"><br>
-                <button id="btnupload" onclick="exibirAddImagem()">Cancelar</button>
+                <!-- <input  
+                type="hidden" 
+                name="idAlbum" 
+                value=""> -->
+                <button id="btnupload" onclick="fecharModelAlbum()">Cancelar</button>
                 <input type="submit" value="Enviar" id="btnupload">
             </form>
         </div>

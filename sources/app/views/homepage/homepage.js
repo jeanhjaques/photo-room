@@ -45,6 +45,7 @@ function abrirAlbum(idAlbum){
     modalAlbum[0].style.display = "none";
     imagensAlbum[0].style.display = "block";
     
+    var idAlbum = idAlbum;
     
 }
 

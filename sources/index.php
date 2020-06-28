@@ -50,6 +50,10 @@ switch ($_GET['action']) {
     case 'cadastrarimagemalbumpadrao':
         $midiaController->cadastrarMidia($_FILES['nova-imagem'], $_SESSION['usuarioLogado']['idalbumprincipal']);
         break;
+    case 'cadastrarimagemalbum':
+        var_dump($_POST['idAlbum']);
+        $midiaController->cadastrarMidia($_FILES['nova-imagem'], $_SESSION['usuarioLogado'][$_POST['idAlbum']]);
+        break;
     case 'favoritar':
         $midiaController->favoritar($_GET['MidiaId']);
         break;
