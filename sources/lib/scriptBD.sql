@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 23-Jun-2020 às 23:05
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.5
+-- Host: localhost
+-- Tempo de geração: 29-Jun-2020 às 05:09
+-- Versão do servidor: 10.4.13-MariaDB
+-- versão do PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `photoroom`
 --
-CREATE DATABASE IF NOT EXISTS `photoroom` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `photoroom`;
 
 -- --------------------------------------------------------
 
@@ -49,7 +47,7 @@ CREATE TABLE `midia` (
   `datadeenvio` date DEFAULT NULL,
   `enderecoArquivo` varchar(100) NOT NULL,
   `descricao` text DEFAULT NULL,
-  `tamanho` float DEFAULT NULL,
+  `tamanho` double DEFAULT NULL,
   `extensao` varchar(45) DEFAULT NULL,
   `resolucao` varchar(45) DEFAULT NULL,
   `duracao` varchar(45) DEFAULT NULL,
@@ -85,9 +83,9 @@ CREATE TABLE `usuario` (
   `telefone` varchar(45) DEFAULT NULL,
   `endfotoperfil` varchar(45) DEFAULT NULL,
   `idalbumprincipal` varchar(45) DEFAULT NULL,
-  `idalbumfavorito` varchar(45) NOT NULL,
+  `idalbumfavorito` varchar(45) DEFAULT NULL,
   `dataNascimento` varchar(45) DEFAULT NULL,
-  `admin` boolean DEFAULT NULL
+  `admin` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -175,7 +173,7 @@ ALTER TABLE `album`
 -- Limitadores para a tabela `midia`
 --
 ALTER TABLE `midia`
-  ADD CONSTRAINT `midia_ibfk_1` FOREIGN KEY (`album_idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON  UPDATE CASCADE;
+  ADD CONSTRAINT `midia_ibfk_1` FOREIGN KEY (`album_idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `midia_album`
@@ -189,7 +187,7 @@ ALTER TABLE `midia_album`
 --
 ALTER TABLE `usuario_album`
   ADD CONSTRAINT `usuario_album_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `usuario_album_ibfk_2` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE CASCADE;;
+  ADD CONSTRAINT `usuario_album_ibfk_2` FOREIGN KEY (`idalbum`) REFERENCES `album` (`idalbum`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
