@@ -1,5 +1,6 @@
 <?php
 //classe responsável pela configuração da conexão com o banco de dados
+error_reporting(E_ALL);
 class Conexao{
     private static $instance;
 

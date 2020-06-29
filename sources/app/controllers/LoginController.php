@@ -11,15 +11,13 @@
 
         public function cadastrar($nome, $sobrenome, $dataNascimento, $email, $telefone, $senha, $pais, $estado, $cidade){
 
-            $novousuario = new Usuario($nome, $sobrenome, $dataNascimento,
-                $email, $telefone, MD5($senha), $cidade, $estado, $pais);
-
+            $novousuario = new Usuario($nome, $sobrenome, $dataNascimento, $email, $telefone, MD5($senha), $cidade, $estado, $pais);
             try {
                 if(!empty($nome) && !empty($sobrenome) && !empty($email) && !empty($senha) && !empty($dataNascimento)){
-                    if(UsuarioDAO::findEmail($email) == null){                    
-                        UsuarioDAO::create($novousuario);
+                    if(UsuarioDAO::findEmail($email) == null){    
+                        UsuarioDAO::create($novousuario);                
                         $fotoPerfil = 'usuario.png';                              
-                        $usuarioCadastrado  = UsuarioDAO::find($email, MD5($senha));                                
+                        $usuarioCadastrado = UsuarioDAO::find($email, MD5($senha));                                
                         $idAlbumPadrao = AlbumController::criarAlbumPadrao($usuarioCadastrado['idusuario']);
                         $idAlbumFavorito = AlbumController::criarAlbumFavorito($usuarioCadastrado['idusuario']);
                         $novousuario->setAlbumFavorito($idAlbumFavorito);
@@ -29,6 +27,7 @@
                         UsuarioDAO::update($novousuario);
                         AlbumDAO::cadastrarEmUsuario($novousuario->getId(), $idAlbumPadrao);
                         AlbumDAO::cadastrarEmUsuario($novousuario->getId(), $idAlbumFavorito);
+                    
 
                         $_SESSION['loginErro'] = "<strong class='success'>Usuario Cadastrado</strong>";
                     }

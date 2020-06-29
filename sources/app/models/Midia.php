@@ -78,17 +78,11 @@ class Midia{
         $this->dataEnvio = $dataEnvio;
     }
 
-    /**
-     * @return int
-     */
     public function getIdAlbum()
     {
         return $this->idAlbum;
     }
 
-    /**
-     * @param int $idAlbum
-     */
     public function setIdAlbum($idAlbum)
     {
         $this->idAlbum = $idAlbum;

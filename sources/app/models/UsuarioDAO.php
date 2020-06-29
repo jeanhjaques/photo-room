@@ -5,9 +5,9 @@ error_reporting(E_ALL);
     class UsuarioDAO{
 
         public static function create(Usuario $usuario){
-            $sql = 'INSERT INTO usuario (nome, sobrenome , email, senha, cidade, estado, pais, dataNascimento) VALUES(?, ?, ?, ?, ?, ?, ?, ?)';
+            $sql = 'INSERT INTO usuario (nome, sobrenome , email, senha, cidade, estado, pais, dataNascimento, telefone) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
-
+            
             /** 
              * A variável dataNasc recebe a data de nascimento do usuário no formato Y-m-d
              */
@@ -19,11 +19,10 @@ error_reporting(E_ALL);
             $stmt->bindValue(4,$usuario->getSenha());
             $stmt->bindValue(5,$usuario->getCidade());
             $stmt->bindValue(6,$usuario->getEstado());
-            $stmt->bindValue(7,$usuario->getPais());           
-            /*$stmt->bindValue(8,$usuario->getTelefone());
-            $stmt->bindValue(9,$usuario->getAlbumPrincipal());
-            $stmt->bindValue(10,$usuario->getAlbumFavorito());*/
-            $stmt->bindValue(8, $dataNasc);            
+            $stmt->bindValue(7,$usuario->getPais());  
+            $stmt->bindValue(8,$dataNasc);           
+            $stmt->bindValue(9,$usuario->getTelefone());
+         
 
             $stmt->execute();
         }

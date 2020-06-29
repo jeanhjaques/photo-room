@@ -3,7 +3,7 @@
 
     class AlbumDAO{
         public static function create(Album $album){
-            $sql = 'INSERT INTO Album (nomealbum, datacriacao, descricao, codCompartilhamento, usuario_idusuario) VALUES(?, current_timestamp, ?, ?, ?)';
+            $sql = 'INSERT INTO album (nomealbum, datacriacao, descricao, codCompartilhamento, usuario_idusuario) VALUES(?, current_timestamp, ?, ?, ?)';
             $stmt = Conexao::getConnect()->prepare($sql);
 
             $stmt->bindValue(1,$album->getNome());

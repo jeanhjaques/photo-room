@@ -20,7 +20,7 @@ class Album{
         $this->dono = $dono;
         $codCompartilhamento =  $this->geradorCodCompartilhamento();
         $this->codCompartilhamento = $codCompartilhamento;
-        $qrCodeName = "public/qrcode/".$codCompartilhamento.".png";
+        $qrCodeName = 'public/qrcode/'.$codCompartilhamento.'.png';
         QRcode::png($codCompartilhamento, $qrCodeName); // creates qrcode img file
     }
 
