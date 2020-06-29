@@ -36,7 +36,7 @@ Linux:<br>
 
 Não há nenhum passo exclusivo.<br>
 
-Windows (opcional):<br>
+Windows:<br>
 
 Não há nenhum passo exclusivo.<br>
 
