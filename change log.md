@@ -1,4 +1,5 @@
-- Agora  já existe um scrip para o BD Sql
-- O acesso agora é possivel direto em resources (usando rotas)
-- É possivel se cadastrar
-- É possivel logar
+- Agora já é possivel cadastrar imagens e albuns.
+- Ver os cadastros caso vc seja administrador.
+- Favoritar Imagens.
+- Adicionar as imagens em outros albuns.
+- Add foto de perfil.
