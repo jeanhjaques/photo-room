@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    margin:0;
+    padding: 0;
+}
+h1{
+    text-align: left;
+    color: #ff00b7;
+}
+.tabelas{
+    padding-top:5px;
+    margin-left: 25%;
+    width: 70%;
+}
+table{
+    text-align: center;
+    border-style:solid;
+    border-color: #ff00b7;
+    border-width: 1px;
+    border-collapse:unset;
+    border-spacing: 0;
+    border-bottom: none;
+    border-right: none;
+}
+table tr{
+    border-style:solid;
+    border-color: teal;
+    border-bottom-width: 3px;
+}
+table td{
+    padding: 4px;
+    border-bottom-style:solid;
+    border-bottom-color: #ff00b7;
+    border-bottom-width: 0.5px;
+    border-right-style:solid;
+    border-right-color: #ff00b7;
+    border-right-width: 0.5px;
+}
+.tituloColuna{
+    border-style:solid;
+    background-color: #ff00b7;
+    margin: 0;
+    color:white;
+    font-weight: bold;
+}
+
+nav{
+    padding-top: 0;
+    margin: 0;
+    position: fixed;
+    background-color: black;
+    color: white;
+    width: 20%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+nav h2{
+    text-align: center;
+    font-size: 24px;
+    color: #ff00b7;
+}
+nav a{
+    position: relative;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+nav a:hover{
+    color:  #ff00b7;
+}
+.selecionado{
+    color: #ff00b7;
+}
